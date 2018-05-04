@@ -4,7 +4,7 @@
 	<context id="contextElAbueloNicolasPersistencia">
 		<jdbcConnection
 			connectionURL="jdbc:mysql://localhost:3306/Inventario"
-			driverClass="org.mariadb.jdbc.Driver" password="root" userId="root" />
+			driverClass="org.mariadb.jdbc.Driver" password="" userId="root" />
 		<javaModelGenerator
 			targetPackage="elabuelonicolas.bd.domain" targetProject="ElAbueloNicolasPersistencia" />
 		<sqlMapGenerator targetPackage="elabuelonicolas.bd.mappers"
