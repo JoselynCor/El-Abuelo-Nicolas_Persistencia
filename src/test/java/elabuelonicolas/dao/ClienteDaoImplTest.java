@@ -20,8 +20,8 @@ public class ClienteDaoImplTest {
 	public void createClient() {
 		try {
 			Cliente c = new Cliente();
-			c.setNombre("Luis");
-			c.setContacto("Castro");
+			c.setNombre("José Luis");
+			c.setContacto("Josué");
 			c.setDireccion("Acatlima");
 			c.setEmail("jlcastrogro@gmail.com");
 			c.setRfc("CACG950419HOCSRS00");
@@ -62,8 +62,8 @@ public class ClienteDaoImplTest {
 	@Test
 	public void deleteCliente() {
 		try {
-			clienteDao.delete(7);
-			clienteDao.delete(8);
+			if(clienteDao.read(2) != null)
+				clienteDao.delete(2);
 		} catch (Exception e) {
 			System.out.println("Error: " + e);
 		}
