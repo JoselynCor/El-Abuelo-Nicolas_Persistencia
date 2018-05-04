@@ -5,6 +5,13 @@ import java.util.List;
 import elabuelonicolas.bd.domain.Cliente;;
 
 public interface ClienteMapper {
-	List <Cliente> findAllClientes();
-	void updateCliente(Cliente cliente);
+	List<Cliente> findAll();
+
+	void create(Cliente cliente);
+
+	Cliente read(int id);
+
+	void update(Cliente cliente);
+
+	void delete(int id);
 }
