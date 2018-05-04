@@ -17,11 +17,21 @@
 		<result column="rfc" jdbcType="VARCHAR" property="rfc" />
 	</resultMap>
 
-	<select id="findAllClientes" resultMap="BaseResultMap">
+	<select id="findAll" resultMap="BaseResultMap">
 		SELECT * FROM Cliente
 	</select>
-
-	<update id="updateCliente" parameterType="elabuelonicolas.bd.domain.Cliente">
+	<insert id="create"
+		parameterType="elabuelonicolas.bd.domain.Cliente">
+		insert into Cliente (nombre, direccion, contacto,
+		telefono, email, rfc) values (#{nombre}, #{direccion}, #{contacto}, #{telefono}, #{email}, #{rfc})
+	</insert>
+	<select id="read"
+		parameterType="int"
+		resultMap="BaseResultMap">
+		select * from Cliente where id=#{id}
+	</select>
+	<update id="update"
+		parameterType="elabuelonicolas.bd.domain.Cliente">
 		UPDATE Cliente SET
 		nombre=#{nombre},
 		direccion=#{direccion},
@@ -29,4 +39,8 @@
 		telefono=#{telefono},
 		rfc=#{rfc} WHERE id=#{id}
 	</update>
+	<delete id="delete"
+		parameterType="int">
+		delete from Cliente where id = #{id}
+	</delete>
 </mapper>

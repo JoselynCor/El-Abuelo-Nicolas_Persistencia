@@ -10,40 +10,65 @@ import elabuelonicolas.bd.mappers.ClienteMapper;
 
 @Named
 public class ClienteDaoImpl implements ClienteDao {
-	
+
 	SqlSession sqlSession;
-	
+
 	@Autowired
 	public void setSqlSession(SqlSession sqlSession) {
 		this.sqlSession = sqlSession;
 	}
-	
+
 	@Override
-	public List<Cliente> findAllClientes() {
+	public List<Cliente> findAll() {
 		List<Cliente> list = null;
 		try {
-			ClienteMapper clienteMapper = sqlSession
-					.getMapper(ClienteMapper.class);
-			list = clienteMapper.findAllClientes();
-
-			for (Cliente c : list) {
-				System.out.println("Id: " + c.getId());
-				System.out.println("Nombre: " + c.getNombre());
-			}
+			ClienteMapper clienteMapper = sqlSession.getMapper(ClienteMapper.class);
+			list = clienteMapper.findAll();
 			return list;
-		} catch(Exception e) {
+		} catch (Exception e) {
 			System.out.println("Error: " + e);
 		}
 		return null;
 	}
 
 	@Override
-	public void updateCliente(Cliente cliente) {
+	public void create(Cliente cliente) {
 		try {
-			ClienteMapper clienteMapper = sqlSession
-					.getMapper(ClienteMapper.class);
-			clienteMapper.updateCliente(cliente);
-		} catch(Exception e) {
+			ClienteMapper clienteMapper = sqlSession.getMapper(ClienteMapper.class);
+			clienteMapper.create(cliente);
+		} catch (Exception e) {
+			System.out.println("Error: " + e);
+		}
+	}
+
+	@Override
+	public Cliente read(int id) {
+		try {
+			ClienteMapper clienteMapper = sqlSession.getMapper(ClienteMapper.class);
+			Cliente cliente = clienteMapper.read(id);
+			return cliente;
+		} catch (Exception e) {
+			System.out.println("Error: " + e);
+		}
+		return null;
+	}
+
+	@Override
+	public void update(Cliente cliente) {
+		try {
+			ClienteMapper clienteMapper = sqlSession.getMapper(ClienteMapper.class);
+			clienteMapper.update(cliente);
+		} catch (Exception e) {
+			System.out.println("Error: " + e);
+		}
+	}
+
+	@Override
+	public void delete(int id) {
+		try {
+			ClienteMapper clienteMapper = sqlSession.getMapper(ClienteMapper.class);
+			clienteMapper.delete(id);
+		} catch (Exception e) {
 			System.out.println("Error: " + e);
 		}
 	}
