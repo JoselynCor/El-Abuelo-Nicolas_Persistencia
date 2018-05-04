@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<context id="contextElAbueloNicolasPersistencia">
+		<jdbcConnection
+			connectionURL="jdbc:mysql://localhost:3306/Inventario"
+			driverClass="org.mariadb.jdbc.Driver" password="root" userId="root" />
+		<javaModelGenerator
+			targetPackage="elabuelonicolas.bd.domain" targetProject="ElAbueloNicolasPersistencia" />
+		<sqlMapGenerator targetPackage="elabuelonicolas.bd.mappers"
+			targetProject="ElAbueloNicolasPersistencia" />
+		<table schema="Inventario" tableName="Cliente">
+			<property name="usActualColumnsNames" value="true" />
+		</table>
+		<table schema="Inventario" tableName="Compras">
+			<property name="usActualColumnsNames" value="true" />
+		</table>
+		<table schema="Inventario" tableName="ListaCompras">
+			<property name="usActualColumnsNames" value="true" />
+		</table>
+		<table schema="Inventario" tableName="ListaVentas">
+			<property name="usActualColumnsNames" value="true" />
+		</table>
+		<table schema="Inventario" tableName="Producto">
+			<property name="usActualColumnsNames" value="true" />
+		</table>
+		<table schema="Inventario" tableName="Proveedor">
+			<property name="usActualColumnsNames" value="true" />
+		</table>
+		<table schema="Inventario" tableName="Ventas">
+			<property name="usActualColumnsNames" value="true" />
+		</table>
+	</context>
+</generatorConfiguration>
