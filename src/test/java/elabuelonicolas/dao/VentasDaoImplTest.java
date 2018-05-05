@@ -17,6 +17,7 @@ public class VentasDaoImplTest {
 	@Inject
 	VentasDao ventasDao;
 
+	@SuppressWarnings("deprecation")
 	@Test
 	public void createVenta() {
 		try {
@@ -42,6 +43,7 @@ public class VentasDaoImplTest {
 		}
 	}
 
+	@SuppressWarnings("deprecation")
 	@Test
 	public void updateVenta() {
 		Ventas v = ventasDao.read(1);
