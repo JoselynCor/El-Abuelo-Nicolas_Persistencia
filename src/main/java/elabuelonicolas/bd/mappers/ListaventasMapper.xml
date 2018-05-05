@@ -12,4 +12,30 @@
     <result column="cantidad" jdbcType="INTEGER" property="cantidad" />
     <result column="subtotal" jdbcType="DOUBLE" property="subtotal" />
   </resultMap>
+  <select id="findAll" resultMap="BaseResultMap">
+		SELECT * FROM listaventas
+	</select>
+	<insert id="create"
+		parameterType="elabuelonicolas.bd.domain.Listaventas">
+		INSERT INTO listaventas (id, idproducto, cantidad,
+		subtotal) VALUES (#{id}, #{idproducto}, #{cantidad}, #{subtotal})
+	</insert>
+	<select id="read"
+		parameterType="int"
+		resultMap="BaseResultMap">
+		select * from listaventas where id=#{id}
+	</select>
+	<update id="update"
+		parameterType="elabuelonicolas.bd.domain.Listaventas">
+		UPDATE listaventas SET
+		id=#{id},
+		idproducto=#{idproducto},
+		cantidad=#{cantidad},
+		subtotal=#{subtotal}
+		WHERE id=#{id}
+	</update>
+	<delete id="delete"
+		parameterType="int">
+		delete from listaventas where id = #{id}
+	</delete>
 </mapper>
