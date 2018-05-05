@@ -6,5 +6,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	<mappers>
 		<mapper resource="elabuelonicolas/bd/mappers/ClienteMapper.xml"/>
 		<mapper resource="elabuelonicolas/bd/mappers/VentasMapper.xml"/>
+		<mapper resource="elabuelonicolas/bd/mappers/ProductoMapper.xml"/>
 	</mappers>
 </configuration>
