@@ -5,20 +5,6 @@
 2. Tomcat 8
 3. MariaDB
 
-## Actualización de la Base de Datos Invetnario:
-
-Las tablas de:
-~~~
-listaventa 
-listacompra
-~~~
-se deberán modificar con lo siguiente:
-~~~
-    ALTER TABLE listaventa DROP PRIMARY KEY;
-    ALTER TABLE listacompra DROP PRIMARY KEY;
-~~~
-Lo anterior es para poder agregar más de un producto a las listas de ventas y compras con el mismo id (que hace referencia a la compra o venta de la respectiva lista).
-
 ## Procedimiento para subir archivos
 1. Crear una rama nueva (New Branch) de preferencia con su nombre
 2. Si suben el archivo vía Github:
