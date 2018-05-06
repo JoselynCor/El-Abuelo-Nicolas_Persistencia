@@ -5,6 +5,15 @@
 2. Tomcat 8
 3. MariaDB
 
+## Notas para el profesor David Martínez
+1. Descargar el proyecto *El Abuelo Nicolás Central* desde [aquí.](https://github.com/jlcastrogro/El-Abuelo-Nicolas_Central)
+2. Descargar el proyecto *El Abuelo Nicolás Persistencia*
+    1. Dentro del proyecto se encuentra el script de la base de datos *inventarios.sql*
+3. Para realizar pruebas unitarias
+    1. Hacer *maven-install* a *El Abuelo Nicolás Central*
+    2. Hacer *maven-install* a *El Abuelo Nicolás Persistencia*
+    3. Realizar pruebas unitarias
+
 ## Procedimiento para subir archivos
 1. Crear una rama nueva (New Branch) de preferencia con su nombre
 2. Si suben el archivo vía Github:
