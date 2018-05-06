@@ -7,31 +7,31 @@
 			MyBatis Generator, do not modify. This element was generated on Mon Apr 30 
 			16:43:23 CDT 2018. -->
 		<id column="id" jdbcType="INTEGER" property="id" />
-		<result column="idCliente" jdbcType="INTEGER"
+		<result column="idcliente" jdbcType="INTEGER"
 			property="idcliente" />
-		<result column="idListaVenta" jdbcType="INTEGER"
+		<result column="idlistaventa" jdbcType="INTEGER"
 			property="idlistaventa" />
 		<result column="fecha" jdbcType="DATE" property="fecha" />
-		<result column="precioTotal" jdbcType="DOUBLE"
+		<result column="preciototal" jdbcType="DOUBLE"
 			property="preciototal" />
 	</resultMap>
 
 	<select id="findAll" resultMap="BaseResultMap">
-		SELECT * FROM Ventas
+		SELECT * FROM ventas
 	</select>
 	<insert id="create"
 		parameterType="elabuelonicolas.bd.domain.Ventas">
-		insert into Ventas (idcliente, idlistaventa, fecha,
+		insert into ventas (idcliente, idlistaventa, fecha,
 		preciototal) values (#{idcliente}, #{idlistaventa}, #{fecha},
 		#{preciototal})
 	</insert>
 	<select id="read" parameterType="int" resultMap="BaseResultMap">
 		select * from
-		Ventas where id=#{id}
+		ventas where id=#{id}
 	</select>
 	<update id="update"
 		parameterType="elabuelonicolas.bd.domain.Ventas">
-		UPDATE Ventas SET
+		UPDATE ventas SET
 		idcliente=#{idcliente},
 		idlistaventa=#{idlistaventa},
 		fecha=#{fecha},
@@ -39,7 +39,7 @@
 		WHERE id=#{id}
 	</update>
 	<delete id="delete" parameterType="int">
-		delete from Ventas where id =
+		delete from ventas where id =
 		#{id}
 	</delete>
 </mapper>

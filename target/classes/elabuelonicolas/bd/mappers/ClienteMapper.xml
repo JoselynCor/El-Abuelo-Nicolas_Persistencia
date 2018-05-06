@@ -18,21 +18,21 @@
 	</resultMap>
 
 	<select id="findAll" resultMap="BaseResultMap">
-		SELECT * FROM Cliente
+		SELECT * FROM cliente
 	</select>
 	<insert id="create"
 		parameterType="elabuelonicolas.bd.domain.Cliente">
-		insert into Cliente (nombre, direccion, contacto,
+		insert into cliente (nombre, direccion, contacto,
 		telefono, email, rfc) values (#{nombre}, #{direccion}, #{contacto}, #{telefono}, #{email}, #{rfc})
 	</insert>
 	<select id="read"
 		parameterType="int"
 		resultMap="BaseResultMap">
-		select * from Cliente where id=#{id}
+		select * from cliente where id=#{id}
 	</select>
 	<update id="update"
 		parameterType="elabuelonicolas.bd.domain.Cliente">
-		UPDATE Cliente SET
+		UPDATE cliente SET
 		nombre=#{nombre},
 		direccion=#{direccion},
 		contacto=#{contacto},
@@ -41,6 +41,6 @@
 	</update>
 	<delete id="delete"
 		parameterType="int">
-		delete from Cliente where id = #{id}
+		delete from cliente where id = #{id}
 	</delete>
 </mapper>
