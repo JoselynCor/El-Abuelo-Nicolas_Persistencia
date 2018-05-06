@@ -13,7 +13,7 @@ import elabuelonicolas.dao.ventas.VentasDao;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/applicationContext.xml" })
 public class VentasDaoImplTest {
-	
+
 	@Inject
 	VentasDao ventasDao;
 
