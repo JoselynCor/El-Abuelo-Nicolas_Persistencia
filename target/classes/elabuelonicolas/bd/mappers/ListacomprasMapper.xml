@@ -11,5 +11,34 @@
     <result column="idProducto" jdbcType="INTEGER" property="idproducto" />
     <result column="cantidad" jdbcType="INTEGER" property="cantidad" />
     <result column="subtotal" jdbcType="DOUBLE" property="subtotal" />
+    <result column="idcompra" jdbcType="DOUBLE" property="idcompra" />
   </resultMap>
+  
+  <select id="findAll" resultMap="BaseResultMap">
+		SELECT * FROM Listacompras
+	</select>
+	<insert id="create"
+		parameterType="elabuelonicolas.bd.domain.Listacompras">
+		insert into Listacompras (id,idproducto, cantidad, subtotal, idcompra)
+		 values (#{id},#{idproducto}, #{cantidad}, #{subtotal},#{idcompra})
+	</insert>
+	<select id="read" parameterType="int" resultMap="BaseResultMap">
+		select * from
+		Listacompras where id=#{id}
+	</select>
+	<update id="update"
+		parameterType="elabuelonicolas.bd.domain.Listacompras">
+		UPDATE Listacompras SET
+		id=#{id},
+		idproducto=#{idproducto},
+		cantidad=#{cantidad},
+		subtotal=#{subtotal},
+		idcompra=#{idcompra}
+		WHERE id=#{id}
+	</update>
+	<delete id="delete" parameterType="int">
+		delete from Listacompras where id =
+		#{id}
+	</delete>
+  
 </mapper>

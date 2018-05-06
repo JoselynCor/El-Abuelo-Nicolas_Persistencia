@@ -13,4 +13,31 @@
     <result column="fecha" jdbcType="DATE" property="fecha" />
     <result column="precioTotal" jdbcType="DOUBLE" property="preciototal" />
   </resultMap>
+
+	<select id="findAll" resultMap="BaseResultMap">
+		SELECT * FROM Compras
+	</select>
+	<insert id="create"
+		parameterType="elabuelonicolas.bd.domain.Compras">
+		insert into Compras (idproveedor, idlistacompra, fecha,
+		preciototal) values (#{idproveedor}, #{idlistacompra}, #{fecha},
+		#{preciototal})
+	</insert>
+	<select id="read" parameterType="int" resultMap="BaseResultMap">
+		select * from
+		Compras where id=#{id}
+	</select>
+	<update id="update"
+		parameterType="elabuelonicolas.bd.domain.Compras">
+		UPDATE Compras SET
+		idProveedor=#{idproveedor},
+		idlistacompra=#{idlistacompra},
+		fecha=#{fecha},
+		preciototal=#{preciototal}
+		WHERE id=#{id}
+	</update>
+	<delete id="delete" parameterType="int">
+		delete from Compras where id =
+		#{id}
+	</delete>
 </mapper>
