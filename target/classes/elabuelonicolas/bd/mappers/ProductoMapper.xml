@@ -13,4 +13,29 @@
     <result column="costo" jdbcType="VARCHAR" property="costo" />
     <result column="existencia" jdbcType="INTEGER" property="existencia" />
   </resultMap>
+  
+  	<select id="findAll" resultMap="BaseResultMap">
+		SELECT * FROM producto
+	</select>
+	<insert id="create"
+		parameterType="elabuelonicolas.bd.domain.Producto">
+		insert into producto (tipo, marca, costo, existencia) values (#{tipo}, #{marca}, #{costo}, #{existencia})
+	</insert>
+	<select id="read"
+		parameterType="int"
+		resultMap="BaseResultMap">
+		select * from producto where id=#{id}
+	</select>
+	<update id="update"
+		parameterType="elabuelonicolas.bd.domain.Producto">
+		UPDATE producto SET
+		tipo=#{tipo},
+		marca=#{marca},
+		costo=#{costo},
+		existencia=#{existencia} WHERE id=#{id}
+	</update>
+	<delete id="delete"
+		parameterType="int">
+		delete from producto where id = #{id}
+	</delete>
 </mapper>
