@@ -8,10 +8,10 @@
       This element was generated on Sat May 05 18:38:25 CDT 2018.
     -->
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="idProducto" jdbcType="INTEGER" property="idproducto" />
+    <result column="idproducto" jdbcType="INTEGER" property="idproducto" />
     <result column="cantidad" jdbcType="INTEGER" property="cantidad" />
     <result column="subtotal" jdbcType="DOUBLE" property="subtotal" />
-    <result column="idVenta" jdbcType="INTEGER" property="idventa" />
+    <result column="idventa" jdbcType="INTEGER" property="idventa" />
   </resultMap>
 	<select id="findAll" resultMap="BaseResultMap">
 		SELECT * FROM listaventas

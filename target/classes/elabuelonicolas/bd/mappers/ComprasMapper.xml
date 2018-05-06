@@ -8,36 +8,36 @@
       This element was generated on Mon Apr 30 16:43:23 CDT 2018.
     -->
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="idProveedor" jdbcType="INTEGER" property="idproveedor" />
-    <result column="idListaCompra" jdbcType="INTEGER" property="idlistacompra" />
+    <result column="idproveedor" jdbcType="INTEGER" property="idproveedor" />
+    <result column="idlistacompra" jdbcType="INTEGER" property="idlistacompra" />
     <result column="fecha" jdbcType="DATE" property="fecha" />
-    <result column="precioTotal" jdbcType="DOUBLE" property="preciototal" />
+    <result column="preciototal" jdbcType="DOUBLE" property="preciototal" />
   </resultMap>
 
 	<select id="findAll" resultMap="BaseResultMap">
-		SELECT * FROM Compras
+		SELECT * FROM compras
 	</select>
 	<insert id="create"
 		parameterType="elabuelonicolas.bd.domain.Compras">
-		insert into Compras (idproveedor, idlistacompra, fecha,
+		insert into compras (idproveedor, idlistacompra, fecha,
 		preciototal) values (#{idproveedor}, #{idlistacompra}, #{fecha},
 		#{preciototal})
 	</insert>
 	<select id="read" parameterType="int" resultMap="BaseResultMap">
 		select * from
-		Compras where id=#{id}
+		compras where id=#{id}
 	</select>
 	<update id="update"
 		parameterType="elabuelonicolas.bd.domain.Compras">
-		UPDATE Compras SET
-		idProveedor=#{idproveedor},
+		UPDATE compras SET
+		idproveedor=#{idproveedor},
 		idlistacompra=#{idlistacompra},
 		fecha=#{fecha},
 		preciototal=#{preciototal}
 		WHERE id=#{id}
 	</update>
 	<delete id="delete" parameterType="int">
-		delete from Compras where id =
+		delete from compras where id =
 		#{id}
 	</delete>
 </mapper>

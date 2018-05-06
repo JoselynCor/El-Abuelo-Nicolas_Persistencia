@@ -7,12 +7,12 @@
 			MyBatis Generator, do not modify. This element was generated on Mon Apr 30 
 			16:43:23 CDT 2018. -->
 		<id column="id" jdbcType="INTEGER" property="id" />
-		<result column="idCliente" jdbcType="INTEGER"
+		<result column="idcliente" jdbcType="INTEGER"
 			property="idcliente" />
-		<result column="idListaVenta" jdbcType="INTEGER"
+		<result column="idlistaventa" jdbcType="INTEGER"
 			property="idlistaventa" />
 		<result column="fecha" jdbcType="DATE" property="fecha" />
-		<result column="precioTotal" jdbcType="DOUBLE"
+		<result column="preciototal" jdbcType="DOUBLE"
 			property="preciototal" />
 	</resultMap>
 
