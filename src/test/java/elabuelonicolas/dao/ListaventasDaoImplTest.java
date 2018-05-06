@@ -21,7 +21,6 @@ public class ListaventasDaoImplTest {
 		try {
 			//System.out.print("\nCreate");
 			Listaventas v = new Listaventas();
-			v.setId(7);
 			v.setIdproducto(172);
 			v.setCantidad(20370);
 			v.setSubtotal(207532.40);
@@ -53,7 +52,6 @@ public class ListaventasDaoImplTest {
 		Listaventas v = listaventasDao.read(1);
 		try {
 			//System.out.print("\nUpdate");
-			v.setId(1);
 			v.setIdproducto(1);
 			v.setCantidad(1);
 			v.setSubtotal(1.10);
@@ -80,7 +78,7 @@ public class ListaventasDaoImplTest {
 			List<Listaventas> list = listaventasDao.findAll();
 			for (Listaventas v : list) {
 				System.out.println("\nFind All");
-				System.out.println("Id Venta: " + v.getId());
+				System.out.println("Id: " + v.getId());
 				System.out.println("Id Producto: " + v.getIdproducto());
 				System.out.println("Cantidad: " + v.getCantidad());
 				System.out.println("Subtotal: " + v.getSubtotal());
