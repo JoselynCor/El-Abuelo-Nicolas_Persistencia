@@ -16,21 +16,21 @@
   </resultMap>
   
   <select id="findAll" resultMap="BaseResultMap">
-		SELECT * FROM Proveedor
+		SELECT * FROM proveedor
 	</select>
 	<insert id="create"
 		parameterType="elabuelonicolas.bd.domain.Proveedor">
-		insert into Proveedor (nombre, direccion, contacto,
+		insert into proveedor (nombre, direccion, contacto,
 		telefono, email, rfc) values (#{nombre}, #{direccion}, #{contacto}, #{telefono}, #{email}, #{rfc})
 	</insert>
 	<select id="read"
 		parameterType="int"
 		resultMap="BaseResultMap">
-		select * from Proveedor where id=#{id}
+		select * from proveedor where id=#{id}
 	</select>
 	<update id="update"
 		parameterType="elabuelonicolas.bd.domain.Proveedor">
-		UPDATE Proveedor SET
+		UPDATE proveedor SET
 		nombre=#{nombre},
 		direccion=#{direccion},
 		contacto=#{contacto},
@@ -39,7 +39,7 @@
 	</update>
 	<delete id="delete"
 		parameterType="int">
-		delete from Proveedor where id = #{id}
+		delete from proveedor where id = #{id}
 	</delete>
   
 </mapper>

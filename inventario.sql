@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.8.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 06-05-2018 a las 02:23:53
--- Versión del servidor: 10.1.30-MariaDB
--- Versión de PHP: 7.2.2
+-- Servidor: localhost
+-- Tiempo de generación: 06-05-2018 a las 01:04:32
+-- Versión del servidor: 10.1.32-MariaDB
+-- Versión de PHP: 7.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -44,7 +44,8 @@ CREATE TABLE `cliente` (
 
 INSERT INTO `cliente` (`id`, `nombre`, `direccion`, `contacto`, `telefono`, `email`, `rfc`) VALUES
 (1, 'Luis', 'Acatlima', 'Castro', '9515007892', 'jlcastrogro@gmail.com', 'CACG950419HOCSRS00'),
-(3, 'José Luis', 'Acatlima', 'Josué', '9515007892', 'jlcastrogro@gmail.com', 'CACG950419HOCSRS00');
+(3, 'José Luis', 'Acatlima', 'Josué', '9515007892', 'jlcastrogro@gmail.com', 'CACG950419HOCSRS00'),
+(4, 'José Luis', 'Acatlima', 'Josué', '9515007892', 'jlcastrogro@gmail.com', 'CACG950419HOCSRS00');
 
 -- --------------------------------------------------------
 
@@ -54,10 +55,10 @@ INSERT INTO `cliente` (`id`, `nombre`, `direccion`, `contacto`, `telefono`, `ema
 
 CREATE TABLE `compras` (
   `id` int(11) NOT NULL,
-  `idProveedor` int(11) NOT NULL,
-  `idListaCompra` int(11) NOT NULL,
+  `idproveedor` int(11) NOT NULL,
+  `idlistacompra` int(11) NOT NULL,
   `fecha` date NOT NULL,
-  `precioTotal` double NOT NULL
+  `preciototal` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 -- --------------------------------------------------------
@@ -68,10 +69,10 @@ CREATE TABLE `compras` (
 
 CREATE TABLE `listacompras` (
   `id` int(11) NOT NULL,
-  `idProducto` int(11) NOT NULL,
+  `idproducto` int(11) NOT NULL,
   `cantidad` int(11) NOT NULL,
   `subtotal` double NOT NULL,
-  `idVentas` int(11) DEFAULT NULL
+  `idventas` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 -- --------------------------------------------------------
@@ -82,17 +83,17 @@ CREATE TABLE `listacompras` (
 
 CREATE TABLE `listaventas` (
   `id` int(11) NOT NULL,
-  `idProducto` int(11) NOT NULL,
+  `idproducto` int(11) NOT NULL,
   `cantidad` int(11) NOT NULL,
   `subtotal` double NOT NULL,
-  `idVenta` int(11) DEFAULT NULL
+  `idventa` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `listaventas`
 --
 
-INSERT INTO `listaventas` (`id`, `idProducto`, `cantidad`, `subtotal`, `idVenta`) VALUES
+INSERT INTO `listaventas` (`id`, `idproducto`, `cantidad`, `subtotal`, `idventa`) VALUES
 (1, 1, 1, 1.1, 1),
 (2, 2, 150, 1553.5, 1),
 (3, 3, 900, 10500, 1),
@@ -115,6 +116,13 @@ CREATE TABLE `producto` (
   `existencia` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
+--
+-- Volcado de datos para la tabla `producto`
+--
+
+INSERT INTO `producto` (`id`, `tipo`, `marca`, `costo`, `existencia`) VALUES
+(1, 'Balón', 'Nike', '$180', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -131,6 +139,13 @@ CREATE TABLE `proveedor` (
   `rfc` varchar(255) CHARACTER SET latin1 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
+--
+-- Volcado de datos para la tabla `proveedor`
+--
+
+INSERT INTO `proveedor` (`id`, `nombre`, `direccion`, `contacto`, `telefono`, `email`, `rfc`) VALUES
+(1, 'Nicolas', 'Oaxaca', 'Bodega', '9877655432', 'sorianahj@gmail.com', 'OAXB950419HOCSRS00');
+
 -- --------------------------------------------------------
 
 --
@@ -139,20 +154,21 @@ CREATE TABLE `proveedor` (
 
 CREATE TABLE `ventas` (
   `id` int(11) NOT NULL,
-  `idCliente` int(11) NOT NULL,
-  `idListaVenta` int(11) NOT NULL,
+  `idcliente` int(11) NOT NULL,
+  `idlistaventa` int(11) NOT NULL,
   `fecha` date NOT NULL,
-  `precioTotal` double NOT NULL
+  `preciototal` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `ventas`
 --
 
-INSERT INTO `ventas` (`id`, `idCliente`, `idListaVenta`, `fecha`, `precioTotal`) VALUES
+INSERT INTO `ventas` (`id`, `idcliente`, `idlistaventa`, `fecha`, `preciototal`) VALUES
 (1, 1, 1, '3918-02-01', 100.1),
 (3, 1, 1, '3918-02-01', 100.1),
-(4, 1, 1, '3918-02-01', 100.1);
+(4, 1, 1, '3918-02-01', 100.1),
+(5, 1, 1, '3918-02-01', 100.1);
 
 --
 -- Índices para tablas volcadas
@@ -208,7 +224,7 @@ ALTER TABLE `ventas`
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `compras`
@@ -220,19 +236,19 @@ ALTER TABLE `compras`
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `proveedor`
 --
 ALTER TABLE `proveedor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `ventas`
 --
 ALTER TABLE `ventas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
