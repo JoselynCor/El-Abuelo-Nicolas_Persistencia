@@ -42,9 +42,9 @@ public class ClienteDaoImplTest {
 			System.out.println("Error: " + e);
 		}
 	}
-	
+
 	@Test
-	public void updateCliente( ) {
+	public void updateCliente() {
 		Cliente c = clienteDao.read(1);
 		try {
 			c.setNombre("Luis");
@@ -58,17 +58,17 @@ public class ClienteDaoImplTest {
 			System.out.println("Error: " + e);
 		}
 	}
-	
+
 	@Test
 	public void deleteCliente() {
 		try {
-			if(clienteDao.read(2) != null)
+			if (clienteDao.read(2) != null)
 				clienteDao.delete(2);
 		} catch (Exception e) {
 			System.out.println("Error: " + e);
 		}
 	}
-	
+
 	@Test
 	public void findAllClientes() {
 		try {

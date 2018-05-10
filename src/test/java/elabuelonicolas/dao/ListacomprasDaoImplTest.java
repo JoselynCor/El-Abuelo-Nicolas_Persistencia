@@ -12,20 +12,20 @@ import elabuelonicolas.dao.listacompras.ListacomprasDao;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/applicationContext.xml" })
 public class ListacomprasDaoImplTest {
-	
+
 	@Inject
 	ListacomprasDao listacomprasDao;
 
 	@Test
 	public void createListacompra() {
 		try {
-			//System.out.print("\nCreate");
+			// System.out.print("\nCreate");
 			Listacompras v = new Listacompras();
 			v.setIdproducto(172);
 			v.setCantidad(20370);
 			v.setSubtotal(207532.40);
 			v.setIdcompra(1);
-			
+
 			listacomprasDao.create(v);
 		} catch (Exception e) {
 			System.out.println("Error create test: " + e);
@@ -51,7 +51,7 @@ public class ListacomprasDaoImplTest {
 	public void updateListacompra() {
 		Listacompras lc = listacomprasDao.read(1);
 		try {
-			//System.out.print("\nUpdate");
+			// System.out.print("\nUpdate");
 			lc.setIdproducto(0);
 			lc.setCantidad(0);
 			lc.setSubtotal(0.10);
@@ -65,8 +65,9 @@ public class ListacomprasDaoImplTest {
 	@Test
 	public void deleteListacompra() {
 		try {
-			if (listacomprasDao.read(1) != null);
-				listacomprasDao.delete(1);
+			if (listacomprasDao.read(1) != null)
+				;
+			listacomprasDao.delete(1);
 		} catch (Exception e) {
 			System.out.println("Error delete test: " + e);
 		}

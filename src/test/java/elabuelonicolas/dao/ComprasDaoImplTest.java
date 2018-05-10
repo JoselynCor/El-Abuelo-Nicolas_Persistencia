@@ -13,10 +13,11 @@ import elabuelonicolas.dao.compras.ComprasDao;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/applicationContext.xml" })
 public class ComprasDaoImplTest {
-	
+
 	@Inject
 	ComprasDao comprasDao;
 
+	@SuppressWarnings("deprecation")
 	@Test
 	public void createCompra() {
 		try {
@@ -42,6 +43,7 @@ public class ComprasDaoImplTest {
 		}
 	}
 
+	@SuppressWarnings("deprecation")
 	@Test
 	public void updateCompra() {
 		Compras c = comprasDao.read(1);
