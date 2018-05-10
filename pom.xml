@@ -6,8 +6,8 @@
     <version>0.0.1-SNAPSHOT</version>
     <groupId>ElAbueloNicolasCentral</groupId>
   </parent>
-  <groupId>ElAbueloNicolasPersistencia</groupId>
-  <artifactId>ElAbueloNicolasPersistencia</artifactId>
+  <groupId>Persistencia-Equipo-5</groupId>
+  <artifactId>Persistencia-Equipo-5</artifactId>
   <url>http://maven.apache.org</url>
   <properties>
   	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
