@@ -2,12 +2,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <artifactId>ElAbueloNicolasCentral</artifactId>
+    <artifactId>Central-Equipo-5</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <groupId>ElAbueloNicolasCentral</groupId>
+    <groupId>Central-Equipo-5</groupId>
   </parent>
-  <groupId>ElAbueloNicolasPersistencia</groupId>
-  <artifactId>ElAbueloNicolasPersistencia</artifactId>
+  <groupId>Persistencia-Equipo-5</groupId>
+  <artifactId>Persistencia-Equipo-5</artifactId>
   <url>http://maven.apache.org</url>
   <properties>
   	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

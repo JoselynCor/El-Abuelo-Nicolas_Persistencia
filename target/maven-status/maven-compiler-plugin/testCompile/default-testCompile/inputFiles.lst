@@ -1,1 +1,7 @@
-/home/manjaro/Workspace/ElAbueloNicolasPersistencia/src/test/java/elabuelonicolas/dao/ClienteDaoImplTest.java
+/home/manjaro/Workspace/Persistencia-Equipo-5/src/test/java/elabuelonicolas/dao/ProductoDaoImplTest.java
+/home/manjaro/Workspace/Persistencia-Equipo-5/src/test/java/elabuelonicolas/dao/ComprasDaoImplTest.java
+/home/manjaro/Workspace/Persistencia-Equipo-5/src/test/java/elabuelonicolas/dao/ListacomprasDaoImplTest.java
+/home/manjaro/Workspace/Persistencia-Equipo-5/src/test/java/elabuelonicolas/dao/VentasDaoImplTest.java
+/home/manjaro/Workspace/Persistencia-Equipo-5/src/test/java/elabuelonicolas/dao/ListaventasDaoImplTest.java
+/home/manjaro/Workspace/Persistencia-Equipo-5/src/test/java/elabuelonicolas/dao/ProveedorDaoImplTest.java
+/home/manjaro/Workspace/Persistencia-Equipo-5/src/test/java/elabuelonicolas/dao/ClienteDaoImplTest.java

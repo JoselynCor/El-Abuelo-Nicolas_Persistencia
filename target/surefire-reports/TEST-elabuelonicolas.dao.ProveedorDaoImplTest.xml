@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="5" failures="0" name="elabuelonicolas.dao.ClienteDaoImplTest" time="0.033" errors="0" skipped="0">
+<testsuite tests="5" failures="0" name="elabuelonicolas.dao.ProveedorDaoImplTest" time="0.063" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-jdk/jre/lib/amd64"/>
@@ -59,9 +59,9 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="elabuelonicolas.dao.ClienteDaoImplTest" name="findAllClientes" time="0.01"/>
-  <testcase classname="elabuelonicolas.dao.ClienteDaoImplTest" name="updateCliente" time="0.002"/>
-  <testcase classname="elabuelonicolas.dao.ClienteDaoImplTest" name="readCliente" time="0.001"/>
-  <testcase classname="elabuelonicolas.dao.ClienteDaoImplTest" name="deleteCliente" time="0.002"/>
-  <testcase classname="elabuelonicolas.dao.ClienteDaoImplTest" name="createClient" time="0.018"/>
+  <testcase classname="elabuelonicolas.dao.ProveedorDaoImplTest" name="createProveedor" time="0.027"/>
+  <testcase classname="elabuelonicolas.dao.ProveedorDaoImplTest" name="findAllClientes" time="0.003"/>
+  <testcase classname="elabuelonicolas.dao.ProveedorDaoImplTest" name="updateCliente" time="0.03"/>
+  <testcase classname="elabuelonicolas.dao.ProveedorDaoImplTest" name="readCliente" time="0.002"/>
+  <testcase classname="elabuelonicolas.dao.ProveedorDaoImplTest" name="deleteProveedor" time="0.001"/>
 </testsuite>
