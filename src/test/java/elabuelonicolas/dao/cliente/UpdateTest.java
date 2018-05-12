@@ -1,16 +1,13 @@
 package elabuelonicolas.dao.cliente;
 
-import static org.junit.Assert.assertEquals;
-
+import static org.junit.Assert.assertNotEquals;
 import javax.inject.Inject;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
 import elabuelonicolas.bd.domain.Cliente;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -23,12 +20,12 @@ public class UpdateTest {
 	@Before
 	public void setUp() {
 		this.cliente = new Cliente();
-		this.cliente.setNombre("Paco");
-		this.cliente.setDireccion("Acatlima");
-		this.cliente.setContacto("Josué");
-		this.cliente.setTelefono("9515007892");
-		this.cliente.setEmail("jlcastrogro@gmail.com");
-		this.cliente.setRfc("CACG950419HOCSRS00");
+		this.cliente.setNombre("Pedro");
+		this.cliente.setDireccion("Oaxaca");
+		this.cliente.setContacto("José");
+		this.cliente.setTelefono("9515787892");
+		this.cliente.setEmail("pedro@gmail.com");
+		this.cliente.setRfc("QBUE72BDU");
 
 		clienteDao.create(this.cliente);
 
@@ -41,92 +38,98 @@ public class UpdateTest {
 	}
 
 	@Test
-	public void updateCliente() {
-		Cliente c_antes = clienteDao.readById(this.cliente.getId());
+	public void update() {
+		Cliente c = clienteDao.readById(this.cliente.getId());
 		try {
-			c_antes.setNombre("Luis");
-			c_antes.setDireccion("Putla");
-			c_antes.setContacto("Guerrero");
-			c_antes.setTelefono("9535362391");
-			c_antes.setEmail("jlcastrogro@outlook.com");
-			c_antes.setRfc("QNEOQINE39NXWO3");
-			clienteDao.update(c_antes);
+			System.out.println("Update");
+			c.setNombre("Luis");
+			c.setDireccion("Putla");
+			c.setContacto("Guerrero");
+			c.setTelefono("9535362398");
+			c.setEmail("jlcastrogro@outlook.com");
+			c.setRfc("QNEOQINE39NXWO3");
+			clienteDao.update(c);
 		} catch (Exception e) {
-			System.out.println("Error update: " + e);
+			System.out.println("Error updateTest: " + e);
 		}
-		Cliente c_despues = clienteDao.readById(this.cliente.getId());
-		
-		assertEquals(c_despues.getNombre(), c_antes.getNombre());
-		assertEquals(c_despues.getDireccion(), c_antes.getDireccion());
-		assertEquals(c_despues.getContacto(), c_antes.getContacto());
-		assertEquals(c_despues.getTelefono(), c_antes.getTelefono());
-		assertEquals(c_despues.getEmail(), c_antes.getEmail());
-		assertEquals(c_despues.getRfc(), c_antes.getRfc());
+
+		assertNotEquals(this.cliente.getNombre(), c.getNombre());
+		assertNotEquals(this.cliente.getDireccion(), c.getDireccion());
+		assertNotEquals(this.cliente.getContacto(), c.getContacto());
+		assertNotEquals(this.cliente.getTelefono(), c.getTelefono());
+		assertNotEquals(this.cliente.getEmail(), c.getEmail());
+		assertNotEquals(this.cliente.getRfc(), c.getRfc());
 	}
 
 	@Test
-	public void updateClienteName() {
+	public void updateName() {
 		try {
-			clienteDao.updateName(this.cliente.getId(), "Pedro");
+			System.out.println("UpdateName");
+			clienteDao.updateName(this.cliente.getId(), "Jaime");
 			Cliente c = clienteDao.readById(this.cliente.getId());
-			assertEquals(c.getNombre(), "Pedro");
+			assertNotEquals(c.getNombre(), this.cliente.getNombre());
 		} catch (Exception e) {
-			System.out.println("Error update: " + e);
+			System.out.println("Error updateNameTest: " + e);
 		}
 	}
 
 	@Test
-	public void updateClienteDireccion() {
+	public void updateAddress() {
 		try {
-			clienteDao.updateAddress(this.cliente.getId(), "Oaxaca");
+			System.out.println("UpdateAddress");
+			clienteDao.updateAddress(this.cliente.getId(), "Huajuapan");
 			Cliente c = clienteDao.readById(this.cliente.getId());
-			assertEquals(c.getDireccion(), "Oaxaca");
+			assertNotEquals(c.getDireccion(), this.cliente.getDireccion());
 		} catch (Exception e) {
-			System.out.println("Error update: " + e);
+			System.out.println("Error updateAddressTest: " + e);
 		}
 	}
 
 	@Test
-	public void updateClienteContact() {
+	public void updateContact() {
 		try {
+			System.out.println("UpdateContact");
 			clienteDao.updateContact(this.cliente.getId(), "Egremy");
 			Cliente c = clienteDao.readById(this.cliente.getId());
-			assertEquals(c.getContacto(), "Egremy");
+			assertNotEquals(c.getContacto(), this.cliente.getContacto());
 		} catch (Exception e) {
-			System.out.println("Error update: " + e);
+			System.out.println("Error updateContactTest: " + e);
 		}
 	}
 
 	@Test
-	public void updateClienteNumber() {
+	public void updateNumber() {
 		try {
+			System.out.println("UpdateNumber");
 			clienteDao.updateNumber(this.cliente.getId(), "192929929");
 			Cliente c = clienteDao.readById(this.cliente.getId());
-			assertEquals(c.getTelefono(), "192929929");
+			assertNotEquals(c.getTelefono(), this.cliente.getTelefono());
 		} catch (Exception e) {
-			System.out.println("Error update: " + e);
+			System.out.println("Error updateNumberTest: " + e);
 		}
 	}
 
 	@Test
-	public void updateClienteEmail() {
+	public void updateEmail() {
 		try {
+			System.out.println("UpdateEmail");
 			clienteDao.updateEmail(this.cliente.getId(), "ajsknas@hotmail.com");
 			Cliente c = clienteDao.readById(this.cliente.getId());
-			assertEquals(c.getEmail(), "ajsknas@hotmail.com");
+			assertNotEquals(c.getEmail(), this.cliente.getTelefono());
 		} catch (Exception e) {
-			System.out.println("Error update: " + e);
+			System.out.println("Error updateEmailTest: " + e);
 		}
 	}
 
 	@Test
-	public void updateClienteRfc() {
+	public void updateRfc() {
 		try {
+			System.out.println("UpdateRfc");
 			clienteDao.updateRfc(this.cliente.getId(), "KWUBEUW8B38DNW");
 			Cliente c = clienteDao.readById(this.cliente.getId());
-			assertEquals(c.getRfc(), "KWUBEUW8B38DNW");
+			assertNotEquals(c.getRfc(), this.cliente.getRfc());
 		} catch (Exception e) {
-			System.out.println("Error update: " + e);
+			System.out.println("Error updateRfcTest: " + e);
 		}
 	}
 }

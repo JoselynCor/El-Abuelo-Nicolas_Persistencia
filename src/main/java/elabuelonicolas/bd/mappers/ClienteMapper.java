@@ -33,7 +33,7 @@ public interface ClienteMapper {
 
 	void updateContact(@Param("id") int id, @Param("contacto") String contacto);
 
-	void updateNumber(@Param("id") int id, @Param("numero") String numero);
+	void updateNumber(@Param("id") int id, @Param("telefono") String telefono);
 
 	void updateEmail(@Param("id") int id, @Param("email") String email);
 

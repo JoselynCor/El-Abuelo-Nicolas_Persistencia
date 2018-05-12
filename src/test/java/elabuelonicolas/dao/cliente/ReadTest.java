@@ -28,9 +28,9 @@ public class ReadTest {
 		this.cliente.setNombre("Paco");
 		this.cliente.setDireccion("Acatlima");
 		this.cliente.setContacto("Josué");
-		this.cliente.setTelefono("9515007892");
-		this.cliente.setEmail("jlcastrogro@gmail.com");
-		this.cliente.setRfc("CACG950419HOCSRS00");
+		this.cliente.setTelefono("951507892");
+		this.cliente.setEmail("jlgro@gmail.com");
+		this.cliente.setRfc("CACG960419HOCSRS00");
 
 		clienteDao.create(this.cliente);
 
@@ -48,7 +48,7 @@ public class ReadTest {
 			Cliente c = clienteDao.readById(this.cliente.getId());
 			assertEquals(c.getId(), this.cliente.getId());
 		} catch (Exception e) {
-			System.out.println("Error read: " + e);
+			System.out.println("Error readTest: " + e);
 		}
 	}
 
@@ -56,9 +56,9 @@ public class ReadTest {
 	public void readClienteByName() {
 		try {
 			List<Cliente> clientes = clienteDao.readByName(this.cliente.getNombre());
-			assertEquals(clientes.get(1).getNombre(), this.cliente.getNombre());
+			assertEquals(clientes.get(0).getNombre(), this.cliente.getNombre());
 		} catch (Exception e) {
-			System.out.println("Error read: " + e);
+			System.out.println("Error readByNameTest: " + e);
 		}
 	}
 
@@ -66,9 +66,9 @@ public class ReadTest {
 	public void readClienteAddress() {
 		try {
 			List<Cliente> clientes = clienteDao.readByAddress(this.cliente.getDireccion());
-			assertEquals(clientes.get(1).getDireccion(), this.cliente.getDireccion());
+			assertEquals(clientes.get(0).getDireccion(), this.cliente.getDireccion());
 		} catch (Exception e) {
-			System.out.println("Error read: " + e);
+			System.out.println("Error readByAddresTest: " + e);
 		}
 	}
 
@@ -76,9 +76,9 @@ public class ReadTest {
 	public void readClienteByContact() {
 		try {
 			List<Cliente> clientes = clienteDao.readByContact(this.cliente.getContacto());
-			assertEquals(clientes.get(1).getContacto(), this.cliente.getContacto());
+			assertEquals(clientes.get(0).getContacto(), this.cliente.getContacto());
 		} catch (Exception e) {
-			System.out.println("Error read: " + e);
+			System.out.println("Error readByContactTest: " + e);
 		}
 	}
 
@@ -86,9 +86,9 @@ public class ReadTest {
 	public void readClienteByNumber() {
 		try {
 			List<Cliente> clientes = clienteDao.readByNumber(this.cliente.getTelefono());
-			assertEquals(clientes.get(1).getTelefono(), this.cliente.getTelefono());
+			assertEquals(clientes.get(0).getTelefono(), this.cliente.getTelefono());
 		} catch (Exception e) {
-			System.out.println("Error read: " + e);
+			System.out.println("Error readByNumberTest: " + e);
 		}
 	}
 
@@ -96,9 +96,9 @@ public class ReadTest {
 	public void readClienteByEmail() {
 		try {
 			List<Cliente> clientes = clienteDao.readByEmail(this.cliente.getEmail());
-			assertEquals(clientes.get(1).getEmail(), this.cliente.getEmail());
+			assertEquals(clientes.get(0).getEmail(), this.cliente.getEmail());
 		} catch (Exception e) {
-			System.out.println("Error read: " + e);
+			System.out.println("Error readByEmailTest: " + e);
 		}
 	}
 
@@ -106,9 +106,9 @@ public class ReadTest {
 	public void readClienteByRfc() {
 		try {
 			List<Cliente> clientes = clienteDao.readByRfc(this.cliente.getRfc());
-			assertEquals(clientes.get(1).getRfc(), this.cliente.getRfc());
+			assertEquals(clientes.get(0).getRfc(), this.cliente.getRfc());
 		} catch (Exception e) {
-			System.out.println("Error read: " + e);
+			System.out.println("Error readByRfcTest: " + e);
 		}
 	}
 }

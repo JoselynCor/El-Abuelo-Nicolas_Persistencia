@@ -49,7 +49,7 @@
 	<select id="readByNumber" parameterType="String"
 		resultMap="BaseResultMap">
 		select * from
-		cliente where numero like #{numero}
+		cliente where telefono like #{telefono}
 	</select>
 	<select id="readByEmail" parameterType="String"
 		resultMap="BaseResultMap">
@@ -70,35 +70,35 @@
 		telefono=#{telefono},
 		rfc=#{rfc} WHERE id=#{id}
 	</update>
-	<update id="updateName"
-		parameterType="elabuelonicolas.bd.domain.Cliente">
-		UPDATE cliente SET nombre=#{nombre} WHERE id=#{id}
+	<update id="updateName" parameterType="map">
+		UPDATE cliente SET
+		nombre=#{nombre} WHERE id=#{id}
 	</update>
-	<update id="updateAddress"
-		parameterType="elabuelonicolas.bd.domain.Cliente">
-		UPDATE cliente SET direccion=#{direccion} WHERE id=#{id}
+	<update id="updateAddress" parameterType="map">
+		UPDATE cliente SET
+		direccion=#{direccion} WHERE id=#{id}
 	</update>
-	<update id="updateContact"
-		parameterType="elabuelonicolas.bd.domain.Cliente">
-		UPDATE cliente SET contacto=#{contacto} WHERE id=#{id}
+	<update id="updateContact" parameterType="map">
+		UPDATE cliente SET
+		contacto=#{contacto} WHERE id=#{id}
 	</update>
-	<update id="updateNumber"
-		parameterType="elabuelonicolas.bd.domain.Cliente">
-		UPDATE cliente SET numero=#{numero} WHERE id=#{id}
+	<update id="updateNumber" parameterType="map">
+		UPDATE cliente SET telefono=#{telefono} WHERE id=#{id}
 	</update>
-	<update id="updateEmail"
-		parameterType="elabuelonicolas.bd.domain.Cliente">
-		UPDATE cliente SET email=#{email} WHERE id=#{id}
+	<update id="updateEmail" parameterType="map">
+		UPDATE cliente SET
+		email=#{email} WHERE id=#{id}
 	</update>
-	<update id="updateRfc"
-		parameterType="elabuelonicolas.bd.domain.Cliente">
-		UPDATE cliente SET rfc=#{rfc} WHERE id=#{id}
+	<update id="updateRfc" parameterType="map">
+		UPDATE cliente SET
+		rfc=#{rfc} WHERE id=#{id}
 	</update>
 	<delete id="delete" parameterType="int">
 		delete from cliente where id =
 		#{id}
 	</delete>
 	<select id="lastClient" resultMap="BaseResultMap">
-		select * from cliente order by id desc limit 1
+		select * from cliente order by
+		id desc limit 1
 	</select>
 </mapper>

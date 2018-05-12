@@ -17,7 +17,7 @@ public interface ClienteDao {
 
 	List<Cliente> readByContact(String nombre);
 
-	List<Cliente> readByNumber(String numero);
+	List<Cliente> readByNumber(String telefono);
 
 	List<Cliente> readByEmail(String email);
 
@@ -31,7 +31,7 @@ public interface ClienteDao {
 
 	void updateContact(@Param("id") int id, @Param("contacto") String contacto);
 
-	void updateNumber(@Param("id") int id, @Param("numero") String numero);
+	void updateNumber(@Param("id") int id, @Param("telefono") String telefono);
 
 	void updateEmail(@Param("id") int id, @Param("email") String email);
 

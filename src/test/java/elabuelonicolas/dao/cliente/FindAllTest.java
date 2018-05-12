@@ -21,7 +21,7 @@ public class FindAllTest {
 
 	@Before
 	public void setUp() {
-		this.clientes = clienteDao.findAll().size();
+		this.clientes = 4;
 	}
 	
 	@After
@@ -35,7 +35,7 @@ public class FindAllTest {
 			List<Cliente> list = clienteDao.findAll();
 			assertEquals(list.size(), this.clientes);
 		} catch (Exception e) {
-			System.out.println("Error findAll: " + e);
+			System.out.println("Error findAllTest: " + e);
 		}
 	}
 }

@@ -24,9 +24,9 @@ public class CreateTest {
 		this.cliente.setNombre("José");
 		this.cliente.setContacto("Josué");
 		this.cliente.setDireccion("Acatlima");
-		this.cliente.setEmail("jlcastrogro@gmail.com");
-		this.cliente.setRfc("CACG950419HOCSRS00");
-		this.cliente.setTelefono("9515007892");
+		this.cliente.setEmail("jlcastro@gmail.com");
+		this.cliente.setRfc("CACG950419HCSRS00");
+		this.cliente.setTelefono("9515007893");
 	}
 
 	@After
@@ -35,7 +35,7 @@ public class CreateTest {
 	}
 	
 	@Test
-	public void createClient() {
+	public void create() {
 		try {
 			clienteDao.create(this.cliente);
 			
@@ -43,7 +43,7 @@ public class CreateTest {
 
 			assertEquals(c.getNombre(), this.cliente.getNombre());
 		} catch (Exception e) {
-			System.out.println("Error create: " + e);
+			System.out.println("Error createTest: " + e);
 		}
 	}
 }

@@ -26,11 +26,11 @@ public class DeleteTest {
 		this.cliente.setNombre("Luis");
 		this.cliente.setContacto("Josué");
 		this.cliente.setDireccion("Acatlima");
-		this.cliente.setEmail("jlcastrogro@gmail.com");
-		this.cliente.setRfc("CACG950419HOCSRS00");
-		this.cliente.setTelefono("9515007892");
+		this.cliente.setEmail("castrogro@gmail.com");
+		this.cliente.setRfc("JACG950419HOCSRS00");
+		this.cliente.setTelefono("955007892");
 		clienteDao.create(this.cliente);
-		this.cliente = clienteDao.lastClient();
+		this.cliente.setId(clienteDao.lastClient().getId());
 	}
 
 	@After
@@ -39,7 +39,7 @@ public class DeleteTest {
 	}
 
 	@Test
-	public void deleteCliente() {
+	public void delete() {
 		try {
 			clienteDao.delete(this.cliente.getId());
 
@@ -48,7 +48,7 @@ public class DeleteTest {
 
 			assertNull(c);
 		} catch (Exception e) {
-			System.out.println("Error delete: " + e);
+			System.out.println("Error deleteTest: " + e);
 		}
 	}
 }
