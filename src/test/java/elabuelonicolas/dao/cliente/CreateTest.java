@@ -1,0 +1,49 @@
+package elabuelonicolas.dao.cliente;
+
+import static org.junit.Assert.assertEquals;
+import javax.inject.Inject;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import elabuelonicolas.bd.domain.Cliente;
+
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = { "/applicationContext.xml" })
+public class CreateTest {
+	@Inject
+	ClienteDao clienteDao;
+
+	private Cliente cliente;
+
+	@Before
+	public void setUp() {
+		this.cliente = new Cliente();
+		this.cliente.setNombre("José");
+		this.cliente.setContacto("Josué");
+		this.cliente.setDireccion("Acatlima");
+		this.cliente.setEmail("jlcastrogro@gmail.com");
+		this.cliente.setRfc("CACG950419HOCSRS00");
+		this.cliente.setTelefono("9515007892");
+	}
+
+	@After
+	public void tearDown() {
+		this.cliente = null;
+	}
+	
+	@Test
+	public void createClient() {
+		try {
+			clienteDao.create(this.cliente);
+			
+			Cliente c = clienteDao.lastClient();
+
+			assertEquals(c.getNombre(), this.cliente.getNombre());
+		} catch (Exception e) {
+			System.out.println("Error create: " + e);
+		}
+	}
+}
