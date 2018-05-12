@@ -1,6 +1,6 @@
 # El abuelo Nicolás - Persistencia
 
-## Requisitos
+## Software utilizado
 1. Java 8
 2. Tomcat 8
 3. MariaDB
@@ -8,10 +8,12 @@
 ## Notas para el profesor David Martínez
 1. Descargar el proyecto *El Abuelo Nicolás Central* desde [aquí.](https://github.com/jlcastrogro/El-Abuelo-Nicolas_Central)
 2. Descargar el proyecto *El Abuelo Nicolás Persistencia*
-    1. Dentro del proyecto se encuentra el script de la base de datos *inventarios.sql*
+    1. Crear una base de datos con nombre "inventario"
+    1. Dentro del proyecto se encuentra el script de la base de datos *Equipo-5-inventarios.sql*
+    2. Importar la base datos
 3. Para realizar pruebas unitarias
-    1. Hacer *maven-install* a *El Abuelo Nicolás Central*
-    2. Hacer *maven-install* a *El Abuelo Nicolás Persistencia*
+    1. Hacer *maven-install* a *Equipo-5-Central*
+    2. Hacer *maven-install* a *Equipo-5-Persistencia*
     3. Realizar pruebas unitarias
 
 ## Procedimiento para subir archivos
@@ -26,4 +28,4 @@
     3. Realizar un Commit and Push (agregar sus comentarios)
     4. Crear un Pull Request de su Push (cuando estén seguros de que funciona)
 
-#### Importante: NO MEZCLAR LAS RAMAS A MENOS QUE ESTÉ FUNCIONANDO AL 100 :) 
+#### Importante: NO MEZCLAR LAS RAMAS A MENOS QUE ESTÉ FUNCIONANDO AL 100 :)
