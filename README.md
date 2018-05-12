@@ -8,7 +8,7 @@
 ## Notas para el profesor David Martínez
 1. Descargar el proyecto *El Abuelo Nicolás Central* desde [aquí.](https://github.com/jlcastrogro/El-Abuelo-Nicolas_Central)
 2. Descargar el proyecto *El Abuelo Nicolás Persistencia*
-    1. Crear una base de datos con nombre "inventario"
+    1. Crear una base de datos con nombre *inventario*
     1. Dentro del proyecto se encuentra el script de la base de datos *Equipo-5-inventarios.sql*
     2. Importar la base datos
 3. Para realizar pruebas unitarias
