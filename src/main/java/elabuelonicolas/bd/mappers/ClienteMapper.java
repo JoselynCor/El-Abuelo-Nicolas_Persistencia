@@ -41,5 +41,5 @@ public interface ClienteMapper {
 
 	void delete(int id);
 	
-	Cliente lastClient();
+	Cliente last();
 }

@@ -39,5 +39,5 @@ public interface ClienteDao {
 
 	void delete(int id);
 	
-	Cliente lastClient();
+	Cliente last();
 }

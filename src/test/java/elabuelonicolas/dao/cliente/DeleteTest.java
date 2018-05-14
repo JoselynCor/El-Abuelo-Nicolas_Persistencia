@@ -30,7 +30,7 @@ public class DeleteTest {
 		this.cliente.setRfc("JACG950419HOCSRS00");
 		this.cliente.setTelefono("955007892");
 		clienteDao.create(this.cliente);
-		this.cliente.setId(clienteDao.lastClient().getId());
+		this.cliente.setId(clienteDao.last().getId());
 	}
 
 	@After

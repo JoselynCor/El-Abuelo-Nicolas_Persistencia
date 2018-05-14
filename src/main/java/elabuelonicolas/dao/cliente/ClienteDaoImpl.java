@@ -206,8 +206,8 @@ public class ClienteDaoImpl implements ClienteDao {
 	}
 
 	@Override
-	public Cliente lastClient() {
+	public Cliente last() {
 		ClienteMapper clienteMapper = sqlSession.getMapper(ClienteMapper.class);
-		return clienteMapper.lastClient();
+		return clienteMapper.last();
 	}
 }

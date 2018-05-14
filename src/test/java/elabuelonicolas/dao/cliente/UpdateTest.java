@@ -29,7 +29,7 @@ public class UpdateTest {
 
 		clienteDao.create(this.cliente);
 
-		this.cliente.setId(clienteDao.lastClient().getId());
+		this.cliente.setId(clienteDao.last().getId());
 	}
 
 	@After

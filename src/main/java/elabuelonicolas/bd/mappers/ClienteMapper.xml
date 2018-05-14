@@ -97,7 +97,7 @@
 		delete from cliente where id =
 		#{id}
 	</delete>
-	<select id="lastClient" resultMap="BaseResultMap">
+	<select id="last" resultMap="BaseResultMap">
 		select * from cliente order by
 		id desc limit 1
 	</select>

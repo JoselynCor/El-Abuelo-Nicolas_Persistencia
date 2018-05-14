@@ -39,7 +39,7 @@ public class CreateTest {
 		try {
 			clienteDao.create(this.cliente);
 			
-			Cliente c = clienteDao.lastClient();
+			Cliente c = clienteDao.last();
 
 			assertEquals(c.getNombre(), this.cliente.getNombre());
 		} catch (Exception e) {
