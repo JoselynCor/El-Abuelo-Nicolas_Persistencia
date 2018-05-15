@@ -1,10 +1,8 @@
 package elabuelonicolas.dao.cliente;
 
 import static org.junit.Assert.assertEquals;
-
 import java.util.List;
 import javax.inject.Inject;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -43,7 +41,7 @@ public class ReadTest {
 	}
 
 	@Test
-	public void readById() {
+	public void read() {
 		try {
 			Cliente c = clienteDao.read(this.cliente.getId());
 			assertEquals(c.getId(), this.cliente.getId());
@@ -58,7 +56,7 @@ public class ReadTest {
 			List<Cliente> clientes = clienteDao.readByNombre(this.cliente.getNombre());
 			assertEquals(clientes.get(0).getNombre(), this.cliente.getNombre());
 		} catch (Exception e) {
-			System.out.println("Error readByNameTest: " + e);
+			System.out.println("Error readByNombreTest: " + e);
 		}
 	}
 
@@ -68,7 +66,7 @@ public class ReadTest {
 			List<Cliente> clientes = clienteDao.readByDireccion(this.cliente.getDireccion());
 			assertEquals(clientes.get(0).getDireccion(), this.cliente.getDireccion());
 		} catch (Exception e) {
-			System.out.println("Error readByAddresTest: " + e);
+			System.out.println("Error readByDireccionTest: " + e);
 		}
 	}
 
@@ -78,7 +76,7 @@ public class ReadTest {
 			List<Cliente> clientes = clienteDao.readByContacto(this.cliente.getContacto());
 			assertEquals(clientes.get(0).getContacto(), this.cliente.getContacto());
 		} catch (Exception e) {
-			System.out.println("Error readByContactTest: " + e);
+			System.out.println("Error readByContactoTest: " + e);
 		}
 	}
 
@@ -88,7 +86,7 @@ public class ReadTest {
 			List<Cliente> clientes = clienteDao.readByTelefono(this.cliente.getTelefono());
 			assertEquals(clientes.get(0).getTelefono(), this.cliente.getTelefono());
 		} catch (Exception e) {
-			System.out.println("Error readByNumberTest: " + e);
+			System.out.println("Error readByTelefonoTest: " + e);
 		}
 	}
 

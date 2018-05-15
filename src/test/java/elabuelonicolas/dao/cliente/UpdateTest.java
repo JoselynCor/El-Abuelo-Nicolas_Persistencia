@@ -69,7 +69,7 @@ public class UpdateTest {
 			Cliente c = clienteDao.read(this.cliente.getId());
 			assertNotEquals(c.getNombre(), this.cliente.getNombre());
 		} catch (Exception e) {
-			System.out.println("Error updateNameTest: " + e);
+			System.out.println("Error updateNombreTest: " + e);
 		}
 	}
 
@@ -81,7 +81,7 @@ public class UpdateTest {
 			Cliente c = clienteDao.read(this.cliente.getId());
 			assertNotEquals(c.getDireccion(), this.cliente.getDireccion());
 		} catch (Exception e) {
-			System.out.println("Error updateAddressTest: " + e);
+			System.out.println("Error updateDireccionTest: " + e);
 		}
 	}
 
@@ -93,7 +93,7 @@ public class UpdateTest {
 			Cliente c = clienteDao.read(this.cliente.getId());
 			assertNotEquals(c.getContacto(), this.cliente.getContacto());
 		} catch (Exception e) {
-			System.out.println("Error updateContactTest: " + e);
+			System.out.println("Error updateContactoTest: " + e);
 		}
 	}
 
@@ -105,7 +105,7 @@ public class UpdateTest {
 			Cliente c = clienteDao.read(this.cliente.getId());
 			assertNotEquals(c.getTelefono(), this.cliente.getTelefono());
 		} catch (Exception e) {
-			System.out.println("Error updateNumberTest: " + e);
+			System.out.println("Error updateTelefonoTest: " + e);
 		}
 	}
 
