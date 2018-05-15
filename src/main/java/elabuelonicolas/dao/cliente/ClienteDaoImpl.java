@@ -42,10 +42,10 @@ public class ClienteDaoImpl implements ClienteDao {
 	}
 
 	@Override
-	public Cliente readById(int id) {
+	public Cliente read(int id) {
 		try {
 			ClienteMapper clienteMapper = sqlSession.getMapper(ClienteMapper.class);
-			Cliente cliente = clienteMapper.readById(id);
+			Cliente cliente = clienteMapper.read(id);
 			return cliente;
 		} catch (Exception e) {
 			System.out.println("Error readById: " + e);
@@ -208,6 +208,7 @@ public class ClienteDaoImpl implements ClienteDao {
 	@Override
 	public Cliente last() {
 		ClienteMapper clienteMapper = sqlSession.getMapper(ClienteMapper.class);
-		return clienteMapper.last();
+		Cliente c = clienteMapper.last(); 
+		return c;
 	}
 }

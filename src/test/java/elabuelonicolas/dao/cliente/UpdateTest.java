@@ -39,7 +39,7 @@ public class UpdateTest {
 
 	@Test
 	public void update() {
-		Cliente c = clienteDao.readById(this.cliente.getId());
+		Cliente c = clienteDao.read(this.cliente.getId());
 		try {
 			System.out.println("Update");
 			c.setNombre("Luis");
@@ -66,7 +66,7 @@ public class UpdateTest {
 		try {
 			System.out.println("UpdateName");
 			clienteDao.updateNombre(this.cliente.getId(), "Jaime");
-			Cliente c = clienteDao.readById(this.cliente.getId());
+			Cliente c = clienteDao.read(this.cliente.getId());
 			assertNotEquals(c.getNombre(), this.cliente.getNombre());
 		} catch (Exception e) {
 			System.out.println("Error updateNameTest: " + e);
@@ -78,7 +78,7 @@ public class UpdateTest {
 		try {
 			System.out.println("UpdateAddress");
 			clienteDao.updateDireccion(this.cliente.getId(), "Huajuapan");
-			Cliente c = clienteDao.readById(this.cliente.getId());
+			Cliente c = clienteDao.read(this.cliente.getId());
 			assertNotEquals(c.getDireccion(), this.cliente.getDireccion());
 		} catch (Exception e) {
 			System.out.println("Error updateAddressTest: " + e);
@@ -90,7 +90,7 @@ public class UpdateTest {
 		try {
 			System.out.println("UpdateContact");
 			clienteDao.updateContacto(this.cliente.getId(), "Egremy");
-			Cliente c = clienteDao.readById(this.cliente.getId());
+			Cliente c = clienteDao.read(this.cliente.getId());
 			assertNotEquals(c.getContacto(), this.cliente.getContacto());
 		} catch (Exception e) {
 			System.out.println("Error updateContactTest: " + e);
@@ -102,7 +102,7 @@ public class UpdateTest {
 		try {
 			System.out.println("UpdateNumber");
 			clienteDao.updateTelefono(this.cliente.getId(), "192929929");
-			Cliente c = clienteDao.readById(this.cliente.getId());
+			Cliente c = clienteDao.read(this.cliente.getId());
 			assertNotEquals(c.getTelefono(), this.cliente.getTelefono());
 		} catch (Exception e) {
 			System.out.println("Error updateNumberTest: " + e);
@@ -114,7 +114,7 @@ public class UpdateTest {
 		try {
 			System.out.println("UpdateEmail");
 			clienteDao.updateEmail(this.cliente.getId(), "ajsknas@hotmail.com");
-			Cliente c = clienteDao.readById(this.cliente.getId());
+			Cliente c = clienteDao.read(this.cliente.getId());
 			assertNotEquals(c.getEmail(), this.cliente.getTelefono());
 		} catch (Exception e) {
 			System.out.println("Error updateEmailTest: " + e);
@@ -126,7 +126,7 @@ public class UpdateTest {
 		try {
 			System.out.println("UpdateRfc");
 			clienteDao.updateRfc(this.cliente.getId(), "KWUBEUW8B38DNW");
-			Cliente c = clienteDao.readById(this.cliente.getId());
+			Cliente c = clienteDao.read(this.cliente.getId());
 			assertNotEquals(c.getRfc(), this.cliente.getRfc());
 		} catch (Exception e) {
 			System.out.println("Error updateRfcTest: " + e);

@@ -44,7 +44,7 @@ public class DeleteTest {
 			clienteDao.delete(this.cliente.getId());
 
 			int id = this.cliente.getId();
-			Cliente c = clienteDao.readById(id);
+			Cliente c = clienteDao.read(id);
 
 			assertNull(c);
 		} catch (Exception e) {

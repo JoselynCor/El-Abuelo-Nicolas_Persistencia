@@ -1,5 +1,6 @@
 package elabuelonicolas.dao.ventas;
 
+import java.sql.Date;
 import java.util.List;
 import javax.inject.Named;
 import org.apache.ibatis.session.SqlSession;
@@ -44,8 +45,56 @@ public class VentasDaoImpl implements VentasDao {
 	public Ventas read(int id) {
 		try {
 			VentasMapper ventasMapper = sqlSession.getMapper(VentasMapper.class);
-			Ventas venta = ventasMapper.readById(id);
+			Ventas venta = ventasMapper.read(id);
 			return venta;
+		} catch (Exception e) {
+			System.out.println("Error read: " + e);
+		}
+		return null;
+	}
+
+	@Override
+	public List<Ventas> readByIdCliente(int id) {
+		try {
+			VentasMapper ventasMapper = sqlSession.getMapper(VentasMapper.class);
+			List<Ventas> ventas = ventasMapper.readByIdCliente(id);
+			return ventas;
+		} catch (Exception e) {
+			System.out.println("Error read: " + e);
+		}
+		return null;
+	}
+
+	@Override
+	public List<Ventas> readByIdListaVenta(int id) {
+		try {
+			VentasMapper ventasMapper = sqlSession.getMapper(VentasMapper.class);
+			List<Ventas> ventas = ventasMapper.readByIdListaVenta(id);
+			return ventas;
+		} catch (Exception e) {
+			System.out.println("Error read: " + e);
+		}
+		return null;
+	}
+
+	@Override
+	public List<Ventas> readByFecha(Date fecha) {
+		try {
+			VentasMapper ventasMapper = sqlSession.getMapper(VentasMapper.class);
+			List<Ventas> ventas = ventasMapper.readByFecha(fecha);
+			return ventas;
+		} catch (Exception e) {
+			System.out.println("Error read: " + e);
+		}
+		return null;
+	}
+
+	@Override
+	public List<Ventas> readByFechas(Date fechaInicio, Date fechaFin) {
+		try {
+			VentasMapper ventasMapper = sqlSession.getMapper(VentasMapper.class);
+			List<Ventas> ventas = ventasMapper.readByFechas(fechaInicio, fechaFin);
+			return ventas;
 		} catch (Exception e) {
 			System.out.println("Error read: " + e);
 		}
@@ -63,6 +112,46 @@ public class VentasDaoImpl implements VentasDao {
 	}
 
 	@Override
+	public void updateIdCliente(int id, int idNuevo) {
+		try {
+			VentasMapper ventasMapper = sqlSession.getMapper(VentasMapper.class);
+			ventasMapper.updateIdCliente(id, idNuevo);
+		} catch (Exception e) {
+			System.out.println("Error update: " + e);
+		}
+	}
+
+	@Override
+	public void updateIdListaVenta(int id, int idNuevo) {
+		try {
+			VentasMapper ventasMapper = sqlSession.getMapper(VentasMapper.class);
+			ventasMapper.updateIdListaVenta(id, idNuevo);
+		} catch (Exception e) {
+			System.out.println("Error update: " + e);
+		}
+	}
+
+	@Override
+	public void updateFecha(int id, Date fechaNueva) {
+		try {
+			VentasMapper ventasMapper = sqlSession.getMapper(VentasMapper.class);
+			ventasMapper.updateFecha(id, fechaNueva);
+		} catch (Exception e) {
+			System.out.println("Error update: " + e);
+		}
+	}
+
+	@Override
+	public void updatePrecioTotal(int id, Double precioTotalNuevo) {
+		try {
+			VentasMapper ventasMapper = sqlSession.getMapper(VentasMapper.class);
+			ventasMapper.updatePrecioTotal(id, precioTotalNuevo);
+		} catch (Exception e) {
+			System.out.println("Error update: " + e);
+		}
+	}
+	
+	@Override
 	public void delete(int id) {
 		try {
 			VentasMapper ventasMapper = sqlSession.getMapper(VentasMapper.class);
@@ -70,5 +159,17 @@ public class VentasDaoImpl implements VentasDao {
 		} catch (Exception e) {
 			System.out.println("Error delete: " + e);
 		}
+	}
+
+	@Override
+	public Ventas last() {
+		try {
+			VentasMapper ventasMapper = sqlSession.getMapper(VentasMapper.class);
+			Ventas venta = ventasMapper.last();
+			return venta;
+		}catch(Exception e) {
+			System.out.println("Error delete: " + e);
+		}
+		return null;
 	}
 }

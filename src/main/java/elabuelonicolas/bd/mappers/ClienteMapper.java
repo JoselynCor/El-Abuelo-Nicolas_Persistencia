@@ -11,7 +11,7 @@ public interface ClienteMapper {
 
 	void create(Cliente cliente);
 
-	Cliente readById(int id);
+	Cliente read(int id);
 
 	List<Cliente> readByNombre(String nombre);
 

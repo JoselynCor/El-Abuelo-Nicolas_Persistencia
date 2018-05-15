@@ -43,9 +43,9 @@ public class ReadTest {
 	}
 
 	@Test
-	public void readCliente() {
+	public void readById() {
 		try {
-			Cliente c = clienteDao.readById(this.cliente.getId());
+			Cliente c = clienteDao.read(this.cliente.getId());
 			assertEquals(c.getId(), this.cliente.getId());
 		} catch (Exception e) {
 			System.out.println("Error readTest: " + e);
@@ -53,7 +53,7 @@ public class ReadTest {
 	}
 
 	@Test
-	public void readClienteByNombre() {
+	public void readByNombre() {
 		try {
 			List<Cliente> clientes = clienteDao.readByNombre(this.cliente.getNombre());
 			assertEquals(clientes.get(0).getNombre(), this.cliente.getNombre());
@@ -63,7 +63,7 @@ public class ReadTest {
 	}
 
 	@Test
-	public void readClienteDireccion() {
+	public void readByDireccion() {
 		try {
 			List<Cliente> clientes = clienteDao.readByDireccion(this.cliente.getDireccion());
 			assertEquals(clientes.get(0).getDireccion(), this.cliente.getDireccion());
@@ -73,7 +73,7 @@ public class ReadTest {
 	}
 
 	@Test
-	public void readClienteByContacto() {
+	public void readByContacto() {
 		try {
 			List<Cliente> clientes = clienteDao.readByContacto(this.cliente.getContacto());
 			assertEquals(clientes.get(0).getContacto(), this.cliente.getContacto());
@@ -83,7 +83,7 @@ public class ReadTest {
 	}
 
 	@Test
-	public void readClienteByTelefono() {
+	public void readByTelefono() {
 		try {
 			List<Cliente> clientes = clienteDao.readByTelefono(this.cliente.getTelefono());
 			assertEquals(clientes.get(0).getTelefono(), this.cliente.getTelefono());
@@ -93,7 +93,7 @@ public class ReadTest {
 	}
 
 	@Test
-	public void readClienteByEmail() {
+	public void readByEmail() {
 		try {
 			List<Cliente> clientes = clienteDao.readByEmail(this.cliente.getEmail());
 			assertEquals(clientes.get(0).getEmail(), this.cliente.getEmail());
@@ -103,7 +103,7 @@ public class ReadTest {
 	}
 
 	@Test
-	public void readClienteByRfc() {
+	public void readByRfc() {
 		try {
 			List<Cliente> clientes = clienteDao.readByRfc(this.cliente.getRfc());
 			assertEquals(clientes.get(0).getRfc(), this.cliente.getRfc());

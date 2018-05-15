@@ -2,9 +2,7 @@ package elabuelonicolas.bd.mappers;
 
 import java.sql.Date;
 import java.util.List;
-
 import org.apache.ibatis.annotations.Param;
-
 import elabuelonicolas.bd.domain.Ventas;
 
 public interface VentasMapper {
@@ -12,7 +10,7 @@ public interface VentasMapper {
 
 	void create(Ventas venta);
 
-	Ventas readById(int id);
+	Ventas read(int id);
 
 	List<Ventas> readByIdCliente(int id);
 
@@ -28,9 +26,9 @@ public interface VentasMapper {
 
 	void updateIdListaVenta(@Param("id") int id, @Param("idNuevo") int idNuevo);
 
-	void updateFecha(@Param("id") int id, @Param("fecha") Date FechaNueva);
+	void updateFecha(@Param("id") int id, @Param("fechaNueva") Date FechaNueva);
 
-	void updatePrecioTotal(@Param("id") int id, @Param("idNuevo") Double precioTotalNuevo);
+	void updatePrecioTotal(@Param("id") int id, @Param("precioTotalNuevo") Double precioTotalNuevo);
 
 	void delete(int id);
 	
