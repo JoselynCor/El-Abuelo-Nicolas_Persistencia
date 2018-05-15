@@ -13,13 +13,13 @@ public interface ClienteMapper {
 
 	Cliente readById(int id);
 
-	List<Cliente> readByName(String nombre);
+	List<Cliente> readByNombre(String nombre);
 
-	List<Cliente> readByAddress(String direccion);
+	List<Cliente> readByDireccion(String direccion);
 
-	List<Cliente> readByContact(String nombre);
+	List<Cliente> readByContacto(String nombre);
 
-	List<Cliente> readByNumber(String numero);
+	List<Cliente> readByTelefono(String numero);
 
 	List<Cliente> readByEmail(String email);
 
@@ -27,13 +27,13 @@ public interface ClienteMapper {
 
 	void update(Cliente cliente);
 
-	void updateName(@Param("id") int id, @Param("nombre") String nombre);
+	void updateNombre(@Param("id") int id, @Param("nombre") String nombre);
 
-	void updateAddress(@Param("id") int id, @Param("direccion") String direccion);
+	void updateDireccion(@Param("id") int id, @Param("direccion") String direccion);
 
-	void updateContact(@Param("id") int id, @Param("contacto") String contacto);
+	void updateContacto(@Param("id") int id, @Param("contacto") String contacto);
 
-	void updateNumber(@Param("id") int id, @Param("telefono") String telefono);
+	void updateTelefono(@Param("id") int id, @Param("telefono") String telefono);
 
 	void updateEmail(@Param("id") int id, @Param("email") String email);
 

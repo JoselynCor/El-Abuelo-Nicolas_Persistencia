@@ -31,22 +31,22 @@
 		select * from
 		cliente where id=#{id}
 	</select>
-	<select id="readByName" parameterType="String"
+	<select id="readByNombre" parameterType="String"
 		resultMap="BaseResultMap">
 		select * from
 		cliente where nombre like #{nombre}
 	</select>
-	<select id="readByAddress" parameterType="String"
+	<select id="Direccion" parameterType="String"
 		resultMap="BaseResultMap">
 		select * from
 		cliente where direccion like #{direccion}
 	</select>
-	<select id="readByContact" parameterType="String"
+	<select id="readByContacto" parameterType="String"
 		resultMap="BaseResultMap">
 		select * from
 		cliente where contacto like #{contacto}
 	</select>
-	<select id="readByNumber" parameterType="String"
+	<select id="readByTelefono" parameterType="String"
 		resultMap="BaseResultMap">
 		select * from
 		cliente where telefono like #{telefono}
@@ -70,20 +70,21 @@
 		telefono=#{telefono},
 		rfc=#{rfc} WHERE id=#{id}
 	</update>
-	<update id="updateName" parameterType="map">
+	<update id="updateNombre" parameterType="map">
 		UPDATE cliente SET
 		nombre=#{nombre} WHERE id=#{id}
 	</update>
-	<update id="updateAddress" parameterType="map">
+	<update id="updateDireccion" parameterType="map">
 		UPDATE cliente SET
 		direccion=#{direccion} WHERE id=#{id}
 	</update>
-	<update id="updateContact" parameterType="map">
+	<update id="updateContacto" parameterType="map">
 		UPDATE cliente SET
 		contacto=#{contacto} WHERE id=#{id}
 	</update>
-	<update id="updateNumber" parameterType="map">
-		UPDATE cliente SET telefono=#{telefono} WHERE id=#{id}
+	<update id="updateTelefono" parameterType="map">
+		UPDATE cliente SET
+		telefono=#{telefono} WHERE id=#{id}
 	</update>
 	<update id="updateEmail" parameterType="map">
 		UPDATE cliente SET
@@ -99,6 +100,7 @@
 	</delete>
 	<select id="last" resultMap="BaseResultMap">
 		select * from cliente order by
-		id desc limit 1
+		id
+		desc limit 1
 	</select>
 </mapper>

@@ -54,10 +54,10 @@ public class ClienteDaoImpl implements ClienteDao {
 	}
 
 	@Override
-	public List<Cliente> readByName(String nombre) {
+	public List<Cliente> readByNombre(String nombre) {
 		try {
 			ClienteMapper clienteMapper = sqlSession.getMapper(ClienteMapper.class);
-			List<Cliente> cliente = clienteMapper.readByName(nombre);
+			List<Cliente> cliente = clienteMapper.readByNombre(nombre);
 			return cliente;
 		} catch (Exception e) {
 			System.out.println("Error readByName: " + e);
@@ -66,10 +66,10 @@ public class ClienteDaoImpl implements ClienteDao {
 	}
 
 	@Override
-	public List<Cliente> readByAddress(String direccion) {
+	public List<Cliente> readByDireccion(String direccion) {
 		try {
 			ClienteMapper clienteMapper = sqlSession.getMapper(ClienteMapper.class);
-			List<Cliente> cliente = clienteMapper.readByAddress(direccion);
+			List<Cliente> cliente = clienteMapper.readByDireccion(direccion);
 			return cliente;
 		} catch (Exception e) {
 			System.out.println("Error readByAddress: " + e);
@@ -78,10 +78,10 @@ public class ClienteDaoImpl implements ClienteDao {
 	}
 
 	@Override
-	public List<Cliente> readByContact(String contacto) {
+	public List<Cliente> readByContacto(String contacto) {
 		try {
 			ClienteMapper clienteMapper = sqlSession.getMapper(ClienteMapper.class);
-			List<Cliente> cliente = clienteMapper.readByContact(contacto);
+			List<Cliente> cliente = clienteMapper.readByContacto(contacto);
 			return cliente;
 		} catch (Exception e) {
 			System.out.println("Error readByContact: " + e);
@@ -90,10 +90,10 @@ public class ClienteDaoImpl implements ClienteDao {
 	}
 
 	@Override
-	public List<Cliente> readByNumber(String telefono) {
+	public List<Cliente> readByTelefono(String telefono) {
 		try {
 			ClienteMapper clienteMapper = sqlSession.getMapper(ClienteMapper.class);
-			List<Cliente> cliente = clienteMapper.readByNumber(telefono);
+			List<Cliente> cliente = clienteMapper.readByTelefono(telefono);
 			return cliente;
 		} catch (Exception e) {
 			System.out.println("Error readByNumber: " + e);
@@ -136,40 +136,40 @@ public class ClienteDaoImpl implements ClienteDao {
 	}
 
 	@Override
-	public void updateName(int id, String nombre) {
+	public void updateNombre(int id, String nombre) {
 		try {
 			ClienteMapper clienteMapper = sqlSession.getMapper(ClienteMapper.class);
-			clienteMapper.updateName(id, nombre);
+			clienteMapper.updateNombre(id, nombre);
 		} catch (Exception e) {
 			System.out.println("Error updateName: " + e);
 		}
 	}
 
 	@Override
-	public void updateAddress(int id, String direccion) {
+	public void updateDireccion(int id, String direccion) {
 		try {
 			ClienteMapper clienteMapper = sqlSession.getMapper(ClienteMapper.class);
-			clienteMapper.updateAddress(id, direccion);
+			clienteMapper.updateDireccion(id, direccion);
 		} catch (Exception e) {
 			System.out.println("Error updateAddress: " + e);
 		}
 	}
 
 	@Override
-	public void updateContact(int id, String contacto) {
+	public void updateContacto(int id, String contacto) {
 		try {
 			ClienteMapper clienteMapper = sqlSession.getMapper(ClienteMapper.class);
-			clienteMapper.updateContact(id, contacto);
+			clienteMapper.updateContacto(id, contacto);
 		} catch (Exception e) {
 			System.out.println("Error updateContact: " + e);
 		}
 	}
 
 	@Override
-	public void updateNumber(int id, String telefono) {
+	public void updateTelefono(int id, String telefono) {
 		try {
 			ClienteMapper clienteMapper = sqlSession.getMapper(ClienteMapper.class);
-			clienteMapper.updateNumber(id, telefono);
+			clienteMapper.updateTelefono(id, telefono);
 		} catch (Exception e) {
 			System.out.println("Error updateNumber: " + e);
 		}

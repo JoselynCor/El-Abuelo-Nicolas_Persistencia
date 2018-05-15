@@ -44,7 +44,7 @@ public class VentasDaoImpl implements VentasDao {
 	public Ventas read(int id) {
 		try {
 			VentasMapper ventasMapper = sqlSession.getMapper(VentasMapper.class);
-			Ventas venta = ventasMapper.read(id);
+			Ventas venta = ventasMapper.readById(id);
 			return venta;
 		} catch (Exception e) {
 			System.out.println("Error read: " + e);

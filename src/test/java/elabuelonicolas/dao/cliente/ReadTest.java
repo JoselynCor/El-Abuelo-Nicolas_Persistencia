@@ -53,9 +53,9 @@ public class ReadTest {
 	}
 
 	@Test
-	public void readClienteByName() {
+	public void readClienteByNombre() {
 		try {
-			List<Cliente> clientes = clienteDao.readByName(this.cliente.getNombre());
+			List<Cliente> clientes = clienteDao.readByNombre(this.cliente.getNombre());
 			assertEquals(clientes.get(0).getNombre(), this.cliente.getNombre());
 		} catch (Exception e) {
 			System.out.println("Error readByNameTest: " + e);
@@ -63,9 +63,9 @@ public class ReadTest {
 	}
 
 	@Test
-	public void readClienteAddress() {
+	public void readClienteDireccion() {
 		try {
-			List<Cliente> clientes = clienteDao.readByAddress(this.cliente.getDireccion());
+			List<Cliente> clientes = clienteDao.readByDireccion(this.cliente.getDireccion());
 			assertEquals(clientes.get(0).getDireccion(), this.cliente.getDireccion());
 		} catch (Exception e) {
 			System.out.println("Error readByAddresTest: " + e);
@@ -73,9 +73,9 @@ public class ReadTest {
 	}
 
 	@Test
-	public void readClienteByContact() {
+	public void readClienteByContacto() {
 		try {
-			List<Cliente> clientes = clienteDao.readByContact(this.cliente.getContacto());
+			List<Cliente> clientes = clienteDao.readByContacto(this.cliente.getContacto());
 			assertEquals(clientes.get(0).getContacto(), this.cliente.getContacto());
 		} catch (Exception e) {
 			System.out.println("Error readByContactTest: " + e);
@@ -83,9 +83,9 @@ public class ReadTest {
 	}
 
 	@Test
-	public void readClienteByNumber() {
+	public void readClienteByTelefono() {
 		try {
-			List<Cliente> clientes = clienteDao.readByNumber(this.cliente.getTelefono());
+			List<Cliente> clientes = clienteDao.readByTelefono(this.cliente.getTelefono());
 			assertEquals(clientes.get(0).getTelefono(), this.cliente.getTelefono());
 		} catch (Exception e) {
 			System.out.println("Error readByNumberTest: " + e);
