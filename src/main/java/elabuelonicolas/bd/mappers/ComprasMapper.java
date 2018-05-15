@@ -1,5 +1,6 @@
 package elabuelonicolas.bd.mappers;
 import java.util.List;
+
 import elabuelonicolas.bd.domain.Compras;
 
 public interface ComprasMapper {

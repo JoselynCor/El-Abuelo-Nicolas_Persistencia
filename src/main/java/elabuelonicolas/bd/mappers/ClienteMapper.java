@@ -2,7 +2,7 @@ package elabuelonicolas.bd.mappers;
 
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
-import elabuelonicolas.bd.domain.Cliente;;
+import elabuelonicolas.bd.domain.Cliente;
 
 public interface ClienteMapper {
 	List<Cliente> findAll();
