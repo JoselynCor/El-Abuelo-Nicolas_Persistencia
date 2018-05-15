@@ -20,11 +20,9 @@ public class VentasDaoImpl implements VentasDao {
 
 	@Override
 	public List<Ventas> findAll() {
-		List<Ventas> list = null;
 		try {
 			VentasMapper ventasMapper = sqlSession.getMapper(VentasMapper.class);
-			list = ventasMapper.findAll();
-			return list;
+			return ventasMapper.findAll();
 		} catch (Exception e) {
 			System.out.println("Error findAll: " + e);
 		}
@@ -45,8 +43,7 @@ public class VentasDaoImpl implements VentasDao {
 	public Ventas read(int id) {
 		try {
 			VentasMapper ventasMapper = sqlSession.getMapper(VentasMapper.class);
-			Ventas venta = ventasMapper.read(id);
-			return venta;
+			return ventasMapper.read(id);
 		} catch (Exception e) {
 			System.out.println("Error read: " + e);
 		}
@@ -57,8 +54,7 @@ public class VentasDaoImpl implements VentasDao {
 	public List<Ventas> readByIdCliente(int id) {
 		try {
 			VentasMapper ventasMapper = sqlSession.getMapper(VentasMapper.class);
-			List<Ventas> ventas = ventasMapper.readByIdCliente(id);
-			return ventas;
+			return ventasMapper.readByIdCliente(id);
 		} catch (Exception e) {
 			System.out.println("Error read: " + e);
 		}
@@ -69,8 +65,7 @@ public class VentasDaoImpl implements VentasDao {
 	public List<Ventas> readByIdListaVenta(int id) {
 		try {
 			VentasMapper ventasMapper = sqlSession.getMapper(VentasMapper.class);
-			List<Ventas> ventas = ventasMapper.readByIdListaVenta(id);
-			return ventas;
+			return ventasMapper.readByIdListaVenta(id);
 		} catch (Exception e) {
 			System.out.println("Error read: " + e);
 		}
@@ -81,8 +76,7 @@ public class VentasDaoImpl implements VentasDao {
 	public List<Ventas> readByFecha(Date fecha) {
 		try {
 			VentasMapper ventasMapper = sqlSession.getMapper(VentasMapper.class);
-			List<Ventas> ventas = ventasMapper.readByFecha(fecha);
-			return ventas;
+			return ventasMapper.readByFecha(fecha);
 		} catch (Exception e) {
 			System.out.println("Error read: " + e);
 		}
@@ -93,8 +87,7 @@ public class VentasDaoImpl implements VentasDao {
 	public List<Ventas> readByFechas(Date fechaInicio, Date fechaFin) {
 		try {
 			VentasMapper ventasMapper = sqlSession.getMapper(VentasMapper.class);
-			List<Ventas> ventas = ventasMapper.readByFechas(fechaInicio, fechaFin);
-			return ventas;
+			return ventasMapper.readByFechas(fechaInicio, fechaFin);
 		} catch (Exception e) {
 			System.out.println("Error read: " + e);
 		}
@@ -165,8 +158,7 @@ public class VentasDaoImpl implements VentasDao {
 	public Ventas last() {
 		try {
 			VentasMapper ventasMapper = sqlSession.getMapper(VentasMapper.class);
-			Ventas venta = ventasMapper.last();
-			return venta;
+			return ventasMapper.last();
 		}catch(Exception e) {
 			System.out.println("Error delete: " + e);
 		}
