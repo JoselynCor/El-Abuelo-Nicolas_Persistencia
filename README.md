@@ -1,20 +1,23 @@
 # El abuelo Nicolás - Persistencia
 
-## Software utilizado
+## Requisitos
 1. Java 8
 2. Tomcat 8
 3. MariaDB
 
-## Notas para el profesor David Martínez
-1. Descargar el proyecto *El Abuelo Nicolás Central* desde [aquí.](https://github.com/jlcastrogro/El-Abuelo-Nicolas_Central)
-2. Descargar el proyecto *El Abuelo Nicolás Persistencia*
-    1. Crear una base de datos con nombre *inventario*
-    1. Dentro del proyecto se encuentra el script de la base de datos *Equipo-5-inventarios.sql*
-    2. Importar la base datos
-3. Para realizar pruebas unitarias
-    1. Hacer *maven-install* a *Equipo-5-Central*
-    2. Hacer *maven-install* a *Equipo-5-Persistencia*
-    3. Realizar pruebas unitarias
+## Actualización de la Base de Datos Invetnario:
+
+Las tablas de:
+~~~
+listaventa 
+listacompra
+~~~
+se deberán modificar con lo siguiente:
+~~~
+    ALTER TABLE listaventa DROP PRIMARY KEY;
+    ALTER TABLE listacompra DROP PRIMARY KEY;
+~~~
+Lo anterior es para poder agregar más de un producto a las listas de ventas y compras con el mismo id (que hace referencia a la compra o venta de la respectiva lista).
 
 ## Procedimiento para subir archivos
 1. Crear una rama nueva (New Branch) de preferencia con su nombre
@@ -28,4 +31,4 @@
     3. Realizar un Commit and Push (agregar sus comentarios)
     4. Crear un Pull Request de su Push (cuando estén seguros de que funciona)
 
-#### Importante: NO MEZCLAR LAS RAMAS A MENOS QUE ESTÉ FUNCIONANDO AL 100 :)
+#### Importante: NO MEZCLAR LAS RAMAS A MENOS QUE ESTÉ FUNCIONANDO AL 100 :) 

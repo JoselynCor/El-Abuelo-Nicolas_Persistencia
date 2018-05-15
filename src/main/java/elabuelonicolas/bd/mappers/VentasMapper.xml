@@ -7,89 +7,39 @@
 			MyBatis Generator, do not modify. This element was generated on Mon Apr 30 
 			16:43:23 CDT 2018. -->
 		<id column="id" jdbcType="INTEGER" property="id" />
-		<result column="idcliente" jdbcType="INTEGER"
+		<result column="idCliente" jdbcType="INTEGER"
 			property="idcliente" />
-		<result column="idlistaventa" jdbcType="INTEGER"
+		<result column="idListaVenta" jdbcType="INTEGER"
 			property="idlistaventa" />
 		<result column="fecha" jdbcType="DATE" property="fecha" />
-		<result column="preciototal" jdbcType="DOUBLE"
+		<result column="precioTotal" jdbcType="DOUBLE"
 			property="preciototal" />
 	</resultMap>
 
 	<select id="findAll" resultMap="BaseResultMap">
-		SELECT * FROM ventas
+		SELECT * FROM Ventas
 	</select>
 	<insert id="create"
 		parameterType="elabuelonicolas.bd.domain.Ventas">
-		insert into ventas (idcliente, idlistaventa, fecha,
+		insert into Ventas (idcliente, idlistaventa, fecha,
 		preciototal) values (#{idcliente}, #{idlistaventa}, #{fecha},
 		#{preciototal})
 	</insert>
-	<select id="read" parameterType="int"
-		resultMap="BaseResultMap">
+	<select id="read" parameterType="int" resultMap="BaseResultMap">
 		select * from
-		ventas where id=#{id}
-	</select>
-	<select id="readByIdCliente" parameterType="int"
-		resultMap="BaseResultMap">
-		select * from
-		ventas where idcliente=#{id}
-	</select>
-	<select id="readByIdListaVenta" parameterType="int"
-		resultMap="BaseResultMap">
-		select * from
-		ventas where idlistaventa=#{id}
-	</select>
-	<select id="readByFecha" parameterType="date"
-		resultMap="BaseResultMap">
-		select * from
-		ventas where fecha=#{fecha}
-	</select>
-	<select id="readByFechas" parameterType="map"
-		resultMap="BaseResultMap">
-		select * from
-		ventas where fecha between #{fechaInicio} and #{fechaFin}
+		Ventas where id=#{id}
 	</select>
 	<update id="update"
 		parameterType="elabuelonicolas.bd.domain.Ventas">
-		UPDATE ventas SET
+		UPDATE Ventas SET
 		idcliente=#{idcliente},
 		idlistaventa=#{idlistaventa},
 		fecha=#{fecha},
 		preciototal=#{preciototal}
 		WHERE id=#{id}
 	</update>
-	<update id="updateIdCliente"
-		parameterType="map">
-		UPDATE ventas SET
-		idcliente=#{idNuevo}
-		WHERE id=#{id}
-	</update>
-	<update id="updateIdListaVenta"
-		parameterType="map">
-		UPDATE ventas SET
-		idlistaventa=#{idNuevo}
-		WHERE id=#{id}
-	</update>
-	<update id="updateFecha"
-		parameterType="map">
-		UPDATE ventas SET
-		fecha=#{fechaNueva}
-		WHERE id=#{id}
-	</update>
-	<update id="updatePrecioTotal"
-		parameterType="map">
-		UPDATE ventas SET
-		preciototal=#{precioTotalNuevo}
-		WHERE id=#{id}
-	</update>
 	<delete id="delete" parameterType="int">
-		delete from ventas where id =
+		delete from Ventas where id =
 		#{id}
 	</delete>
-	<select id="last" resultMap="BaseResultMap">
-		select * from ventas order by
-		id
-		desc limit 1
-	</select>
 </mapper>

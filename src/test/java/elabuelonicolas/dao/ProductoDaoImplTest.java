@@ -42,9 +42,9 @@ public class ProductoDaoImplTest {
 			System.out.println("Error: " + e);
 		}
 	}
-
+	
 	@Test
-	public void updateProducto() {
+	public void updateProducto( ) {
 		Producto c = productoDao.read(1);
 		try {
 			c.setTipo("Balón");
@@ -56,17 +56,17 @@ public class ProductoDaoImplTest {
 			System.out.println("Error: " + e);
 		}
 	}
-
+	
 	@Test
 	public void deleteProducto() {
 		try {
-			if (productoDao.read(2) != null)
+			if(productoDao.read(2) != null)
 				productoDao.delete(2);
 		} catch (Exception e) {
 			System.out.println("Error: " + e);
 		}
 	}
-
+	
 	@Test
 	public void findAllProductos() {
 		try {
