@@ -1,7 +1,6 @@
 package elabuelonicolas.dao.ventas;
 
 import static org.junit.Assert.assertEquals;
-
 import java.sql.Date;
 import java.util.List;
 import javax.inject.Inject;
