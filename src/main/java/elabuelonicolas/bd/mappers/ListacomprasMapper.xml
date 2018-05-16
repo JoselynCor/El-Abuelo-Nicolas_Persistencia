@@ -8,8 +8,37 @@
       This element was generated on Mon Apr 30 16:43:23 CDT 2018.
     -->
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="idProducto" jdbcType="INTEGER" property="idproducto" />
+    <result column="idproducto" jdbcType="INTEGER" property="idproducto" />
     <result column="cantidad" jdbcType="INTEGER" property="cantidad" />
     <result column="subtotal" jdbcType="DOUBLE" property="subtotal" />
+    <result column="idcompra" jdbcType="DOUBLE" property="idcompra" />
   </resultMap>
+  
+  <select id="findAll" resultMap="BaseResultMap">
+		SELECT * FROM listacompras
+	</select>
+	<insert id="create"
+		parameterType="elabuelonicolas.bd.domain.Listacompras">
+		insert into listacompras (id,idproducto, cantidad, subtotal, idcompra)
+		 values (#{id},#{idproducto}, #{cantidad}, #{subtotal},#{idcompra})
+	</insert>
+	<select id="read" parameterType="int" resultMap="BaseResultMap">
+		select * from
+		listacompras where id=#{id}
+	</select>
+	<update id="update"
+		parameterType="elabuelonicolas.bd.domain.Listacompras">
+		UPDATE listacompras SET
+		id=#{id},
+		idproducto=#{idproducto},
+		cantidad=#{cantidad},
+		subtotal=#{subtotal},
+		idcompra=#{idcompra}
+		WHERE id=#{id}
+	</update>
+	<delete id="delete" parameterType="int">
+		delete from listacompras where id =
+		#{id}
+	</delete>
+  
 </mapper>

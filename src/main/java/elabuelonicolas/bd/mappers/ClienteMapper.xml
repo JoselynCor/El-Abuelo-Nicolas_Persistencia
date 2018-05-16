@@ -18,29 +18,89 @@
 	</resultMap>
 
 	<select id="findAll" resultMap="BaseResultMap">
-		SELECT * FROM Cliente
+		SELECT * FROM cliente
 	</select>
 	<insert id="create"
 		parameterType="elabuelonicolas.bd.domain.Cliente">
-		insert into Cliente (nombre, direccion, contacto,
-		telefono, email, rfc) values (#{nombre}, #{direccion}, #{contacto}, #{telefono}, #{email}, #{rfc})
+		insert into cliente (nombre, direccion, contacto,
+		telefono, email, rfc) values (#{nombre}, #{direccion}, #{contacto},
+		#{telefono}, #{email}, #{rfc})
 	</insert>
-	<select id="read"
-		parameterType="int"
+	<select id="read" parameterType="int"
 		resultMap="BaseResultMap">
-		select * from Cliente where id=#{id}
+		select * from
+		cliente where id=#{id}
+	</select>
+	<select id="readByNombre" parameterType="String"
+		resultMap="BaseResultMap">
+		select * from
+		cliente where nombre like #{nombre}
+	</select>
+	<select id="Direccion" parameterType="String"
+		resultMap="BaseResultMap">
+		select * from
+		cliente where direccion like #{direccion}
+	</select>
+	<select id="readByContacto" parameterType="String"
+		resultMap="BaseResultMap">
+		select * from
+		cliente where contacto like #{contacto}
+	</select>
+	<select id="readByTelefono" parameterType="String"
+		resultMap="BaseResultMap">
+		select * from
+		cliente where telefono like #{telefono}
+	</select>
+	<select id="readByEmail" parameterType="String"
+		resultMap="BaseResultMap">
+		select * from
+		cliente where email like #{email}
+	</select>
+	<select id="readByRfc" parameterType="String"
+		resultMap="BaseResultMap">
+		select * from
+		cliente where rfc like #{rfc}
 	</select>
 	<update id="update"
 		parameterType="elabuelonicolas.bd.domain.Cliente">
-		UPDATE Cliente SET
+		UPDATE cliente SET
 		nombre=#{nombre},
 		direccion=#{direccion},
 		contacto=#{contacto},
 		telefono=#{telefono},
 		rfc=#{rfc} WHERE id=#{id}
 	</update>
-	<delete id="delete"
-		parameterType="int">
-		delete from Cliente where id = #{id}
+	<update id="updateNombre" parameterType="map">
+		UPDATE cliente SET
+		nombre=#{nombre} WHERE id=#{id}
+	</update>
+	<update id="updateDireccion" parameterType="map">
+		UPDATE cliente SET
+		direccion=#{direccion} WHERE id=#{id}
+	</update>
+	<update id="updateContacto" parameterType="map">
+		UPDATE cliente SET
+		contacto=#{contacto} WHERE id=#{id}
+	</update>
+	<update id="updateTelefono" parameterType="map">
+		UPDATE cliente SET
+		telefono=#{telefono} WHERE id=#{id}
+	</update>
+	<update id="updateEmail" parameterType="map">
+		UPDATE cliente SET
+		email=#{email} WHERE id=#{id}
+	</update>
+	<update id="updateRfc" parameterType="map">
+		UPDATE cliente SET
+		rfc=#{rfc} WHERE id=#{id}
+	</update>
+	<delete id="delete" parameterType="int">
+		delete from cliente where id =
+		#{id}
 	</delete>
+	<select id="last" resultMap="BaseResultMap">
+		select * from cliente order by
+		id
+		desc limit 1
+	</select>
 </mapper>
