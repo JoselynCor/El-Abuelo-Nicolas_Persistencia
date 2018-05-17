@@ -38,9 +38,7 @@ public class CreateTest {
 	public void create() {
 		try {
 			clienteDao.create(this.cliente);
-			
 			Cliente c = clienteDao.last();
-
 			assertEquals(c.getNombre(), this.cliente.getNombre());
 		} catch (Exception e) {
 			System.out.println("Error createTest: " + e);
