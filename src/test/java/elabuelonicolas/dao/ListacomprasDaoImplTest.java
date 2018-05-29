@@ -7,14 +7,14 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import elabuelonicolas.bd.domain.Listacompras;
-import elabuelonicolas.dao.listacompras.ListacomprasDao;
+import elabuelonicolas.dao.listacompra.ListacompraDao;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/applicationContext.xml" })
 public class ListacomprasDaoImplTest {
 
 	@Inject
-	ListacomprasDao listacomprasDao;
+	ListacompraDao listacompraDao;
 
 	@Test
 	public void createListacompra() {
@@ -26,7 +26,7 @@ public class ListacomprasDaoImplTest {
 			v.setSubtotal(207532.40);
 			v.setIdcompra(1);
 
-			listacomprasDao.create(v);
+			listacompraDao.create(v);
 		} catch (Exception e) {
 			System.out.println("Error create test: " + e);
 		}
@@ -35,7 +35,7 @@ public class ListacomprasDaoImplTest {
 	@Test
 	public void readListacompra() {
 		try {
-			Listacompras lc = listacomprasDao.read(1);
+			Listacompras lc = listacompraDao.read(1);
 			System.out.println("\nRead");
 			System.out.println("Id: " + lc.getId());
 			System.out.println("Id Prodcuto: " + lc.getIdproducto());
@@ -49,14 +49,14 @@ public class ListacomprasDaoImplTest {
 
 	@Test
 	public void updateListacompra() {
-		Listacompras lc = listacomprasDao.read(1);
+		Listacompras lc = listacompraDao.read(1);
 		try {
 			// System.out.print("\nUpdate");
 			lc.setIdproducto(0);
 			lc.setCantidad(0);
 			lc.setSubtotal(0.10);
 			lc.setIdcompra(4);
-			listacomprasDao.update(lc);
+			listacompraDao.update(lc);
 		} catch (Exception e) {
 			System.out.println("Error update test: " + e);
 		}
@@ -65,9 +65,9 @@ public class ListacomprasDaoImplTest {
 	@Test
 	public void deleteListacompra() {
 		try {
-			if (listacomprasDao.read(1) != null)
+			if (listacompraDao.read(1) != null)
 				;
-			listacomprasDao.delete(1);
+			listacompraDao.delete(1);
 		} catch (Exception e) {
 			System.out.println("Error delete test: " + e);
 		}
@@ -76,7 +76,7 @@ public class ListacomprasDaoImplTest {
 	@Test
 	public void findAllClientes() {
 		try {
-			List<Listacompras> list = listacomprasDao.findAll();
+			List<Listacompras> list = listacompraDao.findAll();
 			for (Listacompras lc : list) {
 				System.out.println("\nFind All");
 				System.out.println("Id: " + lc.getId());

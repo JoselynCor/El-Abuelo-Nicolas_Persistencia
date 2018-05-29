@@ -13,7 +13,7 @@ public interface ProveedorDao {
 
 	List<Proveedor> readByNombre(String nombre);
 
-	List<Proveedor> readByDireccion(String direccion);
+	Proveedor readByDireccion(int idDireccion);
 
 	List<Proveedor> readByContacto(String nombre);
 
@@ -26,8 +26,6 @@ public interface ProveedorDao {
 	void update(Proveedor proveedor);
 
 	void updateNombre(@Param("id") int id, @Param("nombre") String nombre);
-
-	void updateDireccion(@Param("id") int id, @Param("direccion") String direccion);
 
 	void updateContacto(@Param("id") int id, @Param("contacto") String contacto);
 

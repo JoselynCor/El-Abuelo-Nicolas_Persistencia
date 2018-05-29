@@ -13,7 +13,7 @@ public interface ClienteDao {
 
 	List<Cliente> readByNombre(String nombre);
 
-	List<Cliente> readByDireccion(String direccion);
+	Cliente readByDireccion(int idDireccion);
 
 	List<Cliente> readByContacto(String nombre);
 
@@ -26,8 +26,6 @@ public interface ClienteDao {
 	void update(Cliente cliente);
 
 	void updateNombre(@Param("id") int id, @Param("nombre") String nombre);
-
-	void updateDireccion(@Param("id") int id, @Param("direccion") String direccion);
 
 	void updateContacto(@Param("id") int id, @Param("contacto") String contacto);
 

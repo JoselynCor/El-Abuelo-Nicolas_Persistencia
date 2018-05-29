@@ -7,14 +7,14 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import elabuelonicolas.bd.domain.Listaventas;
-import elabuelonicolas.dao.listaventas.ListaventasDao;
+import elabuelonicolas.dao.listaventa.ListaventaDao;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/applicationContext.xml" })
 public class ListaventasDaoImplTest {
 
 	@Inject
-	ListaventasDao listaventasDao;
+	ListaventaDao listaventaDao;
 
 	@Test
 	public void createListaventa() {
@@ -26,7 +26,7 @@ public class ListaventasDaoImplTest {
 			v.setSubtotal(207532.40);
 			v.setIdventa(1);
 
-			listaventasDao.create(v);
+			listaventaDao.create(v);
 		} catch (Exception e) {
 			System.out.println("Error create test: " + e);
 		}
@@ -35,7 +35,7 @@ public class ListaventasDaoImplTest {
 	@Test
 	public void readListaventa() {
 		try {
-			Listaventas v = listaventasDao.read(2);
+			Listaventas v = listaventaDao.read(2);
 			System.out.println("\nRead");
 			System.out.println("Id: " + v.getId());
 			System.out.println("Id Prodcuto: " + v.getIdproducto());
@@ -49,14 +49,14 @@ public class ListaventasDaoImplTest {
 
 	@Test
 	public void updateListaventa() {
-		Listaventas v = listaventasDao.read(1);
+		Listaventas v = listaventaDao.read(1);
 		try {
 			// System.out.print("\nUpdate");
 			v.setIdproducto(1);
 			v.setCantidad(1);
 			v.setSubtotal(1.10);
 			v.setIdventa(1);
-			listaventasDao.update(v);
+			listaventaDao.update(v);
 		} catch (Exception e) {
 			System.out.println("Error update test: " + e);
 		}
@@ -65,9 +65,9 @@ public class ListaventasDaoImplTest {
 	@Test
 	public void deleteListaventa() {
 		try {
-			if (listaventasDao.read(9) != null)
+			if (listaventaDao.read(9) != null)
 				;
-			listaventasDao.delete(9);
+			listaventaDao.delete(9);
 		} catch (Exception e) {
 			System.out.println("Error delete test: " + e);
 		}
@@ -76,7 +76,7 @@ public class ListaventasDaoImplTest {
 	@Test
 	public void findAllClientes() {
 		try {
-			List<Listaventas> list = listaventasDao.findAll();
+			List<Listaventas> list = listaventaDao.findAll();
 			for (Listaventas v : list) {
 				System.out.println("\nFind All");
 				System.out.println("Id: " + v.getId());

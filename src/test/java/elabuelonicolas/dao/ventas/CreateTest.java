@@ -10,13 +10,14 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import elabuelonicolas.bd.domain.Ventas;
+import elabuelonicolas.dao.venta.VentaDao;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/applicationContext.xml" })
 public class CreateTest {
 
 	@Inject
-	VentasDao ventasDao;
+	VentaDao ventaDao;
 
 	private Ventas venta;
 	
@@ -38,9 +39,9 @@ public class CreateTest {
 	@Test
 	public void create() {
 		try {
-			ventasDao.create(this.venta);
+			ventaDao.create(this.venta);
 			
-			Ventas v = ventasDao.last();
+			Ventas v = ventaDao.last();
 
 			assertEquals(v.getFecha(), this.venta.getFecha());
 		} catch (Exception e) {

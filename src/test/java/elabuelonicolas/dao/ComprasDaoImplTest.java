@@ -8,14 +8,14 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import elabuelonicolas.bd.domain.Compras;
-import elabuelonicolas.dao.compras.ComprasDao;
+import elabuelonicolas.dao.compra.CompraDao;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/applicationContext.xml" })
 public class ComprasDaoImplTest {
 
 	@Inject
-	ComprasDao comprasDao;
+	CompraDao compraDao;
 
 	@SuppressWarnings("deprecation")
 	@Test
@@ -26,7 +26,7 @@ public class ComprasDaoImplTest {
 			c.setIdlistacompra(1);
 			c.setFecha(new Date(2018, 1, 1));
 			c.setPreciototal(100.10);
-			comprasDao.create(c);
+			compraDao.create(c);
 		} catch (Exception e) {
 			System.out.println("Error create test: " + e);
 		}
@@ -35,7 +35,7 @@ public class ComprasDaoImplTest {
 	@Test
 	public void readCompra() {
 		try {
-			Compras c = comprasDao.read(1);
+			Compras c = compraDao.read(1);
 			System.out.println("Id: " + c.getId());
 			System.out.println("Nombre: " + c.getIdproveedor());
 		} catch (Exception e) {
@@ -46,13 +46,13 @@ public class ComprasDaoImplTest {
 	@SuppressWarnings("deprecation")
 	@Test
 	public void updateCompra() {
-		Compras c = comprasDao.read(1);
+		Compras c = compraDao.read(1);
 		try {
 			c.setIdproveedor(1);
 			c.setIdlistacompra(1);
 			c.setFecha(new Date(2018, 1, 1));
 			c.setPreciototal(100.10);
-			comprasDao.update(c);
+			compraDao.update(c);
 		} catch (Exception e) {
 			System.out.println("Error update test: " + e);
 		}
@@ -61,8 +61,8 @@ public class ComprasDaoImplTest {
 	@Test
 	public void deleteCompra() {
 		try {
-			if (comprasDao.read(2) != null)
-				comprasDao.delete(2);
+			if (compraDao.read(2) != null)
+				compraDao.delete(2);
 		} catch (Exception e) {
 			System.out.println("Error delete test: " + e);
 		}
@@ -71,7 +71,7 @@ public class ComprasDaoImplTest {
 	@Test
 	public void findAllClientes() {
 		try {
-			List<Compras> list = comprasDao.findAll();
+			List<Compras> list = compraDao.findAll();
 			for (Compras c : list) {
 				System.out.println("Id: " + c.getId());
 				System.out.println("Nombre: " + c.getIdproveedor());

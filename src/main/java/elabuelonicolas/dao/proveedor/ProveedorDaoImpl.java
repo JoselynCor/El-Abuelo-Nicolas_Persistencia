@@ -61,10 +61,10 @@ public class ProveedorDaoImpl implements ProveedorDao {
 	}
 
 	@Override
-	public List<Proveedor> readByDireccion(String direccion) {
+	public Proveedor readByDireccion(int idDireccion) {
 		try {
 			ProveedorMapper proveedorMapper = sqlSession.getMapper(ProveedorMapper.class);
-			return proveedorMapper.readByDireccion(direccion);
+			return proveedorMapper.readByDireccion(idDireccion);
 		} catch (Exception e) {
 			System.out.println("Error readByDireccion: " + e);
 		}
@@ -133,16 +133,6 @@ public class ProveedorDaoImpl implements ProveedorDao {
 			proveedorMapper.updateNombre(id, nombre);
 		} catch (Exception e) {
 			System.out.println("Error updateNombre: " + e);
-		}
-	}
-
-	@Override
-	public void updateDireccion(int id, String direccion) {
-		try {
-			ProveedorMapper proveedorMapper = sqlSession.getMapper(ProveedorMapper.class);
-			proveedorMapper.updateDireccion(id, direccion);
-		} catch (Exception e) {
-			System.out.println("Error updateDireccion: " + e);
 		}
 	}
 

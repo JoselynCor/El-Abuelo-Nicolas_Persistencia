@@ -61,10 +61,10 @@ public class ClienteDaoImpl implements ClienteDao {
 	}
 
 	@Override
-	public List<Cliente> readByDireccion(String direccion) {
+	public Cliente readByDireccion(int idDireccion) {
 		try {
 			ClienteMapper clienteMapper = sqlSession.getMapper(ClienteMapper.class);
-			return clienteMapper.readByDireccion(direccion);
+			return clienteMapper.readByDireccion(idDireccion);
 		} catch (Exception e) {
 			System.out.println("Error readByDireccion: " + e);
 		}
@@ -133,16 +133,6 @@ public class ClienteDaoImpl implements ClienteDao {
 			clienteMapper.updateNombre(id, nombre);
 		} catch (Exception e) {
 			System.out.println("Error updateNombre: " + e);
-		}
-	}
-
-	@Override
-	public void updateDireccion(int id, String direccion) {
-		try {
-			ClienteMapper clienteMapper = sqlSession.getMapper(ClienteMapper.class);
-			clienteMapper.updateDireccion(id, direccion);
-		} catch (Exception e) {
-			System.out.println("Error updateDireccion: " + e);
 		}
 	}
 

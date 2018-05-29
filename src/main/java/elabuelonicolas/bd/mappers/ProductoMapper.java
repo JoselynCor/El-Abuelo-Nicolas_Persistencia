@@ -1,9 +1,7 @@
 package elabuelonicolas.bd.mappers;
 
 import java.util.List;
-
 import elabuelonicolas.bd.domain.Producto;
-
 
 public interface ProductoMapper {
 	List<Producto> findAll();

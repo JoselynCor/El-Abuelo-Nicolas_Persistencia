@@ -13,11 +13,11 @@ public interface ProveedorMapper {
 
 	List<Proveedor> readByNombre(String nombre);
 
-	List<Proveedor> readByDireccion(String direccion);
+	Proveedor readByDireccion(int idDireccion);
 
-	List<Proveedor> readByContacto(String nombre);
+	List<Proveedor> readByContacto(String contacto);
 
-	List<Proveedor> readByTelefono(String numero);
+	List<Proveedor> readByTelefono(String telefono);
 
 	List<Proveedor> readByEmail(String email);
 
@@ -26,8 +26,6 @@ public interface ProveedorMapper {
 	void update(Proveedor proveedor);
 
 	void updateNombre(@Param("id") int id, @Param("nombre") String nombre);
-
-	void updateDireccion(@Param("id") int id, @Param("direccion") String direccion);
 
 	void updateContacto(@Param("id") int id, @Param("contacto") String contacto);
 

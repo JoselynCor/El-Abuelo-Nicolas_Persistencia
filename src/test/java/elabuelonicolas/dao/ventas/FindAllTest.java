@@ -10,12 +10,13 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import elabuelonicolas.bd.domain.Ventas;
+import elabuelonicolas.dao.venta.VentaDao;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/applicationContext.xml" })
 public class FindAllTest {
 	@Inject
-	VentasDao ventasDao;
+	VentaDao ventaDao;
 	private Object ventas;
 
 	@Before
@@ -31,7 +32,7 @@ public class FindAllTest {
 	@Test
 	public void findAll() {
 		try {
-			List<Ventas> list = ventasDao.findAll();
+			List<Ventas> list = ventaDao.findAll();
 			assertEquals(list.size(), this.ventas);
 		} catch (Exception e) {
 			System.out.println("Error findAllTest: " + e);
