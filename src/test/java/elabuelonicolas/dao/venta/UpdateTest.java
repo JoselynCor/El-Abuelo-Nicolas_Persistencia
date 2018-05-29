@@ -1,4 +1,4 @@
-package elabuelonicolas.dao.ventas;
+package elabuelonicolas.dao.venta;
 
 import static org.junit.Assert.assertNotEquals;
 import java.sql.Date;
@@ -9,7 +9,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import elabuelonicolas.bd.domain.Ventas;
+import elabuelonicolas.bd.domain.Venta;
 import elabuelonicolas.dao.venta.VentaDao;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -17,16 +17,16 @@ import elabuelonicolas.dao.venta.VentaDao;
 public class UpdateTest {
 	@Inject
 	VentaDao ventaDao;
-	private Ventas venta;
+	private Venta venta;
 
 	@SuppressWarnings("deprecation")
 	@Before
 	public void setUp() {
-		this.venta = new Ventas();
+		this.venta = new Venta();
 		this.venta.setIdcliente(1);;
 		this.venta.setIdlistaventa(1);
 		this.venta.setFecha(new Date(2018, 1, 1));
-		this.venta.setPreciototal(100.10);
+		this.venta.setTotal(100.10);
 
 		ventaDao.create(this.venta);
 
@@ -41,13 +41,13 @@ public class UpdateTest {
 	@SuppressWarnings("deprecation")
 	@Test
 	public void update() {
-		Ventas v = ventaDao.read(this.venta.getId());
+		Venta v = ventaDao.read(this.venta.getId());
 		try {
 			System.out.println("Update");
 			v.setIdcliente(2);
 			v.setIdlistaventa(2);
 			v.setFecha(new Date(2019, 1, 1));
-			v.setPreciototal(1920812.1);
+			v.setTotal(1920812.1);
 			ventaDao.update(v);
 		} catch (Exception e) {
 			System.out.println("Error updateTest: " + e);
@@ -56,7 +56,7 @@ public class UpdateTest {
 		assertNotEquals(this.venta.getIdcliente(), v.getIdcliente());
 		assertNotEquals(this.venta.getIdlistaventa(), v.getIdlistaventa());
 		assertNotEquals(this.venta.getFecha(), v.getFecha());
-		assertNotEquals(this.venta.getPreciototal(), v.getPreciototal());
+		assertNotEquals(this.venta.getTotal(), v.getTotal());
 	}
 
 	@Test
@@ -64,7 +64,7 @@ public class UpdateTest {
 		try {
 			System.out.println("UpdateIdCliente");
 			ventaDao.updateIdCliente(this.venta.getId(), 10);
-			Ventas v = ventaDao.read(this.venta.getId());
+			Venta v = ventaDao.read(this.venta.getId());
 			assertNotEquals(v.getIdcliente(), this.venta.getIdcliente());
 		} catch (Exception e) {
 			System.out.println("Error updateIdClienteTest: " + e);
@@ -72,14 +72,14 @@ public class UpdateTest {
 	}
 
 	@Test
-	public void updateIdListaVentas() {
+	public void updateIdListaVenta() {
 		try {
-			System.out.println("UpdateIdListaVentas");
+			System.out.println("UpdateIdListaVenta");
 			ventaDao.updateIdListaVenta(this.venta.getId(), 11);
-			Ventas v = ventaDao.read(this.venta.getId());
+			Venta v = ventaDao.read(this.venta.getId());
 			assertNotEquals(v.getIdlistaventa(), this.venta.getIdlistaventa());
 		} catch (Exception e) {
-			System.out.println("Error updateIdListaVentasTest: " + e);
+			System.out.println("Error updateIdListaVentaTest: " + e);
 		}
 	}
 
@@ -89,7 +89,7 @@ public class UpdateTest {
 		try {
 			System.out.println("UpdateFecha");
 			ventaDao.updateFecha(this.venta.getId(), new Date(2018,12,1));
-			Ventas c = ventaDao.read(this.venta.getId());
+			Venta c = ventaDao.read(this.venta.getId());
 			assertNotEquals(c.getFecha(), this.venta.getFecha());
 		} catch (Exception e) {
 			System.out.println("Error updateFechaTest: " + e);
@@ -100,9 +100,9 @@ public class UpdateTest {
 	public void updatePrecioTotal() {
 		try {
 			System.out.println("UpdatePrecioTotal");
-			ventaDao.updatePrecioTotal(this.venta.getId(), 1000.1);
-			Ventas v = ventaDao.read(this.venta.getId());
-			assertNotEquals(v.getPreciototal(), this.venta.getPreciototal());
+			ventaDao.updateTotal(this.venta.getId(), 1000.1);
+			Venta v = ventaDao.read(this.venta.getId());
+			assertNotEquals(v.getTotal(), this.venta.getTotal());
 		} catch (Exception e) {
 			System.out.println("Error updatePrecioTotalTest: " + e);
 		}

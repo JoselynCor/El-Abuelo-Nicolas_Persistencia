@@ -6,12 +6,12 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import elabuelonicolas.bd.domain.Listacompras;
+import elabuelonicolas.bd.domain.Listacompra;
 import elabuelonicolas.dao.listacompra.ListacompraDao;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/applicationContext.xml" })
-public class ListacomprasDaoImplTest {
+public class ListacompraDaoImplTest {
 
 	@Inject
 	ListacompraDao listacompraDao;
@@ -20,7 +20,7 @@ public class ListacomprasDaoImplTest {
 	public void createListacompra() {
 		try {
 			// System.out.print("\nCreate");
-			Listacompras v = new Listacompras();
+			Listacompra v = new Listacompra();
 			v.setIdproducto(172);
 			v.setCantidad(20370);
 			v.setSubtotal(207532.40);
@@ -35,7 +35,7 @@ public class ListacomprasDaoImplTest {
 	@Test
 	public void readListacompra() {
 		try {
-			Listacompras lc = listacompraDao.read(1);
+			Listacompra lc = listacompraDao.read(1);
 			System.out.println("\nRead");
 			System.out.println("Id: " + lc.getId());
 			System.out.println("Id Prodcuto: " + lc.getIdproducto());
@@ -49,7 +49,7 @@ public class ListacomprasDaoImplTest {
 
 	@Test
 	public void updateListacompra() {
-		Listacompras lc = listacompraDao.read(1);
+		Listacompra lc = listacompraDao.read(1);
 		try {
 			// System.out.print("\nUpdate");
 			lc.setIdproducto(0);
@@ -76,8 +76,8 @@ public class ListacomprasDaoImplTest {
 	@Test
 	public void findAllClientes() {
 		try {
-			List<Listacompras> list = listacompraDao.findAll();
-			for (Listacompras lc : list) {
+			List<Listacompra> list = listacompraDao.findAll();
+			for (Listacompra lc : list) {
 				System.out.println("\nFind All");
 				System.out.println("Id: " + lc.getId());
 				System.out.println("Id Producto: " + lc.getIdproducto());

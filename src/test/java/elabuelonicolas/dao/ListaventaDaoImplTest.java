@@ -6,12 +6,12 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import elabuelonicolas.bd.domain.Listaventas;
+import elabuelonicolas.bd.domain.Listaventa;
 import elabuelonicolas.dao.listaventa.ListaventaDao;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/applicationContext.xml" })
-public class ListaventasDaoImplTest {
+public class ListaventaDaoImplTest {
 
 	@Inject
 	ListaventaDao listaventaDao;
@@ -20,7 +20,7 @@ public class ListaventasDaoImplTest {
 	public void createListaventa() {
 		try {
 			// System.out.print("\nCreate");
-			Listaventas v = new Listaventas();
+			Listaventa v = new Listaventa();
 			v.setIdproducto(172);
 			v.setCantidad(20370);
 			v.setSubtotal(207532.40);
@@ -35,7 +35,7 @@ public class ListaventasDaoImplTest {
 	@Test
 	public void readListaventa() {
 		try {
-			Listaventas v = listaventaDao.read(2);
+			Listaventa v = listaventaDao.read(2);
 			System.out.println("\nRead");
 			System.out.println("Id: " + v.getId());
 			System.out.println("Id Prodcuto: " + v.getIdproducto());
@@ -49,7 +49,7 @@ public class ListaventasDaoImplTest {
 
 	@Test
 	public void updateListaventa() {
-		Listaventas v = listaventaDao.read(1);
+		Listaventa v = listaventaDao.read(1);
 		try {
 			// System.out.print("\nUpdate");
 			v.setIdproducto(1);
@@ -76,8 +76,8 @@ public class ListaventasDaoImplTest {
 	@Test
 	public void findAllClientes() {
 		try {
-			List<Listaventas> list = listaventaDao.findAll();
-			for (Listaventas v : list) {
+			List<Listaventa> list = listaventaDao.findAll();
+			for (Listaventa v : list) {
 				System.out.println("\nFind All");
 				System.out.println("Id: " + v.getId());
 				System.out.println("Id Producto: " + v.getIdproducto());

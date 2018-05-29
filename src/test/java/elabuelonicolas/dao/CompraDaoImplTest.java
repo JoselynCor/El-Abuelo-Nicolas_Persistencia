@@ -7,12 +7,12 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import elabuelonicolas.bd.domain.Compras;
+import elabuelonicolas.bd.domain.Compra;
 import elabuelonicolas.dao.compra.CompraDao;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/applicationContext.xml" })
-public class ComprasDaoImplTest {
+public class CompraDaoImplTest {
 
 	@Inject
 	CompraDao compraDao;
@@ -21,11 +21,11 @@ public class ComprasDaoImplTest {
 	@Test
 	public void createCompra() {
 		try {
-			Compras c = new Compras();
+			Compra c = new Compra();
 			c.setIdproveedor(1);
 			c.setIdlistacompra(1);
 			c.setFecha(new Date(2018, 1, 1));
-			c.setPreciototal(100.10);
+			c.setTotal(100.10);
 			compraDao.create(c);
 		} catch (Exception e) {
 			System.out.println("Error create test: " + e);
@@ -35,7 +35,7 @@ public class ComprasDaoImplTest {
 	@Test
 	public void readCompra() {
 		try {
-			Compras c = compraDao.read(1);
+			Compra c = compraDao.read(1);
 			System.out.println("Id: " + c.getId());
 			System.out.println("Nombre: " + c.getIdproveedor());
 		} catch (Exception e) {
@@ -46,12 +46,12 @@ public class ComprasDaoImplTest {
 	@SuppressWarnings("deprecation")
 	@Test
 	public void updateCompra() {
-		Compras c = compraDao.read(1);
+		Compra c = compraDao.read(1);
 		try {
 			c.setIdproveedor(1);
 			c.setIdlistacompra(1);
 			c.setFecha(new Date(2018, 1, 1));
-			c.setPreciototal(100.10);
+			c.setTotal(100.10);
 			compraDao.update(c);
 		} catch (Exception e) {
 			System.out.println("Error update test: " + e);
@@ -71,8 +71,8 @@ public class ComprasDaoImplTest {
 	@Test
 	public void findAllClientes() {
 		try {
-			List<Compras> list = compraDao.findAll();
-			for (Compras c : list) {
+			List<Compra> list = compraDao.findAll();
+			for (Compra c : list) {
 				System.out.println("Id: " + c.getId());
 				System.out.println("Nombre: " + c.getIdproveedor());
 			}
