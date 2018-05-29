@@ -6,31 +6,31 @@
 			connectionURL="jdbc:mysql://localhost:3306/Inventario"
 			driverClass="org.mariadb.jdbc.Driver" password="" userId="root" />
 		<javaModelGenerator
-			targetPackage="elabuelonicolas.bd.domain" targetProject="ElAbueloNicolasPersistencia" />
+			targetPackage="elabuelonicolas.bd.domain" targetProject="Persistencia-Equipo-5" />
 		<sqlMapGenerator targetPackage="elabuelonicolas.bd.mappers"
-			targetProject="ElAbueloNicolasPersistencia" />
-		<table schema="Inventario" tableName="Cliente">
+			targetProject="Persistencia-Equipo-5" />
+		<table schema="Inventario" tableName="cliente">
 			<property name="usActualColumnsNames" value="true" />
 		</table>
-		<table schema="Inventario" tableName="Compra">
+		<table schema="Inventario" tableName="compra">
 			<property name="usActualColumnsNames" value="true" />
 		</table>
-		<table schema="Inventario" tableName="ListaCompra">
+		<table schema="Inventario" tableName="listacompra">
 			<property name="usActualColumnsNames" value="true" />
 		</table>
-		<table schema="Inventario" tableName="ListaVenta">
+		<table schema="Inventario" tableName="listaventa">
 			<property name="usActualColumnsNames" value="true" />
 		</table>
-		<table schema="Inventario" tableName="Producto">
+		<table schema="Inventario" tableName="producto">
 			<property name="usActualColumnsNames" value="true" />
 		</table>
-		<table schema="Inventario" tableName="Proveedor">
+		<table schema="Inventario" tableName="proveedor">
 			<property name="usActualColumnsNames" value="true" />
 		</table>
-		<table schema="Inventario" tableName="Venta">
+		<table schema="Inventario" tableName="venta">
 			<property name="usActualColumnsNames" value="true" />
 		</table>
-		<table schema="Inventario" tableName="Direccion">
+		<table schema="Inventario" tableName="direccion">
 			<property name="usActualColumnsNames" value="true" />
 		</table>
 	</context>
