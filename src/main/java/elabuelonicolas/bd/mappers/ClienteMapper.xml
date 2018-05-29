@@ -23,7 +23,7 @@
 	<insert id="create"
 		parameterType="elabuelonicolas.bd.domain.Cliente">
 		insert into cliente (nombre, iddireccion, contacto,
-		telefono, email, rfc) values (#{nombre}, #{idDireccion}, #{contacto},
+		telefono, email, rfc) values (#{nombre}, #{iddireccion}, #{contacto},
 		#{telefono}, #{email}, #{rfc})
 	</insert>
 	<select id="read" parameterType="int" resultMap="BaseResultMap">
@@ -64,7 +64,7 @@
 		parameterType="elabuelonicolas.bd.domain.Cliente">
 		UPDATE cliente SET
 		nombre=#{nombre},
-		iddireccion=#{idDireccion},
+		iddireccion=#{iddireccion},
 		contacto=#{contacto},
 		telefono=#{telefono},
 		rfc=#{rfc} WHERE id=#{id}

@@ -20,7 +20,7 @@
 	<insert id="create"
 		parameterType="elabuelonicolas.bd.domain.Direccion">
 		insert into compra (pais, ciudad, colonia, calle,
-		numero) values (#{pais}, #{ciudad}, #{colonia}, #{calle}
+		numero) values (#{pais}, #{ciudad}, #{colonia}, #{calle},
 		#{numero})
 	</insert>
 	<select id="read" parameterType="int" resultMap="BaseResultMap">

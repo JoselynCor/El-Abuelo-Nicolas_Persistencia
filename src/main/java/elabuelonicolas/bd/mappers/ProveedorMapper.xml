@@ -24,7 +24,7 @@
 	<insert id="create"
 		parameterType="elabuelonicolas.bd.domain.Proveedor">
 		insert into proveedor (nombre, iddireccion, contacto,
-		telefono, email, rfc) values (#{nombre}, #{idDireccion}, #{contacto},
+		telefono, email, rfc) values (#{nombre}, #{iddireccion}, #{contacto},
 		#{telefono}, #{email}, #{rfc})
 	</insert>
 	<select id="read" parameterType="int" resultMap="BaseResultMap">
@@ -36,10 +36,10 @@
 		select * from
 		proveedor where nombre like #{nombre}
 	</select>
-	<select id="readByDireccion" parameterType="String"
+	<select id="readByDireccion" parameterType="int"
 		resultMap="BaseResultMap">
 		select * from
-		proveedor where iddireccion like #{idDireccion}
+		proveedor where iddireccion like #{iddireccion}
 	</select>
 	<select id="readByContacto" parameterType="String"
 		resultMap="BaseResultMap">
@@ -65,7 +65,7 @@
 		parameterType="elabuelonicolas.bd.domain.Proveedor">
 		UPDATE proveedor SET
 		nombre=#{nombre},
-		iddireccion=#{idDireccion},
+		iddireccion=#{iddireccion},
 		contacto=#{contacto},
 		telefono=#{telefono},
 		rfc=#{rfc} WHERE id=#{id}

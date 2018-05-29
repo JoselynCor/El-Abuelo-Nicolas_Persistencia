@@ -20,7 +20,7 @@
 	<insert id="create"
 		parameterType="elabuelonicolas.bd.domain.Compra">
 		insert into compra (idproveedor, idlistacompra, fecha,
-		total) values (#{idProveedor}, #{idListacompra}, #{fecha},
+		total) values (#{idproveedor}, #{idlistacompra}, #{fecha},
 		#{total})
 	</insert>
 	<select id="read" parameterType="int" resultMap="BaseResultMap">
@@ -30,8 +30,8 @@
 	<update id="update"
 		parameterType="elabuelonicolas.bd.domain.Compra">
 		UPDATE compra SET
-		idproveedor=#{idProveedor},
-		idlistacompra=#{idListacompra},
+		idproveedor=#{idproveedor},
+		idlistacompra=#{idlistacompra},
 		fecha=#{fecha},
 		total=#{total}
 		WHERE id=#{id}

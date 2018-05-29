@@ -43,8 +43,8 @@ public class ReadTest {
 	@Test
 	public void read() {
 		try {
-			Cliente c = clienteDao.read(this.cliente.getId());
-			assertEquals(c.getId(), this.cliente.getId());
+			Cliente cliente = clienteDao.read(this.cliente.getId());
+			assertEquals(cliente.getId(), this.cliente.getId());
 		} catch (Exception e) {
 			System.out.println("Error readTest: " + e);
 		}

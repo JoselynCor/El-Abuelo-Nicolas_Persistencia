@@ -22,7 +22,7 @@
 	<insert id="create"
 		parameterType="elabuelonicolas.bd.domain.Venta">
 		insert into venta (idcliente, idlistaventa, fecha,
-		total) values (#{idCliente}, #{idListaventa}, #{fecha},
+		total) values (#{idcliente}, #{idlistaventa}, #{fecha},
 		#{total})
 	</insert>
 	<select id="read" parameterType="int"
@@ -33,12 +33,12 @@
 	<select id="readByIdCliente" parameterType="int"
 		resultMap="BaseResultMap">
 		select * from
-		venta where idcliente=#{idCliente}
+		venta where idcliente=#{idcliente}
 	</select>
 	<select id="readByIdListaVenta" parameterType="int"
 		resultMap="BaseResultMap">
 		select * from
-		venta where idlistaventa=#{idListaventa}
+		venta where idlistaventa=#{idlistaventa}
 	</select>
 	<select id="readByFecha" parameterType="date"
 		resultMap="BaseResultMap">
@@ -53,8 +53,8 @@
 	<update id="update"
 		parameterType="elabuelonicolas.bd.domain.Venta">
 		UPDATE venta SET
-		idcliente=#{idCliente},
-		idlistaventa=#{idListaventa},
+		idcliente=#{idcliente},
+		idlistaventa=#{idlistaventa},
 		fecha=#{fecha},
 		total=#{total}
 		WHERE id=#{id}

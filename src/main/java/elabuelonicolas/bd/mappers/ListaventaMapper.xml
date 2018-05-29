@@ -19,7 +19,7 @@
 	<insert id="create"
 		parameterType="elabuelonicolas.bd.domain.Listaventa">
 		INSERT INTO listaventa (id, idproducto, idventa, cantidad,
-		subtotal) VALUES (#{id}, #{idProducto},#{idVenta}, #{cantidad}, #{subtotal})
+		subtotal) VALUES (#{id}, #{idproducto},#{idventa}, #{cantidad}, #{subtotal})
 	</insert>
 	<select id="read"
 		parameterType="int"
@@ -30,8 +30,8 @@
 		parameterType="elabuelonicolas.bd.domain.Listaventa">
 		UPDATE listaventa SET
 		id=#{id},
-		idproducto=#{idProducto},
-		idventa=#{idVenta},
+		idproducto=#{idproducto},
+		idventa=#{idventa},
 		cantidad=#{cantidad},
 		subtotal=#{subtotal}
 		WHERE id=#{id}
