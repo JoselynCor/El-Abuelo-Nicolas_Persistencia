@@ -12,13 +12,13 @@
 		<table schema="Inventario" tableName="Cliente">
 			<property name="usActualColumnsNames" value="true" />
 		</table>
-		<table schema="Inventario" tableName="Compras">
+		<table schema="Inventario" tableName="Compra">
 			<property name="usActualColumnsNames" value="true" />
 		</table>
-		<table schema="Inventario" tableName="ListaCompras">
+		<table schema="Inventario" tableName="ListaCompra">
 			<property name="usActualColumnsNames" value="true" />
 		</table>
-		<table schema="Inventario" tableName="ListaVentas">
+		<table schema="Inventario" tableName="ListaVenta">
 			<property name="usActualColumnsNames" value="true" />
 		</table>
 		<table schema="Inventario" tableName="Producto">
@@ -27,7 +27,10 @@
 		<table schema="Inventario" tableName="Proveedor">
 			<property name="usActualColumnsNames" value="true" />
 		</table>
-		<table schema="Inventario" tableName="Ventas">
+		<table schema="Inventario" tableName="Venta">
+			<property name="usActualColumnsNames" value="true" />
+		</table>
+		<table schema="Inventario" tableName="Direccion">
 			<property name="usActualColumnsNames" value="true" />
 		</table>
 	</context>
