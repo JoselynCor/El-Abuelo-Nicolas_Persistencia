@@ -1,4 +1,4 @@
-package elabuelonicolas.dao.venta;
+package elabuelonicolas.dao.compra;
 
 import static org.junit.Assert.assertEquals;
 import java.util.List;
@@ -9,31 +9,31 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import elabuelonicolas.bd.domain.Venta;
-import elabuelonicolas.dao.venta.VentaDao;
+
+import elabuelonicolas.bd.domain.Compra;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/applicationContext.xml" })
 public class FindAllTest {
 	@Inject
-	VentaDao ventaDao;
-	private Object ventas;
+	CompraDao clienteDao;
+	private Object clientes;
 
 	@Before
 	public void setUp() {
-		this.ventas = ventaDao.findAll().size();
+		this.clientes = clienteDao.findAll().size();
 	}
 	
 	@After
 	public void tearDown() {
-		this.ventas = null;
+		this.clientes = null;
 	}
 
 	@Test
 	public void findAll() {
 		try {
-			List<Venta> list = ventaDao.findAll();
-			assertEquals(list.size(), this.ventas);
+			List<Compra> list = clienteDao.findAll();
+			assertEquals(list.size(), this.clientes);
 		} catch (Exception e) {
 			System.out.println("Error findAllTest: " + e);
 		}

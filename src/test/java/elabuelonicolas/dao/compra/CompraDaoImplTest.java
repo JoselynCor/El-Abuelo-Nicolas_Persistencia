@@ -1,4 +1,4 @@
-package elabuelonicolas.dao;
+package elabuelonicolas.dao.compra;
 
 import java.sql.Date;
 import java.util.List;

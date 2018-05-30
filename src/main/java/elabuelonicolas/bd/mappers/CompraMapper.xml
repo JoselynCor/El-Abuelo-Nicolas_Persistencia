@@ -27,6 +27,22 @@
 		select * from
 		compra where id=#{id}
 	</select>
+	<select id="readByIdProveedor" parameterType="int" resultMap="BaseResultMap">
+		select * from
+		compra where idproveedor=#{idproveedor}
+	</select>
+	<select id="readByIdListaCompra" parameterType="int" resultMap="BaseResultMap">
+		select * from
+		compra where idlistacompra=#{idlistacompra}
+	</select>
+	<select id="readByFecha" parameterType="date" resultMap="BaseResultMap">
+		select * from
+		compra where fecha=#{fecha}
+	</select>
+	<select id="readByTotal" parameterType="double" resultMap="BaseResultMap">
+		select * from
+		compra where total=#{total}
+	</select>
 	<update id="update"
 		parameterType="elabuelonicolas.bd.domain.Compra">
 		UPDATE compra SET
@@ -36,8 +52,37 @@
 		total=#{total}
 		WHERE id=#{id}
 	</update>
+	<update id="updateIdProveedor"
+		parameterType="elabuelonicolas.bd.domain.Compra">
+		UPDATE compra SET
+		idproveedor=#{idproveedor}
+		WHERE id=#{id}
+	</update>
+	<update id="updateIdListaCompra"
+		parameterType="elabuelonicolas.bd.domain.Compra">
+		UPDATE compra SET
+		idlistacompra=#{idlistacompra}
+		WHERE id=#{id}
+	</update>
+	<update id="updateFecha"
+		parameterType="elabuelonicolas.bd.domain.Compra">
+		UPDATE compra SET
+		fecha=#{fecha}
+		WHERE id=#{id}
+	</update>
+	<update id="updateTotal"
+		parameterType="elabuelonicolas.bd.domain.Compra">
+		UPDATE compra SET
+		total=#{total}
+		WHERE id=#{id}
+	</update>
 	<delete id="delete" parameterType="int">
 		delete from compra where id =
 		#{id}
 	</delete>
+		<select id="last" resultMap="BaseResultMap">
+		select * from compra order by
+		id
+		desc limit 1
+	</select>
 </mapper>

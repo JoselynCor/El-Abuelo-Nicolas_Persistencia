@@ -21,7 +21,7 @@ public class FindAllTest {
 
 	@Before
 	public void setUp() {
-		this.proveedor = 5;
+		this.proveedor = proveedorDao.findAll().size();
 	}
 	
 	@After

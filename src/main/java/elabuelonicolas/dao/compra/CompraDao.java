@@ -1,6 +1,10 @@
 package elabuelonicolas.dao.compra;
 
+import java.sql.Date;
 import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
+
 import elabuelonicolas.bd.domain.Compra;
 
 public interface CompraDao {
@@ -9,8 +13,26 @@ public interface CompraDao {
 	void create(Compra compra);
 
 	Compra read(int id);
-
+	
+	List<Compra> readByIdProveedor(int idProveedor);
+	
+	List<Compra> readByIdListaCompra(int idListaCompra);
+	
+	List<Compra> readByFecha(Date fecha);
+	
+	List<Compra> readByTotal(Double total);
+	
 	void update(Compra compra);
+	
+	void updateIdProveedor(@Param("id") int id, @Param("idProveedor") int idProveedor);
+	
+	void updateIdListaCompra(@Param("id") int id, @Param("idListaCompra") int idListaCompra);
+	
+	void updateFecha(@Param("id") int id, @Param("fecha") Date fecha);
+	
+	void updateTotal(@Param("id") int id, @Param("total") double total);
 
 	void delete(int id);
+	
+	Compra last();
 }
