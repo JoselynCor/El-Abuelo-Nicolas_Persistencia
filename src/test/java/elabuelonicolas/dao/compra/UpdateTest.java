@@ -21,34 +21,34 @@ public class UpdateTest {
 
 	private Compra compra;
 	
-	@SuppressWarnings("deprecation")
 	@Before
 	public void setUp() {
 		this.compra = new Compra();
 		this.compra.setIdproveedor(1);
-		this.compra.setIdlistacompra(1);
-		this.compra.setFecha(new Date(2018, 1, 1));
+		this.compra.setIdlistacompra(5);
+		this.compra.setFecha(Date.valueOf("2018-05-02"));
 		this.compra.setTotal(100.1);
+		compraDao.create(this.compra);
+		this.compra.setId(compraDao.last().getId());
 	}
 
 	@After
 	public void tearDown() {
-		this.compra = null;
+		compraDao.delete(this.compra.getId());
 	}
 
-	@SuppressWarnings("deprecation")
 	@Test
 	public void update() {
 		Compra c = compraDao.read(this.compra.getId());
 		try {
 			System.out.println("Update");
-			c.setIdproveedor(1);
-			c.setIdlistacompra(1);
-			c.setFecha(new Date(2018, 1, 1));
-			c.setTotal(100.10);
+			c.setIdproveedor(2);
+			c.setIdlistacompra(6);
+			c.setFecha(Date.valueOf("2018-12-1"));
+			c.setTotal(105.5);
 			compraDao.update(c);
 		} catch (Exception e) {
-			System.out.println("Error updateTest: " + e);
+			System.out.println("Error updateCompraTest: " + e);
 		}
 
 		assertNotEquals(this.compra.getIdproveedor(), c.getIdproveedor());
@@ -65,7 +65,7 @@ public class UpdateTest {
 			Compra c = compraDao.read(this.compra.getId());
 			assertNotEquals(c.getIdproveedor(), this.compra.getIdproveedor());
 		} catch (Exception e) {
-			System.out.println("Error updateNombreTest: " + e);
+			System.out.println("Error updateCompraProveedorTest: " + e);
 		}
 	}
 
@@ -77,7 +77,7 @@ public class UpdateTest {
 			Compra c = compraDao.read(this.compra.getId());
 			assertNotEquals(c.getIdlistacompra(), this.compra.getIdlistacompra());
 		} catch (Exception e) {
-			System.out.println("Error updateContactoTest: " + e);
+			System.out.println("Error updateCompraListaCompraTest: " + e);
 		}
 	}
 
@@ -90,7 +90,7 @@ public class UpdateTest {
 			Compra c = compraDao.read(this.compra.getId());
 			assertNotEquals(c.getFecha(), this.compra.getFecha());
 		} catch (Exception e) {
-			System.out.println("Error updateTelefonoTest: " + e);
+			System.out.println("Error updateFechaTest: " + e);
 		}
 	}
 
@@ -102,7 +102,7 @@ public class UpdateTest {
 			Compra c = compraDao.read(this.compra.getId());
 			assertNotEquals(c.getTotal(), this.compra.getTotal());
 		} catch (Exception e) {
-			System.out.println("Error updateEmailTest: " + e);
+			System.out.println("Error updateTotalTest: " + e);
 		}
 	}
 }

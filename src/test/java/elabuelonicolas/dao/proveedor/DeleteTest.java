@@ -25,7 +25,7 @@ public class DeleteTest {
 		this.proveedor = new Proveedor();
 		this.proveedor.setNombre("Coopel");
 		this.proveedor.setContacto("Nicolas");
-		this.proveedor.setIddireccion(1);
+		this.proveedor.setIddireccion(3);
 		this.proveedor.setEmail("coopelhj@gmail.com");
 		this.proveedor.setRfc("COPH455672HPLCRD55");
 		this.proveedor.setTelefono("9531294557");
@@ -41,9 +41,9 @@ public class DeleteTest {
 	@Test
 	public void delete() {
 		try {
-			proveedorDao.delete(this.proveedor.getId());
-
 			int id = this.proveedor.getId();
+			
+			proveedorDao.delete(id);
 			Proveedor p = proveedorDao.read(id);
 
 			assertNull(p);

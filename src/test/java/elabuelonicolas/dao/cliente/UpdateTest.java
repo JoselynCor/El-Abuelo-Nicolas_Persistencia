@@ -21,7 +21,7 @@ public class UpdateTest {
 	public void setUp() {
 		this.cliente = new Cliente();
 		this.cliente.setNombre("Pedro");
-		this.cliente.setIddireccion(1);
+		this.cliente.setIddireccion(5);
 		this.cliente.setContacto("José");
 		this.cliente.setTelefono("9515787892");
 		this.cliente.setEmail("pedro@gmail.com");
@@ -34,7 +34,7 @@ public class UpdateTest {
 
 	@After
 	public void tearDown() {
-		this.cliente = null;
+		clienteDao.delete(this.cliente.getId());
 	}
 
 	@Test

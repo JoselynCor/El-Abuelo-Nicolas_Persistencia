@@ -27,7 +27,7 @@ public class DeleteTest {
 	public void setUp() {
 		this.compra = new Compra();
 		this.compra.setIdproveedor(1);
-		this.compra.setIdlistacompra(1);
+		this.compra.setIdlistacompra(5);
 		this.compra.setFecha(new Date(2018, 1, 1));
 		this.compra.setTotal(100.1);
 	}
@@ -40,14 +40,16 @@ public class DeleteTest {
 	@Test
 	public void delete() {
 		try {
-			compraDao.delete(this.compra.getId());
-
+			compraDao.create(this.compra);
+			this.compra.setId(compraDao.last().getId());
 			int id = this.compra.getId();
+
+			compraDao.delete(id);
 			Compra c = compraDao.read(id);
 
 			assertNull(c);
 		} catch (Exception e) {
-			System.out.println("Error deleteTest: " + e);
+			System.out.println("Error deleteCompraTest: " + e);
 		}
 	}
 }

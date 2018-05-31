@@ -1,11 +1,10 @@
 package elabuelonicolas.dao.compra;
 
 import static org.junit.Assert.assertEquals;
+
 import java.sql.Date;
 import java.util.List;
 import javax.inject.Inject;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -18,70 +17,53 @@ public class ReadTest {
 	@Inject
 	CompraDao compraDao;
 
-	private Compra compra;
-	
-	@SuppressWarnings("deprecation")
-	@Before
-	public void setUp() {
-		this.compra = new Compra();
-		this.compra.setIdproveedor(1);
-		this.compra.setIdlistacompra(1);
-		this.compra.setFecha(new Date(2018, 1, 1));
-		this.compra.setTotal(100.1);
-	}
-
-	@After
-	public void tearDown() {
-		this.compra = null;
-	}
-
 	@Test
 	public void read() {
 		try {
-			Compra compra = compraDao.read(this.compra.getId());
-			assertEquals(compra.getId(), this.compra.getId());
+			Compra compra = compraDao.read(1);
+			assertEquals((int) compra.getIdlistacompra(), 1);
 		} catch (Exception e) {
-			System.out.println("Error readTest: " + e);
+			System.out.println("Error readCompraTest: " + e);
 		}
 	}
 
 	@Test
 	public void readByIdProveedor() {
 		try {
-			List<Compra> compras = compraDao.readByIdProveedor(this.compra.getIdproveedor());
-			assertEquals(compras.get(0).getIdproveedor(), this.compra.getIdproveedor());
+			List<Compra> compras = compraDao.readByIdProveedor(1);
+			assertEquals((int) compras.get(0).getIdproveedor(), 1);
 		} catch (Exception e) {
-			System.out.println("Error readByNombreTest: " + e);
+			System.out.println("Error readCompraByProveedorTest: " + e);
 		}
 	}
 
 	@Test
 	public void readByIdListacompra() {
 		try {
-			List<Compra> compra = compraDao.readByIdListaCompra(this.compra.getIdlistacompra());
-			assertEquals(compra.get(0).getIdlistacompra(), this.compra.getIdlistacompra());
+			Compra compra = compraDao.readByIdListaCompra(1);
+			assertEquals((int) compra.getIdlistacompra(), 1);
 		} catch (Exception e) {
-			System.out.println("Error readByDireccionTest: " + e);
+			System.out.println("Error readCompraByListaCompraTest: " + e);
 		}
 	}
-
+	
 	@Test
 	public void readByFecha() {
 		try {
-			List<Compra> compras = compraDao.readByFecha((Date) this.compra.getFecha());
-			assertEquals(compras.get(0).getFecha(), this.compra.getFecha());
+			List<Compra> compras = compraDao.readByFecha(Date.valueOf("2018-05-01"));
+			assertEquals(compras.get(0).getFecha(), Date.valueOf("2018-05-01"));
 		} catch (Exception e) {
-			System.out.println("Error readByContactoTest: " + e);
+			System.out.println("Error readCompraByFechaTest: " + e);
 		}
 	}
-
+	
 	@Test
 	public void readByTotal() {
 		try {
-			List<Compra> compras = compraDao.readByTotal(this.compra.getTotal());
-			assertEquals(compras.get(0).getTotal(), this.compra.getTotal());
+			List<Compra> compras = compraDao.readByTotal(1781.1);
+			assertEquals(compras.get(0).getTotal(), 1781.1, 1);
 		} catch (Exception e) {
-			System.out.println("Error readByTelefonoTest: " + e);
+			System.out.println("Error readCompraByTotalTest: " + e);
 		}
 	}
 }
