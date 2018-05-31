@@ -23,7 +23,7 @@ public class CreateTest {
 		this.proveedor = new Proveedor();
 		this.proveedor.setNombre("Elektra");
 		this.proveedor.setContacto("Jose");
-		this.proveedor.setIddireccion(1);
+		this.proveedor.setIddireccion(3);
 		this.proveedor.setEmail("elektrahj@gmail.com");
 		this.proveedor.setRfc("EKHJ984317HPLCRM09");
 		this.proveedor.setTelefono("9551239856");
@@ -31,17 +31,18 @@ public class CreateTest {
 
 	@After
 	public void tearDown() {
-		this.proveedor = null;
+		this.proveedorDao.delete(this.proveedor.getId());
 	}
 	
 	@Test
 	public void create() {
 		try {
 			proveedorDao.create(this.proveedor);
-			
 			Proveedor c = proveedorDao.last();
 
 			assertEquals(c.getNombre(), this.proveedor.getNombre());
+			
+			this.proveedor.setId(c.getId());
 		} catch (Exception e) {
 			System.out.println("Error createTest: " + e);
 		}

@@ -1,4 +1,4 @@
-package elabuelonicolas.dao;
+package elabuelonicolas.dao.listacompra;
 
 import java.util.List;
 import javax.inject.Inject;
@@ -19,7 +19,6 @@ public class ListacompraDaoImplTest {
 	@Test
 	public void createListacompra() {
 		try {
-			// System.out.print("\nCreate");
 			Listacompra v = new Listacompra();
 			v.setIdproducto(172);
 			v.setCantidad(20370);
@@ -66,8 +65,7 @@ public class ListacompraDaoImplTest {
 	public void deleteListacompra() {
 		try {
 			if (listacompraDao.read(1) != null)
-				;
-			listacompraDao.delete(1);
+				listacompraDao.delete(1);
 		} catch (Exception e) {
 			System.out.println("Error delete test: " + e);
 		}

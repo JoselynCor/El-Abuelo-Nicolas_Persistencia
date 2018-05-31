@@ -34,7 +34,7 @@ public class UpdateTest {
 
 	@After
 	public void tearDown() {
-		this.proveedor = null;
+		proveedorDao.delete(this.proveedor.getId());
 	}
 
 	@Test

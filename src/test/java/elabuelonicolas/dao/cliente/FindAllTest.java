@@ -21,7 +21,7 @@ public class FindAllTest {
 
 	@Before
 	public void setUp() {
-		this.clientes = 5;
+		this.clientes = clienteDao.findAll().size();
 	}
 	
 	@After

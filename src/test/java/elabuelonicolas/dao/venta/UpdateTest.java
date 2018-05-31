@@ -19,13 +19,12 @@ public class UpdateTest {
 	VentaDao ventaDao;
 	private Venta venta;
 
-	@SuppressWarnings("deprecation")
 	@Before
 	public void setUp() {
 		this.venta = new Venta();
 		this.venta.setIdcliente(1);;
-		this.venta.setIdlistaventa(1);
-		this.venta.setFecha(new Date(2018, 1, 1));
+		this.venta.setIdlistaventa(6);
+		this.venta.setFecha(Date.valueOf("2018-5-1"));
 		this.venta.setTotal(100.10);
 
 		ventaDao.create(this.venta);
@@ -35,18 +34,17 @@ public class UpdateTest {
 
 	@After
 	public void tearDown() {
-		this.venta = null;
+		ventaDao.delete(this.venta.getId());
 	}
 
-	@SuppressWarnings("deprecation")
 	@Test
 	public void update() {
 		Venta v = ventaDao.read(this.venta.getId());
 		try {
 			System.out.println("Update");
 			v.setIdcliente(2);
-			v.setIdlistaventa(2);
-			v.setFecha(new Date(2019, 1, 1));
+			v.setIdlistaventa(7);
+			v.setFecha(Date.valueOf("2018-5-2"));
 			v.setTotal(1920812.1);
 			ventaDao.update(v);
 		} catch (Exception e) {
@@ -83,12 +81,11 @@ public class UpdateTest {
 		}
 	}
 
-	@SuppressWarnings("deprecation")
 	@Test
 	public void updateFecha() {
 		try {
 			System.out.println("UpdateFecha");
-			ventaDao.updateFecha(this.venta.getId(), new Date(2018,12,1));
+			ventaDao.updateFecha(this.venta.getId(), Date.valueOf("2018-5-10"));
 			Venta c = ventaDao.read(this.venta.getId());
 			assertNotEquals(c.getFecha(), this.venta.getFecha());
 		} catch (Exception e) {

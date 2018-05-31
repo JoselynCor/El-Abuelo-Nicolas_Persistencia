@@ -4,8 +4,6 @@ import static org.junit.Assert.assertEquals;
 import java.sql.Date;
 import java.util.List;
 import javax.inject.Inject;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -19,32 +17,11 @@ public class ReadTest {
 	@Inject
 	VentaDao ventaDao;
 
-	private Venta venta;
-
-	@SuppressWarnings("deprecation")
-	@Before
-	public void setUp() {
-		this.venta = new Venta();
-		this.venta.setIdcliente(1);
-		this.venta.setIdlistaventa(1);
-		this.venta.setFecha(new Date(2018, 1, 1));
-		this.venta.setTotal(100.10);
-
-		ventaDao.create(this.venta);
-
-		this.venta.setId(ventaDao.last().getId());
-	}
-
-	@After
-	public void tearDown() {
-		this.venta = null;
-	}
-
 	@Test
 	public void read() {
 		try {
-			Venta c = ventaDao.read(this.venta.getId());
-			assertEquals(c.getId(), this.venta.getId());
+			Venta c = ventaDao.read(1);
+			assertEquals(c.getId(), 1, 1);
 		} catch (Exception e) {
 			System.out.println("Error readTest: " + e);
 		}
@@ -53,8 +30,8 @@ public class ReadTest {
 	@Test
 	public void readByIdCliente() {
 		try {
-			List<Venta> ventas = ventaDao.readByIdCliente(this.venta.getIdcliente());
-			assertEquals(ventas.get(0).getIdcliente(), this.venta.getIdcliente());
+			List<Venta> ventas = ventaDao.readByIdCliente(1);
+			assertEquals(ventas.get(0).getIdcliente(), 1, 1);
 		} catch (Exception e) {
 			System.out.println("Error readByIdClienteTest: " + e);
 		}
@@ -63,34 +40,28 @@ public class ReadTest {
 	@Test
 	public void readByIdListaVenta() {
 		try {
-			List<Venta> ventas = ventaDao.readByIdListaVenta(this.venta.getIdlistaventa());
-			assertEquals(ventas.get(0).getIdlistaventa(), this.venta.getIdlistaventa());
+			List<Venta> ventas = ventaDao.readByIdListaVenta(1);
+			assertEquals(ventas.get(0).getIdlistaventa(), 1, 1);
 		} catch (Exception e) {
 			System.out.println("Error readByIdListaVentaTest: " + e);
 		}
 	}
 
-	@SuppressWarnings("deprecation")
 	@Test
 	public void readByFecha() {
 		try {
-			List<Venta> ventas = ventaDao.readByFecha(new Date(2018, 1, 1));
-			assertEquals(ventas.get(0).getFecha(), this.venta.getFecha());
+			List<Venta> ventas = ventaDao.readByFecha(Date.valueOf("2018-5-1"));
+			assertEquals(ventas.get(0).getFecha(), Date.valueOf("2018-5-1"));
 		} catch (Exception e) {
 			System.out.println("Error readByFechaTest: " + e);
 		}
 	}
 
-	@SuppressWarnings("deprecation")
 	@Test
 	public void readByFechas() {
 		try {
-			List<Venta> ventas = ventaDao.readByFechas(new Date(2018, 1, 1), new Date(2018, 1, 2));
-			for(Venta v : ventas) {
-				System.out.println("Id: " + v.getId());
-				System.out.println("IdCliente: " + v.getIdcliente());
-				System.out.println("IdListaVenta: " + v.getIdlistaventa());
-			}
+			List<Venta> ventas = ventaDao.readByFechas(Date.valueOf("2018-5-1"), Date.valueOf("2018-5-2"));
+			assertEquals(ventas.get(0).getFecha(), Date.valueOf("2018-5-1"));
 		} catch (Exception e) {
 			System.out.println("Error readByFechasTest: " + e);
 		}

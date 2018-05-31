@@ -1,4 +1,4 @@
-package elabuelonicolas.dao;
+package elabuelonicolas.dao.listaventa;
 
 import java.util.List;
 import javax.inject.Inject;

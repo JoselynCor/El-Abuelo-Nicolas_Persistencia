@@ -21,29 +21,29 @@ public class CreateTest {
 
 	private Venta venta;
 	
-	@SuppressWarnings("deprecation")
 	@Before
 	public void setUp() {
 		this.venta = new Venta();
 		this.venta.setIdcliente(2);
 		this.venta.setIdlistaventa(1);
-		this.venta.setFecha(new Date(2018, 1, 1));
+		this.venta.setFecha(Date.valueOf("2018-1-1"));
 		this.venta.setTotal(100.10);
 	}
 
 	@After
 	public void tearDown() {
-		this.venta = null;
+		ventaDao.delete(this.venta.getId());
 	}
 	
 	@Test
 	public void create() {
 		try {
 			ventaDao.create(this.venta);
-			
 			Venta v = ventaDao.last();
 
 			assertEquals(v.getFecha(), this.venta.getFecha());
+			
+			this.venta.setId(v.getId());
 		} catch (Exception e) {
 			System.out.println("Error createTest: " + e);
 		}

@@ -23,7 +23,7 @@ public class CreateTest {
 		this.cliente = new Cliente();
 		this.cliente.setNombre("José");
 		this.cliente.setContacto("Josué");
-		this.cliente.setIddireccion(1);
+		this.cliente.setIddireccion(5);
 		this.cliente.setEmail("jlcastro@gmail.com");
 		this.cliente.setRfc("CACG950419HCSRS00");
 		this.cliente.setTelefono("9515007893");
@@ -31,7 +31,7 @@ public class CreateTest {
 
 	@After
 	public void tearDown() {
-		this.cliente = null;
+		clienteDao.delete(this.cliente.getId());
 	}
 	
 	@Test
@@ -39,7 +39,10 @@ public class CreateTest {
 		try {
 			clienteDao.create(this.cliente);
 			Cliente c = clienteDao.last();
+			
 			assertEquals(c.getNombre(), this.cliente.getNombre());
+			
+			this.cliente.setId(c.getId());
 		} catch (Exception e) {
 			System.out.println("Error createTest: " + e);
 		}
