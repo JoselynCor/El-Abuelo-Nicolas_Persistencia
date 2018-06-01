@@ -19,22 +19,69 @@
 	</select>
 	<insert id="create"
 		parameterType="elabuelonicolas.bd.domain.Listaventa">
-		INSERT INTO listaventa (id, idproducto, idventa,
+		INSERT INTO listaventa (id, idventa, idproducto,
 		cantidad,
-		subtotal) VALUES (#{id}, #{idproducto},#{idventa},
+		subtotal) VALUES (#{id},#{idventa}, #{idproducto},
 		#{cantidad}, #{subtotal})
 	</insert>
-	<select id="read" parameterType="int" resultMap="BaseResultMap">
+		<select id="read" parameterType="int" resultMap="BaseResultMap">
 		select * from
 		listaventa where id=#{id}
+	</select>
+	<select id="readByIdVenta" parameterType="int"
+		resultMap="BaseResultMap">
+		select * from
+		listaventa where idventa=#{idventa}
+	</select>
+	<select id="readByIdProducto" parameterType="int"
+		resultMap="BaseResultMap">
+		select * from
+		listaventa where idproducto=#{idproducto}
+	</select>
+	<select id="readByCantidad" parameterType="int"
+		resultMap="BaseResultMap">
+		select * from
+		listaventa where cantidad=#{cantidad}
+	</select>
+	<select id="readBySubtotal" parameterType="double"
+		resultMap="BaseResultMap">
+		select * from
+		listaventa where subtotal=#{subtotal}
 	</select>
 	<update id="update"
 		parameterType="elabuelonicolas.bd.domain.Listaventa">
 		UPDATE listaventa SET
-		id=#{id},
-		idproducto=#{idproducto},
 		idventa=#{idventa},
+		idproducto=#{idproducto},
 		cantidad=#{cantidad},
+		subtotal=#{subtotal}
+		WHERE
+		id=#{id}
+	</update>
+	<update id="updateIdVenta"
+		parameterType="elabuelonicolas.bd.domain.Listaventa">
+		UPDATE listaventa SET
+		idventa=#{idventa}
+		WHERE
+		id=#{id}
+	</update>
+	<update id="updateIdProducto"
+		parameterType="elabuelonicolas.bd.domain.Listaventa">
+		UPDATE listaventa SET
+		idproducto=#{idproducto}
+		WHERE
+		id=#{id}
+	</update>
+	<update id="updateCantidad"
+		parameterType="elabuelonicolas.bd.domain.Listaventa">
+		UPDATE listaventa SET
+		cantidad=#{cantidad}
+		WHERE
+		id=#{id}
+	</update>
+	<update id="updateSubtotal"
+		parameterType="elabuelonicolas.bd.domain.Listaventa">
+		UPDATE listaventa SET
 		subtotal=#{subtotal}
 		WHERE
 		id=#{id}
@@ -43,4 +90,10 @@
 		delete from listaventa where
 		id = #{id}
 	</delete>
+		<select id="last" resultMap="BaseResultMap">
+		select * from listaventa order by
+		id
+		desc
+		limit 1
+	</select>
 </mapper>

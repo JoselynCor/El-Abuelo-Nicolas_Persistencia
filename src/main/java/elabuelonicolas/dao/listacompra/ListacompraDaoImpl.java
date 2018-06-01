@@ -19,11 +19,9 @@ public class ListacompraDaoImpl implements ListacompraDao {
 
 	@Override
 	public List<Listacompra> findAll() {
-		List<Listacompra> list = null;
 		try {
 			ListacompraMapper listacompraMapper = sqlSession.getMapper(ListacompraMapper.class);
-			list = listacompraMapper.findAll();
-			return list;
+			return listacompraMapper.findAll();
 		} catch (Exception e) {
 			System.out.println("Error findAll: " + e);
 		}
@@ -44,14 +42,57 @@ public class ListacompraDaoImpl implements ListacompraDao {
 	public Listacompra read(int id) {
 		try {
 			ListacompraMapper listacompraMapper = sqlSession.getMapper(ListacompraMapper.class);
-			Listacompra listacompra = listacompraMapper.read(id);
-			return listacompra;
+			return listacompraMapper.read(id);
 		} catch (Exception e) {
 			System.out.println("Error read: " + e);
 		}
 		return null;
 	}
 
+	@Override
+	public List<Listacompra> readByIdCompra(int idcompra) {
+		try {
+			ListacompraMapper listacompraMapper = sqlSession.getMapper(ListacompraMapper.class);
+			return listacompraMapper.readByIdCompra(idcompra);
+		} catch (Exception e) {
+			System.out.println("Error readByIdCompra: " + e);
+		}
+		return null;
+	}
+
+	@Override
+	public List<Listacompra> readByIdProducto(int idproducto) {
+		try {
+			ListacompraMapper listacompraMapper = sqlSession.getMapper(ListacompraMapper.class);
+			return listacompraMapper.readByIdProducto(idproducto);
+		} catch (Exception e) {
+			System.out.println("Error readByIdProducto: " + e);
+		}
+		return null;
+	}
+
+	@Override
+	public List<Listacompra> readByIdCantidad(int cantidad) {
+		try {
+			ListacompraMapper listacompraMapper = sqlSession.getMapper(ListacompraMapper.class);
+			return listacompraMapper.readByIdCantidad(cantidad);
+		} catch (Exception e) {
+			System.out.println("Error readByIdCantidad: " + e);
+		}
+		return null;
+	}
+
+	@Override
+	public List<Listacompra> readByIdSubtotal(double subtotal) {
+		try {
+			ListacompraMapper listacompraMapper = sqlSession.getMapper(ListacompraMapper.class);
+			return listacompraMapper.readByIdSubtotal(subtotal);
+		} catch (Exception e) {
+			System.out.println("Error readByIdSubtotal: " + e);
+		}
+		return null;
+	}
+	
 	@Override
 	public void update(Listacompra listacompra) {
 		try {
@@ -63,6 +104,46 @@ public class ListacompraDaoImpl implements ListacompraDao {
 	}
 
 	@Override
+	public void updateIdCompra(int id, int idcompra) {
+		try {
+			ListacompraMapper listacompraMapper = sqlSession.getMapper(ListacompraMapper.class);
+			listacompraMapper.updateIdCompra(id, idcompra);
+		} catch (Exception e) {
+			System.out.println("Error updateIdCompra: " + e);
+		}
+	}
+
+	@Override
+	public void updateIdProducto(int id, int idproducto) {
+		try {
+			ListacompraMapper listacompraMapper = sqlSession.getMapper(ListacompraMapper.class);
+			listacompraMapper.updateIdProducto(id, idproducto);
+		} catch (Exception e) {
+			System.out.println("Error updateIdProducto: " + e);
+		}
+	}
+
+	@Override
+	public void updateCantidad(int id, int cantidad) {
+		try {
+			ListacompraMapper listacompraMapper = sqlSession.getMapper(ListacompraMapper.class);
+			listacompraMapper.updateCantidad(id, cantidad);
+		} catch (Exception e) {
+			System.out.println("Error updateCantidad: " + e);
+		}
+	}
+
+	@Override
+	public void updateSubtotal(int id, int subtotal) {
+		try {
+			ListacompraMapper listacompraMapper = sqlSession.getMapper(ListacompraMapper.class);
+			listacompraMapper.updateSubtotal(id, subtotal);
+		} catch (Exception e) {
+			System.out.println("Error updateSubtotal: " + e);
+		}
+	}
+	
+	@Override
 	public void delete(int id) {
 		try {
 			ListacompraMapper listacompraMapper = sqlSession.getMapper(ListacompraMapper.class);
@@ -70,5 +151,16 @@ public class ListacompraDaoImpl implements ListacompraDao {
 		} catch (Exception e) {
 			System.out.println("Error delete: " + e);
 		}
+	}
+
+	@Override
+	public Listacompra last() {
+		try {
+			ListacompraMapper listacompraMapper = sqlSession.getMapper(ListacompraMapper.class);
+			return listacompraMapper.last();
+		} catch (Exception e) {
+			System.out.println("Error last: " + e);
+		}
+		return null;
 	}
 }
