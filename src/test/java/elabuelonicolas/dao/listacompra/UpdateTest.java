@@ -60,7 +60,7 @@ public class UpdateTest {
 	public void updateIdCompra() {
 		try {
 			System.out.println("UpdateProveedor");
-			listacompraDao.updateIdCompra(this.listaCompra.getIdcompra(), 2);
+			listacompraDao.updateIdCompra(this.listaCompra.getId(), 2);
 			Listacompra c = listacompraDao.read(this.listaCompra.getId());
 			assertNotEquals(c.getIdcompra(), this.listaCompra.getIdcompra());
 		} catch (Exception e) {
