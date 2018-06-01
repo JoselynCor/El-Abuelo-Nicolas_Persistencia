@@ -75,7 +75,7 @@ public class ListaventaDaoImpl implements ListaventaDao {
 	}
 
 	@Override
-	public List<Listaventa> readByIdCantidad(int cantidad) {
+	public List<Listaventa> readByCantidad(int cantidad) {
 		try {
 			ListaventaMapper listaventaMapper = sqlSession.getMapper(ListaventaMapper.class);
 			return listaventaMapper.readByIdCantidad(cantidad);
@@ -86,7 +86,7 @@ public class ListaventaDaoImpl implements ListaventaDao {
 	}
 
 	@Override
-	public List<Listaventa> readByIdSubtotal(double subtotal) {
+	public List<Listaventa> readBySubtotal(double subtotal) {
 		try {
 			ListaventaMapper listaventaMapper = sqlSession.getMapper(ListaventaMapper.class);
 			return listaventaMapper.readByIdSubtotal(subtotal);

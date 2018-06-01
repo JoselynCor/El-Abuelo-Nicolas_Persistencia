@@ -17,9 +17,9 @@ public interface ListaventaDao {
 	
 	List<Listaventa> readByIdProducto(int idproducto);
 	
-	List<Listaventa> readByIdCantidad(int cantidad);
+	List<Listaventa> readByCantidad(int cantidad);
 	
-	List<Listaventa> readByIdSubtotal(double subtotal);
+	List<Listaventa> readBySubtotal(double subtotal);
 
 	void update(Listaventa listaventas);
 	

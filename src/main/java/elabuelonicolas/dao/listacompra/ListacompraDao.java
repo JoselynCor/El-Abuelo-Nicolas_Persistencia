@@ -17,9 +17,9 @@ public interface ListacompraDao {
 
 	List<Listacompra> readByIdProducto(int idproducto);
 
-	List<Listacompra> readByIdCantidad(int cantidad);
+	List<Listacompra> readByCantidad(int cantidad);
 
-	List<Listacompra> readByIdSubtotal(double subtotal);
+	List<Listacompra> readBySubtotal(double subtotal);
 
 	void update(Listacompra listacompra);
 
@@ -29,7 +29,7 @@ public interface ListacompraDao {
 
 	void updateCantidad(@Param("id") int id, @Param("cantidad") int cantidad);
 
-	void updateSubtotal(@Param("id") int id, @Param("subtotal") int subtotal);
+	void updateSubtotal(@Param("id") int id, @Param("subtotal") double subtotal);
 
 	void delete(int id);
 

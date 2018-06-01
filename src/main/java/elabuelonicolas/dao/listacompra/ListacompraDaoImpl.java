@@ -72,7 +72,7 @@ public class ListacompraDaoImpl implements ListacompraDao {
 	}
 
 	@Override
-	public List<Listacompra> readByIdCantidad(int cantidad) {
+	public List<Listacompra> readByCantidad(int cantidad) {
 		try {
 			ListacompraMapper listacompraMapper = sqlSession.getMapper(ListacompraMapper.class);
 			return listacompraMapper.readByIdCantidad(cantidad);
@@ -83,7 +83,7 @@ public class ListacompraDaoImpl implements ListacompraDao {
 	}
 
 	@Override
-	public List<Listacompra> readByIdSubtotal(double subtotal) {
+	public List<Listacompra> readBySubtotal(double subtotal) {
 		try {
 			ListacompraMapper listacompraMapper = sqlSession.getMapper(ListacompraMapper.class);
 			return listacompraMapper.readByIdSubtotal(subtotal);
@@ -134,7 +134,7 @@ public class ListacompraDaoImpl implements ListacompraDao {
 	}
 
 	@Override
-	public void updateSubtotal(int id, int subtotal) {
+	public void updateSubtotal(int id, double subtotal) {
 		try {
 			ListacompraMapper listacompraMapper = sqlSession.getMapper(ListacompraMapper.class);
 			listacompraMapper.updateSubtotal(id, subtotal);

@@ -27,7 +27,7 @@ public interface ListacompraMapper {
 
 	void updateCantidad(@Param("id") int id, @Param("cantidad") int cantidad);
 
-	void updateSubtotal(@Param("id") int id, @Param("subtotal") int subtotal);
+	void updateSubtotal(@Param("id") int id, @Param("subtotal") double subtotal);
 
 	void delete(int id);
 
