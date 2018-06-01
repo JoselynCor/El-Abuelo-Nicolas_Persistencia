@@ -38,7 +38,6 @@ public class CreateTest {
 		try {
 			ventaDao.create(this.venta);
 			Venta v = ventaDao.last();
-
 			assertEquals(v.getFecha(), this.venta.getFecha());
 			
 			this.venta.setId(v.getId());

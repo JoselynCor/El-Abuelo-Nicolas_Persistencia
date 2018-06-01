@@ -20,12 +20,11 @@ public class DeleteTest {
 
 	private Venta venta;
 
-	@SuppressWarnings("deprecation")
 	@Before
 	public void setUp() {
 		this.venta = new Venta();
 		this.venta.setIdcliente(1);
-		this.venta.setFecha(new Date(2018, 1, 1));
+		this.venta.setFecha(Date.valueOf("2018-1-1"));
 		this.venta.setTotal(100.10);
 		ventaDao.create(this.venta);
 		this.venta.setId(ventaDao.last().getId());
