@@ -13,7 +13,7 @@ public interface CompraMapper {
 
 	Compra read(int id);
 	
-	List<Compra> readByIdProveedor(int idProveedor);
+	List<Compra> readByIdProveedor(int idproveedor);
 	
 	List<Compra> readByFecha(Date fecha);
 	

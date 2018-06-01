@@ -50,8 +50,8 @@ public class ReadTest {
 	@Test
 	public void readByTotal() {
 		try {
-			List<Compra> compras = compraDao.readByTotal(1781.1);
-			assertEquals(compras.get(0).getTotal(), 1781.1, 1);
+			List<Compra> compras = compraDao.readByTotal(12.121);
+			assertEquals(compras.get(0).getTotal(), 12.121, 1);
 		} catch (Exception e) {
 			System.out.println("Error readCompraByTotalTest: " + e);
 		}

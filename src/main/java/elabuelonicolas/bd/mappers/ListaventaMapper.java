@@ -15,15 +15,15 @@ public interface ListaventaMapper {
 	
 	List<Listaventa> readByIdProducto(int idproducto);
 	
-	List<Listaventa> readByIdCantidad(int cantidad);
+	List<Listaventa> readByCantidad(int cantidad);
 	
-	List<Listaventa> readByIdSubtotal(double subtotal);
+	List<Listaventa> readBySubtotal(double subtotal);
 
-	void update(Listaventa listaventas);
+	void update(Listaventa listaventa);
 	
 	void updateIdVenta(@Param("id") int id, @Param("idventa") int idventa);
 	
-	void updateIdProducto(@Param("id") int id, @Param("idproducto") int idProducto);
+	void updateIdProducto(@Param("id") int id, @Param("idproducto") int idproducto);
 	
 	void updateCantidad(@Param("id") int id, @Param("cantidad") int cantidad);
 	

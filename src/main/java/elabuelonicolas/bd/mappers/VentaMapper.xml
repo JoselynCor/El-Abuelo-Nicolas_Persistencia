@@ -46,7 +46,6 @@
 		parameterType="elabuelonicolas.bd.domain.Venta">
 		UPDATE venta SET
 		idcliente=#{idcliente},
-		idlistaventa=#{idlistaventa},
 		fecha=#{fecha},
 		total=#{total}
 		WHERE

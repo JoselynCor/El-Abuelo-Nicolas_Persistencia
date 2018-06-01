@@ -78,7 +78,7 @@ public class ListaventaDaoImpl implements ListaventaDao {
 	public List<Listaventa> readByCantidad(int cantidad) {
 		try {
 			ListaventaMapper listaventaMapper = sqlSession.getMapper(ListaventaMapper.class);
-			return listaventaMapper.readByIdCantidad(cantidad);
+			return listaventaMapper.readByCantidad(cantidad);
 		} catch (Exception e) {
 			System.out.println("Error readByIdCantidad: " + e);
 		}
@@ -89,7 +89,7 @@ public class ListaventaDaoImpl implements ListaventaDao {
 	public List<Listaventa> readBySubtotal(double subtotal) {
 		try {
 			ListaventaMapper listaventaMapper = sqlSession.getMapper(ListaventaMapper.class);
-			return listaventaMapper.readByIdSubtotal(subtotal);
+			return listaventaMapper.readBySubtotal(subtotal);
 		} catch (Exception e) {
 			System.out.println("Error readByIdSubtotal: " + e);
 		}

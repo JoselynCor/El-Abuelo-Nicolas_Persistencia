@@ -32,7 +32,7 @@
 		<select id="readByIdCompra" parameterType="int"
 		resultMap="BaseResultMap">
 		select * from
-		listacompra where idventa=#{idventa}
+		listacompra where idcompra=#{idcompra}
 	</select>
 	<select id="readByIdProducto" parameterType="int"
 		resultMap="BaseResultMap">
@@ -59,28 +59,28 @@
 		WHERE id=#{id}
 	</update>
 		<update id="updateIdCompra"
-		parameterType="elabuelonicolas.bd.domain.Listaventa">
+		parameterType="elabuelonicolas.bd.domain.Listacompra">
 		UPDATE listacompra SET
 		idcompra=#{idcompra}
 		WHERE
 		id=#{id}
 	</update>
 	<update id="updateIdProducto"
-		parameterType="elabuelonicolas.bd.domain.Listaventa">
+		parameterType="elabuelonicolas.bd.domain.Listacompra">
 		UPDATE listacompra SET
 		idproducto=#{idproducto}
 		WHERE
 		id=#{id}
 	</update>
 	<update id="updateCantidad"
-		parameterType="elabuelonicolas.bd.domain.Listaventa">
+		parameterType="elabuelonicolas.bd.domain.Listacompra">
 		UPDATE listacompra SET
 		cantidad=#{cantidad}
 		WHERE
 		id=#{id}
 	</update>
 	<update id="updateSubtotal"
-		parameterType="elabuelonicolas.bd.domain.Listaventa">
+		parameterType="elabuelonicolas.bd.domain.Listacompra">
 		UPDATE listacompra SET
 		subtotal=#{subtotal}
 		WHERE
