@@ -10,7 +10,7 @@ public interface ProveedorMapper {
 	void create(Proveedor proveedor);
 
 	Proveedor read(int id);
-
+	
 	List<Proveedor> readByNombre(String nombre);
 
 	Proveedor readByDireccion(int idDireccion);

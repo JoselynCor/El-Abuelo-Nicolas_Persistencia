@@ -15,8 +15,6 @@ public interface CompraMapper {
 	
 	List<Compra> readByIdProveedor(int idProveedor);
 	
-	Compra readByIdListaCompra(int idListaCompra);
-	
 	List<Compra> readByFecha(Date fecha);
 	
 	List<Compra> readByTotal(Double total);
@@ -24,8 +22,6 @@ public interface CompraMapper {
 	void update(Compra compra);
 	
 	void updateIdProveedor(@Param("id") int id, @Param("idProveedor") int idProveedor);
-	
-	void updateIdListaCompra(@Param("id") int id, @Param("idListacompra") int idListacompra);
 	
 	void updateFecha(@Param("id") int id, @Param("fecha") Date fecha);
 	

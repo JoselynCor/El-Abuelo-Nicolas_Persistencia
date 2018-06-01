@@ -11,7 +11,7 @@ import elabuelonicolas.bd.mappers.ListacompraMapper;
 public class ListacompraDaoImpl implements ListacompraDao {
 
 	SqlSession sqlSession;
-
+	
 	@Autowired
 	public void setSqlSession(SqlSession sqlSession) {
 		this.sqlSession = sqlSession;

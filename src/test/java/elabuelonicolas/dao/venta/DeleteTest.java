@@ -15,7 +15,6 @@ import elabuelonicolas.dao.venta.VentaDao;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/applicationContext.xml" })
 public class DeleteTest {
-
 	@Inject
 	VentaDao ventaDao;
 
@@ -26,7 +25,6 @@ public class DeleteTest {
 	public void setUp() {
 		this.venta = new Venta();
 		this.venta.setIdcliente(1);
-		this.venta.setIdlistaventa(1);
 		this.venta.setFecha(new Date(2018, 1, 1));
 		this.venta.setTotal(100.10);
 		ventaDao.create(this.venta);

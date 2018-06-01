@@ -22,8 +22,7 @@ public class UpdateTest {
 	@Before
 	public void setUp() {
 		this.venta = new Venta();
-		this.venta.setIdcliente(1);;
-		this.venta.setIdlistaventa(6);
+		this.venta.setIdcliente(1);
 		this.venta.setFecha(Date.valueOf("2018-5-1"));
 		this.venta.setTotal(100.10);
 
@@ -43,7 +42,6 @@ public class UpdateTest {
 		try {
 			System.out.println("Update");
 			v.setIdcliente(2);
-			v.setIdlistaventa(7);
 			v.setFecha(Date.valueOf("2018-5-2"));
 			v.setTotal(1920812.1);
 			ventaDao.update(v);
@@ -52,7 +50,6 @@ public class UpdateTest {
 		}
 
 		assertNotEquals(this.venta.getIdcliente(), v.getIdcliente());
-		assertNotEquals(this.venta.getIdlistaventa(), v.getIdlistaventa());
 		assertNotEquals(this.venta.getFecha(), v.getFecha());
 		assertNotEquals(this.venta.getTotal(), v.getTotal());
 	}
@@ -66,18 +63,6 @@ public class UpdateTest {
 			assertNotEquals(v.getIdcliente(), this.venta.getIdcliente());
 		} catch (Exception e) {
 			System.out.println("Error updateIdClienteTest: " + e);
-		}
-	}
-
-	@Test
-	public void updateIdListaVenta() {
-		try {
-			System.out.println("UpdateIdListaVenta");
-			ventaDao.updateIdListaVenta(this.venta.getId(), 11);
-			Venta v = ventaDao.read(this.venta.getId());
-			assertNotEquals(v.getIdlistaventa(), this.venta.getIdlistaventa());
-		} catch (Exception e) {
-			System.out.println("Error updateIdListaVentaTest: " + e);
 		}
 	}
 

@@ -24,7 +24,6 @@ public class CreateTest {
 	public void setUp() {
 		this.compra = new Compra();
 		this.compra.setIdproveedor(3);
-		this.compra.setIdlistacompra(5);
 		this.compra.setFecha(new Date(2018, 1, 1));
 		this.compra.setTotal(100.1);
 	}

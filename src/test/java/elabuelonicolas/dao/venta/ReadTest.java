@@ -38,16 +38,6 @@ public class ReadTest {
 	}
 
 	@Test
-	public void readByIdListaVenta() {
-		try {
-			List<Venta> ventas = ventaDao.readByIdListaVenta(1);
-			assertEquals(ventas.get(0).getIdlistaventa(), 1, 1);
-		} catch (Exception e) {
-			System.out.println("Error readByIdListaVentaTest: " + e);
-		}
-	}
-
-	@Test
 	public void readByFecha() {
 		try {
 			List<Venta> ventas = ventaDao.readByFecha(Date.valueOf("2018-5-1"));
