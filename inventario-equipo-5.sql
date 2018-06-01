@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 29-05-2018 a las 05:10:36
+-- Tiempo de generación: 01-06-2018 a las 02:31:39
 -- Versión del servidor: 10.1.33-MariaDB
 -- Versión de PHP: 7.2.5
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `inventario`
+-- Base de datos: `inventario-equipo-5`
 --
 
 -- --------------------------------------------------------
@@ -57,7 +57,6 @@ INSERT INTO `cliente` (`id`, `nombre`, `iddireccion`, `contacto`, `telefono`, `e
 CREATE TABLE `compra` (
   `id` int(11) NOT NULL,
   `idproveedor` int(11) NOT NULL,
-  `idlistacompra` int(11) NOT NULL,
   `fecha` date NOT NULL,
   `total` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
@@ -66,11 +65,10 @@ CREATE TABLE `compra` (
 -- Volcado de datos para la tabla `compra`
 --
 
-INSERT INTO `compra` (`id`, `idproveedor`, `idlistacompra`, `fecha`, `total`) VALUES
-(1, 1, 1, '2018-05-01', 1781.1),
-(2, 1, 1, '2018-05-02', 12.121),
-(3, 1, 2, '2018-05-01', 812.12),
-(4, 2, 1, '2018-05-02', 18629.12);
+INSERT INTO `compra` (`id`, `idproveedor`, `fecha`, `total`) VALUES
+(1, 1, '2018-05-02', 12.121),
+(2, 1, '2018-05-01', 812.12),
+(3, 2, '2018-05-02', 18629.12);
 
 -- --------------------------------------------------------
 
@@ -81,11 +79,20 @@ INSERT INTO `compra` (`id`, `idproveedor`, `idlistacompra`, `fecha`, `total`) VA
 CREATE TABLE `direccion` (
   `id` int(11) NOT NULL,
   `pais` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
+  `estado` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
   `ciudad` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
   `colonia` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
   `calle` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
   `numero` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `direccion`
+--
+
+INSERT INTO `direccion` (`id`, `pais`, `estado`, `ciudad`, `colonia`, `calle`, `numero`) VALUES
+(1, 'México', 'Oaxaca', 'Oaxaca', 'Centro', 'Colón', 22),
+(2, 'México', 'Oaxaca', 'Putla', 'Centro', 'Oaxaca', 45);
 
 -- --------------------------------------------------------
 
@@ -95,8 +102,8 @@ CREATE TABLE `direccion` (
 
 CREATE TABLE `listacompra` (
   `id` int(11) NOT NULL,
-  `idproducto` int(11) NOT NULL,
   `idcompra` int(11) NOT NULL,
+  `idproducto` int(11) NOT NULL,
   `cantidad` int(11) NOT NULL,
   `subtotal` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
@@ -105,11 +112,10 @@ CREATE TABLE `listacompra` (
 -- Volcado de datos para la tabla `listacompra`
 --
 
-INSERT INTO `listacompra` (`id`, `idproducto`, `idcompra`, `cantidad`, `subtotal`) VALUES
-(1, 1, 1, 12, 8727.12),
-(2, 2, 1, 21, 982398.1),
-(3, 1, 2, 23, 2839.13),
-(4, 2, 1, 2, 123.1);
+INSERT INTO `listacompra` (`id`, `idcompra`, `idproducto`, `cantidad`, `subtotal`) VALUES
+(1, 1, 2, 21, 982398.1),
+(2, 1, 1, 23, 2839.13),
+(3, 2, 2, 2, 123.1);
 
 -- --------------------------------------------------------
 
@@ -119,8 +125,8 @@ INSERT INTO `listacompra` (`id`, `idproducto`, `idcompra`, `cantidad`, `subtotal
 
 CREATE TABLE `listaventa` (
   `id` int(11) NOT NULL,
-  `idproducto` int(11) NOT NULL,
   `idventa` int(11) NOT NULL,
+  `idproducto` int(11) NOT NULL,
   `cantidad` int(11) NOT NULL,
   `subtotal` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
@@ -129,10 +135,10 @@ CREATE TABLE `listaventa` (
 -- Volcado de datos para la tabla `listaventa`
 --
 
-INSERT INTO `listaventa` (`id`, `idproducto`, `idventa`, `cantidad`, `subtotal`) VALUES
+INSERT INTO `listaventa` (`id`, `idventa`, `idproducto`, `cantidad`, `subtotal`) VALUES
 (1, 1, 1, 1, 1.1),
-(2, 2, 1, 150, 1553.5),
-(3, 3, 1, 900, 10500),
+(2, 1, 2, 150, 1553.5),
+(3, 1, 3, 900, 10500),
 (4, 1, 1, 200, 20532.4);
 
 -- --------------------------------------------------------
@@ -145,7 +151,7 @@ CREATE TABLE `producto` (
   `id` int(11) NOT NULL,
   `tipo` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
   `marca` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
-  `costo` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
+  `costo` double NOT NULL,
   `existencia` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
@@ -154,9 +160,9 @@ CREATE TABLE `producto` (
 --
 
 INSERT INTO `producto` (`id`, `tipo`, `marca`, `costo`, `existencia`) VALUES
-(1, 'Balón', 'Nike', '$180', 1),
-(2, 'Guantes', 'Nike', '165.12', 12),
-(3, 'Balón', 'Puma', '$120', 3);
+(1, 'Balón', 'Nike', 150, 1),
+(4, 'Balón', 'Puma', 250, 3),
+(5, 'Balón', 'Puma', 250, 3);
 
 -- --------------------------------------------------------
 
@@ -191,7 +197,6 @@ INSERT INTO `proveedor` (`id`, `nombre`, `iddireccion`, `contacto`, `telefono`, 
 CREATE TABLE `venta` (
   `id` int(11) NOT NULL,
   `idcliente` int(11) NOT NULL,
-  `idlistaventa` int(11) NOT NULL,
   `fecha` date NOT NULL,
   `total` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
@@ -200,12 +205,11 @@ CREATE TABLE `venta` (
 -- Volcado de datos para la tabla `venta`
 --
 
-INSERT INTO `venta` (`id`, `idcliente`, `idlistaventa`, `fecha`, `total`) VALUES
-(1, 1, 1, '2018-05-01', 100.1),
-(2, 1, 1, '2018-05-01', 100.1),
-(3, 1, 1, '2018-05-02', 100.1),
-(4, 1, 1, '2018-05-02', 100.1),
-(5, 1, 1, '2018-05-02', 100.1);
+INSERT INTO `venta` (`id`, `idcliente`, `fecha`, `total`) VALUES
+(1, 1, '2018-05-01', 100.1),
+(2, 1, '2018-05-01', 100.1),
+(3, 1, '2018-05-02', 100.1),
+(4, 1, '2018-05-02', 100.1);
 
 --
 -- Índices para tablas volcadas
@@ -273,19 +277,19 @@ ALTER TABLE `cliente`
 -- AUTO_INCREMENT de la tabla `compra`
 --
 ALTER TABLE `compra`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `direccion`
 --
 ALTER TABLE `direccion`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `listacompra`
 --
 ALTER TABLE `listacompra`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `listaventa`
@@ -297,7 +301,7 @@ ALTER TABLE `listaventa`
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `proveedor`
@@ -309,7 +313,7 @@ ALTER TABLE `proveedor`
 -- AUTO_INCREMENT de la tabla `venta`
 --
 ALTER TABLE `venta`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
