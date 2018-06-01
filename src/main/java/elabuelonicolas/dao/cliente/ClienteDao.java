@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Param;
 import elabuelonicolas.bd.domain.Cliente;
 
 public interface ClienteDao {
+
 	List<Cliente> findAll();
 
 	void create(Cliente cliente);

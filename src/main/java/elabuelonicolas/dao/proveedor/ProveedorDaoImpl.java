@@ -9,7 +9,7 @@ import elabuelonicolas.bd.mappers.ProveedorMapper;
 
 @Named
 public class ProveedorDaoImpl implements ProveedorDao {
-
+	
 	SqlSession sqlSession;
 
 	@Autowired

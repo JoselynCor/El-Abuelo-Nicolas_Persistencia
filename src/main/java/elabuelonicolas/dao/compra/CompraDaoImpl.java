@@ -10,7 +10,7 @@ import elabuelonicolas.bd.mappers.CompraMapper;
 
 @Named
 public class CompraDaoImpl implements CompraDao {
-
+	
 	SqlSession sqlSession;
 
 	@Autowired

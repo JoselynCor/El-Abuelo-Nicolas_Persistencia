@@ -12,7 +12,7 @@ import elabuelonicolas.bd.mappers.ListaventaMapper;
 
 @Named
 public class ListaventaDaoImpl implements ListaventaDao {
-
+	
 	SqlSession sqlSession;
 
 	@Autowired

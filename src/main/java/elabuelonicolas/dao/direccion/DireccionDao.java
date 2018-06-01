@@ -4,6 +4,7 @@ import java.util.List;
 import elabuelonicolas.bd.domain.Direccion;
 
 public interface DireccionDao {
+	
 	List<Direccion> findAll();
 
 	void create(Direccion compra);

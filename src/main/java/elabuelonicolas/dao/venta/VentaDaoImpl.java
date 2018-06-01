@@ -10,7 +10,7 @@ import elabuelonicolas.bd.mappers.VentaMapper;
 
 @Named
 public class VentaDaoImpl implements VentaDao {
-
+	
 	SqlSession sqlSession;
 
 	@Autowired

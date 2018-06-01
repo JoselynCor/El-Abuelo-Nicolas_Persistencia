@@ -4,6 +4,7 @@ import java.util.List;
 import elabuelonicolas.bd.domain.Direccion;
 
 public interface DireccionMapper {
+
 	List<Direccion> findAll();
 
 	void create(Direccion direccion);

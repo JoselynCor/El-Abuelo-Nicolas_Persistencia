@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Param;
 import elabuelonicolas.bd.domain.Proveedor;
 
 public interface ProveedorDao {
+	
 	List<Proveedor> findAll();
 
 	void create(Proveedor proveedor);

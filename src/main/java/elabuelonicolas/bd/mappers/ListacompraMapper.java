@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Param;
 import elabuelonicolas.bd.domain.Listacompra;
 
 public interface ListacompraMapper {
+	
 	List<Listacompra> findAll();
 
 	void create(Listacompra listacompra);

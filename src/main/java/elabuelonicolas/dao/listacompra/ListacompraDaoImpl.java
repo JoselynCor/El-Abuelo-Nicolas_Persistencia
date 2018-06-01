@@ -9,7 +9,7 @@ import elabuelonicolas.bd.mappers.ListacompraMapper;
 
 @Named
 public class ListacompraDaoImpl implements ListacompraDao {
-
+	
 	SqlSession sqlSession;
 	
 	@Autowired
