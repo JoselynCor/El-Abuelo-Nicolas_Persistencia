@@ -36,6 +36,6 @@ public interface ClienteMapper {
 	void updateRfc(@Param("id") int id, @Param("rfc") String rfc);
 
 	void delete(int id);
-	
+
 	Cliente last();
 }

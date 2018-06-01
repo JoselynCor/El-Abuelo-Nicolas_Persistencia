@@ -62,17 +62,6 @@ public class VentaDaoImpl implements VentaDao {
 	}
 
 	@Override
-	public List<Venta> readByIdListaVenta(int idListaventa) {
-		try {
-			VentaMapper ventaMapper = sqlSession.getMapper(VentaMapper.class);
-			return ventaMapper.readByIdListaVenta(idListaventa);
-		} catch (Exception e) {
-			System.out.println("Error readByIdListaVenta: " + e);
-		}
-		return null;
-	}
-
-	@Override
 	public List<Venta> readByFecha(Date fecha) {
 		try {
 			VentaMapper ventaMapper = sqlSession.getMapper(VentaMapper.class);
@@ -111,16 +100,6 @@ public class VentaDaoImpl implements VentaDao {
 			ventaMapper.updateIdCliente(id, idCliente);
 		} catch (Exception e) {
 			System.out.println("Error updateIdCliente: " + e);
-		}
-	}
-
-	@Override
-	public void updateIdListaVenta(int id, int idListaventa) {
-		try {
-			VentaMapper ventaMapper = sqlSession.getMapper(VentaMapper.class);
-			ventaMapper.updateIdListaVenta(id, idListaventa);
-		} catch (Exception e) {
-			System.out.println("Error updateIdListaVenta: " + e);
 		}
 	}
 

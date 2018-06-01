@@ -11,10 +11,8 @@ public interface CompraDao {
 	void create(Compra compra);
 
 	Compra read(int id);
-
+	
 	List<Compra> readByIdProveedor(int idProveedor);
-
-	Compra readByIdListaCompra(int idListaCompra);
 
 	List<Compra> readByFecha(Date fecha);
 
@@ -23,8 +21,6 @@ public interface CompraDao {
 	void update(Compra compra);
 
 	void updateIdProveedor(@Param("id") int id, @Param("idProveedor") int idProveedor);
-
-	void updateIdListaCompra(@Param("id") int id, @Param("idListaCompra") int idListaCompra);
 
 	void updateFecha(@Param("id") int id, @Param("fecha") Date fecha);
 

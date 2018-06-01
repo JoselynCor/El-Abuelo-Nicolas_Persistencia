@@ -21,7 +21,7 @@ public class ReadTest {
 	public void read() {
 		try {
 			Compra compra = compraDao.read(1);
-			assertEquals((int) compra.getIdlistacompra(), 1);
+			assertEquals((int) compra.getIdproveedor(), 1);
 		} catch (Exception e) {
 			System.out.println("Error readCompraTest: " + e);
 		}
@@ -34,16 +34,6 @@ public class ReadTest {
 			assertEquals((int) compras.get(0).getIdproveedor(), 1);
 		} catch (Exception e) {
 			System.out.println("Error readCompraByProveedorTest: " + e);
-		}
-	}
-
-	@Test
-	public void readByIdListacompra() {
-		try {
-			Compra compra = compraDao.readByIdListaCompra(1);
-			assertEquals((int) compra.getIdlistacompra(), 1);
-		} catch (Exception e) {
-			System.out.println("Error readCompraByListaCompraTest: " + e);
 		}
 	}
 	

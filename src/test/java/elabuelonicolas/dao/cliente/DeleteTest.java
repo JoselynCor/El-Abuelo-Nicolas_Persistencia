@@ -14,7 +14,6 @@ import elabuelonicolas.dao.cliente.ClienteDao;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/applicationContext.xml" })
 public class DeleteTest {
-
 	@Inject
 	ClienteDao clienteDao;
 

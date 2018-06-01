@@ -14,8 +14,6 @@ public interface VentaDao {
 
 	List<Venta> readByIdCliente(int idCliente);
 
-	List<Venta> readByIdListaVenta(int idListaventa);
-
 	List<Venta> readByFecha(Date fecha);
 
 	List<Venta> readByFechas(@Param("fechaInicio") Date fechaInicio, @Param("fechaFin") Date fechaFin);
@@ -23,8 +21,6 @@ public interface VentaDao {
 	void update(Venta venta);
 
 	void updateIdCliente(@Param("id") int id, @Param("idCliente") int idCliente);
-
-	void updateIdListaVenta(@Param("id") int id, @Param("idListaventa") int idListaventa);
 
 	void updateFecha(@Param("id") int id, @Param("fecha") Date fecha);
 

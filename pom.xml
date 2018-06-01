@@ -1,19 +1,20 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <artifactId>Central-Equipo-5</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <groupId>Central-Equipo-5</groupId>
-  </parent>
-  <groupId>Persistencia-Equipo-5</groupId>
-  <artifactId>Persistencia-Equipo-5</artifactId>
-  <url>http://maven.apache.org</url>
-  <properties>
-  	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
-  <dependencies>
-  		<dependency>
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>Central-Equipo-5</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<groupId>Central-Equipo-5</groupId>
+	</parent>
+	<groupId>Persistencia-Equipo-5</groupId>
+	<artifactId>Persistencia-Equipo-5</artifactId>
+	<url>http://maven.apache.org</url>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	<dependencies>
+		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
 			<version>${spring.version}</version>
@@ -67,25 +68,25 @@
 			<artifactId>javax.inject</artifactId>
 			<version>1</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>commons-dbcp</groupId>
 			<artifactId>commons-dbcp</artifactId>
 			<version>1.4</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis-spring</artifactId>
 			<version>1.2.2</version>
 		</dependency>
-  </dependencies>
-  
+	</dependencies>
+
 </project>

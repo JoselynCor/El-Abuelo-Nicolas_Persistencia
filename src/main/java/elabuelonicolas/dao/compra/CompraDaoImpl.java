@@ -62,17 +62,6 @@ public class CompraDaoImpl implements CompraDao {
 	}
 
 	@Override
-	public Compra readByIdListaCompra(int idListaCompra) {
-		try {
-			CompraMapper compraMapper = sqlSession.getMapper(CompraMapper.class);
-			return compraMapper.readByIdListaCompra(idListaCompra);
-		} catch (Exception e) {
-			System.out.println("Error readByIdListaCompra: " + e);
-		}
-		return null;
-	}
-
-	@Override
 	public List<Compra> readByFecha(Date fecha) {
 		try {
 			CompraMapper compraMapper = sqlSession.getMapper(CompraMapper.class);
@@ -111,16 +100,6 @@ public class CompraDaoImpl implements CompraDao {
 			compraMapper.updateIdProveedor(id, idProveedor);
 		} catch (Exception e) {
 			System.out.println("Error updateIdProveedor: " + e);
-		}
-	}
-
-	@Override
-	public void updateIdListaCompra(int id, int idListaCompra) {
-		try {
-			CompraMapper compraMapper = sqlSession.getMapper(CompraMapper.class);
-			compraMapper.updateIdListaCompra(id, idListaCompra);
-		} catch (Exception e) {
-			System.out.println("Error updateIdListaCompra: " + e);
 		}
 	}
 

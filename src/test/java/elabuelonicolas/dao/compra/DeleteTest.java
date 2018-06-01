@@ -16,7 +16,6 @@ import elabuelonicolas.bd.domain.Compra;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/applicationContext.xml" })
 public class DeleteTest {
-
 	@Inject
 	CompraDao compraDao;
 
@@ -27,7 +26,6 @@ public class DeleteTest {
 	public void setUp() {
 		this.compra = new Compra();
 		this.compra.setIdproveedor(1);
-		this.compra.setIdlistacompra(5);
 		this.compra.setFecha(new Date(2018, 1, 1));
 		this.compra.setTotal(100.1);
 	}

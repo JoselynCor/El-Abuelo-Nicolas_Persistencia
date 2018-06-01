@@ -15,7 +15,6 @@ import elabuelonicolas.dao.venta.VentaDao;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/applicationContext.xml" })
 public class CreateTest {
-
 	@Inject
 	VentaDao ventaDao;
 
@@ -25,7 +24,6 @@ public class CreateTest {
 	public void setUp() {
 		this.venta = new Venta();
 		this.venta.setIdcliente(2);
-		this.venta.setIdlistaventa(1);
 		this.venta.setFecha(Date.valueOf("2018-1-1"));
 		this.venta.setTotal(100.10);
 	}

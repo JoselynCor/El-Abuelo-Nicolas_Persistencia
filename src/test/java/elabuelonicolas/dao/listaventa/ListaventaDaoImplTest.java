@@ -12,7 +12,6 @@ import elabuelonicolas.dao.listaventa.ListaventaDao;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/applicationContext.xml" })
 public class ListaventaDaoImplTest {
-
 	@Inject
 	ListaventaDao listaventaDao;
 
