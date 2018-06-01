@@ -1,7 +1,7 @@
 package elabuelonicolas.dao.compra;
 
 import static org.junit.Assert.assertEquals;
-import java.util.Date;
+import java.sql.Date;
 import javax.inject.Inject;
 import org.junit.After;
 import org.junit.Before;
@@ -19,12 +19,11 @@ public class CreateTest {
 
 	private Compra compra;
 	
-	@SuppressWarnings("deprecation")
 	@Before
 	public void setUp() {
 		this.compra = new Compra();
 		this.compra.setIdproveedor(3);
-		this.compra.setFecha(new Date(2018, 1, 1));
+		this.compra.setFecha(Date.valueOf("2018-1-1"));
 		this.compra.setTotal(100.1);
 	}
 

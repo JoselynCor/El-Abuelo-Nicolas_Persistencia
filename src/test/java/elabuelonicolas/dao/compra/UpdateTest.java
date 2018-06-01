@@ -3,7 +3,6 @@ package elabuelonicolas.dao.compra;
 import static org.junit.Assert.assertNotEquals;
 
 import java.sql.Date;
-
 import javax.inject.Inject;
 import org.junit.After;
 import org.junit.Before;
@@ -66,12 +65,11 @@ public class UpdateTest {
 		}
 	}
 
-	@SuppressWarnings("deprecation")
 	@Test
 	public void updateFecha() {
 		try {
 			System.out.println("UpdateNumber");
-			compraDao.updateFecha(this.compra.getId(), new Date(2018, 2, 1));
+			compraDao.updateFecha(this.compra.getId(), Date.valueOf("2018-2-1"));
 			Compra c = compraDao.read(this.compra.getId());
 			assertNotEquals(c.getFecha(), this.compra.getFecha());
 		} catch (Exception e) {
