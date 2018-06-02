@@ -51,6 +51,72 @@ public class DireccionDaoImpl implements DireccionDao {
 		}
 		return null;
 	}
+	
+	@Override
+	public List<Direccion> readByPais(String pais) {
+		try {
+			DireccionMapper direccionMapper = sqlSession.getMapper(DireccionMapper.class);
+			return direccionMapper.readByPais(pais);
+		} catch (Exception e) {
+			System.out.println("Error readByPais: " + e);
+		}
+		return null;
+	}
+	
+	@Override
+	public List<Direccion> readByEstado(String estado) {
+		try {
+			DireccionMapper direccionMapper = sqlSession.getMapper(DireccionMapper.class);
+			return direccionMapper.readByEstado(estado);
+		} catch (Exception e) {
+			System.out.println("Error readByEstado: " + e);
+		}
+		return null;
+	}
+	
+	@Override
+	public List<Direccion> readByCiudad(String ciudad) {
+		try {
+			DireccionMapper direccionMapper = sqlSession.getMapper(DireccionMapper.class);
+			return direccionMapper.readByCiudad(ciudad);
+		} catch (Exception e) {
+			System.out.println("Error readByCiudad: " + e);
+		}
+		return null;
+	}
+	
+	@Override
+	public List<Direccion> readByColonia(String colonia) {
+		try {
+			DireccionMapper direccionMapper = sqlSession.getMapper(DireccionMapper.class);
+			return direccionMapper.readByColonia(colonia);
+		} catch (Exception e) {
+			System.out.println("Error readByDireccion: " + e);
+		}
+		return null;
+	}
+	
+	@Override
+	public List<Direccion> readByCalle(String calle) {
+		try {
+			DireccionMapper direccionMapper = sqlSession.getMapper(DireccionMapper.class);
+			return direccionMapper.readByCalle(calle);
+		} catch (Exception e) {
+			System.out.println("Error readByDireccion: " + e);
+		}
+		return null;
+	}
+	
+	@Override
+	public Direccion readByNumero(int numero) {
+		try {
+			DireccionMapper direccionMapper = sqlSession.getMapper(DireccionMapper.class);
+			return direccionMapper.readByNumero(numero);
+		}catch(Exception e) {
+			System.out.println("Error readByDireccion: " + e);
+		}
+		return null;
+	}
 
 	@Override
 	public void update(Direccion direccion) {
@@ -61,7 +127,67 @@ public class DireccionDaoImpl implements DireccionDao {
 			System.out.println("Error update: " + e);
 		}
 	}
+	
+	@Override
+	public void updateEstado(int id, String estado) {
+		try {
+			DireccionMapper direccionMapper = sqlSession.getMapper(DireccionMapper.class);
+			direccionMapper.updateEstado(id, estado);
+		} catch (Exception e) {
+			System.out.println("Error updateEstado: " + e);
+		}
+	}
 
+	@Override
+	public void updateCiudad(int id, String ciudad) {
+		try {
+			DireccionMapper direccionMapper = sqlSession.getMapper(DireccionMapper.class);
+			direccionMapper.updateCiudad(id, ciudad);
+		} catch (Exception e) {
+			System.out.println("Error updateCiudad: " + e);
+		}
+	}
+	
+	@Override
+	public void updateColonia(int id, String colonia) {
+		try {
+			DireccionMapper direccionMapper = sqlSession.getMapper(DireccionMapper.class);
+			direccionMapper.updateColonia(id, colonia);
+		} catch (Exception e) {
+			System.out.println("Error updateColonia: " + e);
+		}
+	}
+	
+	@Override
+	public void updateCalle(int id, String calle) {
+		try {
+			DireccionMapper direccionMapper = sqlSession.getMapper(DireccionMapper.class);
+			direccionMapper.updateCalle(id, calle);
+		} catch (Exception e) {
+			System.out.println("Error updateCalle: " + e);
+		}
+	}
+	
+	@Override
+	public void updateNumero(int id, int numero) {
+		try {
+			DireccionMapper direccionMapper = sqlSession.getMapper(DireccionMapper.class);
+			direccionMapper.updateNumero(id, numero);
+		} catch (Exception e) {
+			System.out.println("Error updateNumero: " + e);
+		}
+	}
+	
+	@Override
+	public void updatePais(int id, String pais) {
+		try {
+			DireccionMapper direccionMapper = sqlSession.getMapper(DireccionMapper.class);
+			direccionMapper.updatePais(id, pais);
+		} catch (Exception e) {
+			System.out.println("Error updatePais: " + e);
+		}
+	}
+	
 	@Override
 	public void delete(int id) {
 		try {
@@ -70,5 +196,11 @@ public class DireccionDaoImpl implements DireccionDao {
 		} catch (Exception e) {
 			System.out.println("Error delete: " + e);
 		}
+	}
+	
+	@Override
+	public Direccion last() {
+		DireccionMapper direccionMapper = sqlSession.getMapper(DireccionMapper.class);
+		return direccionMapper.last();
 	}
 }
