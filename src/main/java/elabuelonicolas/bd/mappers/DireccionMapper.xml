@@ -19,14 +19,50 @@
 	</select>
 	<insert id="create"
 		parameterType="elabuelonicolas.bd.domain.Direccion">
-		insert into compra (pais, ciudad, colonia, calle,
-		numero) values (#{pais}, #{ciudad}, #{colonia}, #{calle},
-		#{numero})
+		insert into direccion (pais, estado, ciudad, colonia, calle, numero) 
+		values (#{pais}, #{estado}, #{ciudad}, #{colonia}, #{calle}, #{numero})
 	</insert>
 	<select id="read" parameterType="int" resultMap="BaseResultMap">
 		select * from
 		direccion where id=#{id}
 	</select>
+
+	<select id="readByPais" parameterType="String"
+		resultMap="BaseResultMap">
+		select * from
+		direccion where pais like #{pais}
+	</select>
+
+	<select id="readByEstado" parameterType="String"
+		resultMap="BaseResultMap">
+		select * from
+		direccion where estado like #{estado}
+	</select>
+
+	<select id="readByCiudad" parameterType="String"
+		resultMap="BaseResultMap">
+		select * from
+		direccion where ciudad like #{ciudad}
+	</select>
+
+	<select id="readByColonia" parameterType="String"
+		resultMap="BaseResultMap">
+		select * from
+		direccion where colonia like #{colonia}
+	</select>
+
+	<select id="readByCalle" parameterType="String"
+		resultMap="BaseResultMap">
+		select * from
+		direccion where calle like #{calle}
+	</select>
+
+	<select id="readByNumero" parameterType="int"
+		resultMap="BaseResultMap">
+		select * from
+		direccion where numero=#{numero}
+	</select>
+	
 	<update id="update"
 		parameterType="elabuelonicolas.bd.domain.Direccion">
 		UPDATE direccion SET
@@ -38,9 +74,46 @@
 		WHERE
 		id=#{id}
 	</update>
+
+	<update id="updatePais" parameterType="map">
+		UPDATE direccion SET
+		pais=#{pais} WHERE id=#{id}
+	</update>
+
+	<update id="updateEstado" parameterType="map">
+		UPDATE direccion SET
+		estado=#{estado} WHERE id=#{id}
+	</update>
+
+	<update id="updateCiudad" parameterType="map">
+		UPDATE direccion SET
+		ciudad=#{ciudad} WHERE id=#{id}
+	</update>
+
+	<update id="updateColonia" parameterType="map">
+		UPDATE direccion SET
+		colonia=#{colonia} WHERE id=#{id}
+	</update>
+
+	<update id="updateCalle" parameterType="map">
+		UPDATE direccion SET
+		calle=#{calle} WHERE id=#{id}
+	</update>
+
+	<update id="updateNumero" parameterType="map">
+		UPDATE direccion SET
+		numero=#{numero} WHERE id=#{id}
+	</update>
+
 	<delete id="delete" parameterType="int">
 		delete from direccion where id
 		=
 		#{id}
 	</delete>
+
+	<select id="last" resultMap="BaseResultMap">
+		select * from direccion order by
+		id
+		desc limit 1
+	</select>
 </mapper>
