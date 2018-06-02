@@ -73,7 +73,7 @@ public class UpdateTest {
 			Compra c = compraDao.read(this.compra.getId());
 			assertNotEquals(c.getFecha(), this.compra.getFecha());
 		} catch (Exception e) {
-			System.out.println("Error updateFechaTest: " + e);
+			System.out.println("Error updateCompraFechaTest: " + e);
 		}
 	}
 
@@ -85,7 +85,7 @@ public class UpdateTest {
 			Compra c = compraDao.read(this.compra.getId());
 			assertNotEquals(c.getTotal(), this.compra.getTotal());
 		} catch (Exception e) {
-			System.out.println("Error updateTotalTest: " + e);
+			System.out.println("Error updateCompraTotalTest: " + e);
 		}
 	}
 }

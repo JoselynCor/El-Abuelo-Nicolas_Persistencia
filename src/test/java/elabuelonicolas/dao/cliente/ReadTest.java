@@ -22,7 +22,7 @@ public class ReadTest {
 			Cliente cliente = clienteDao.read(1);
 			assertEquals((int) cliente.getId(), 1);
 		} catch (Exception e) {
-			System.out.println("Error readTest: " + e);
+			System.out.println("Error readClienteTest: " + e);
 		}
 	}
 
@@ -32,7 +32,7 @@ public class ReadTest {
 			List<Cliente> clientes = clienteDao.readByNombre("José Luis");
 			assertEquals(clientes.get(0).getNombre(), "José Luis");
 		} catch (Exception e) {
-			System.out.println("Error readByNombreTest: " + e);
+			System.out.println("Error readClienteByNombreTest: " + e);
 		}
 	}
 
@@ -42,7 +42,7 @@ public class ReadTest {
 			Cliente cliente = clienteDao.readByDireccion(1);
 			assertEquals((int) cliente.getIddireccion(), 1);
 		} catch (Exception e) {
-			System.out.println("Error readByDireccionTest: " + e);
+			System.out.println("Error readClienteByDireccionTest: " + e);
 		}
 	}
 
@@ -52,7 +52,7 @@ public class ReadTest {
 			List<Cliente> clientes = clienteDao.readByContacto("Castro");
 			assertEquals(clientes.get(0).getContacto(), "Castro");
 		} catch (Exception e) {
-			System.out.println("Error readByContactoTest: " + e);
+			System.out.println("Error readClienteByContactoTest: " + e);
 		}
 	}
 
@@ -62,7 +62,7 @@ public class ReadTest {
 			List<Cliente> clientes = clienteDao.readByTelefono("9535362391");
 			assertEquals(clientes.get(0).getTelefono(), "9535362391");
 		} catch (Exception e) {
-			System.out.println("Error readByTelefonoTest: " + e);
+			System.out.println("Error readClienteByTelefonoTest: " + e);
 		}
 	}
 
@@ -72,7 +72,7 @@ public class ReadTest {
 			List<Cliente> clientes = clienteDao.readByEmail("jlcastrogro@gmail.com");
 			assertEquals(clientes.get(0).getEmail(), "jlcastrogro@gmail.com");
 		} catch (Exception e) {
-			System.out.println("Error readByEmailTest: " + e);
+			System.out.println("Error readClienteByEmailTest: " + e);
 		}
 	}
 
@@ -82,7 +82,7 @@ public class ReadTest {
 			List<Cliente> clientes = clienteDao.readByRfc("KUCNW4NW4RN");
 			assertEquals(clientes.get(0).getRfc(), "KUCNW4NW4RN");
 		} catch (Exception e) {
-			System.out.println("Error readByRfcTest: " + e);
+			System.out.println("Error readClienteByRfcTest: " + e);
 		}
 	}
 }

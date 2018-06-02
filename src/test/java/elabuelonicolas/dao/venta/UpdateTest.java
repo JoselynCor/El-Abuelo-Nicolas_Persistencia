@@ -40,13 +40,12 @@ public class UpdateTest {
 	public void update() {
 		Venta v = ventaDao.read(this.venta.getId());
 		try {
-			System.out.println("Update");
 			v.setIdcliente(2);
 			v.setFecha(Date.valueOf("2018-5-2"));
 			v.setTotal(1920812.1);
 			ventaDao.update(v);
 		} catch (Exception e) {
-			System.out.println("Error updateTest: " + e);
+			System.out.println("Error updateVentaTest: " + e);
 		}
 
 		assertNotEquals(this.venta.getIdcliente(), v.getIdcliente());
@@ -57,36 +56,33 @@ public class UpdateTest {
 	@Test
 	public void updateIdCliente() {
 		try {
-			System.out.println("UpdateIdCliente");
 			ventaDao.updateIdCliente(this.venta.getId(), 10);
 			Venta v = ventaDao.read(this.venta.getId());
 			assertNotEquals(v.getIdcliente(), this.venta.getIdcliente());
 		} catch (Exception e) {
-			System.out.println("Error updateIdClienteTest: " + e);
+			System.out.println("Error updateVentaIdClienteTest: " + e);
 		}
 	}
 
 	@Test
 	public void updateFecha() {
 		try {
-			System.out.println("UpdateFecha");
 			ventaDao.updateFecha(this.venta.getId(), Date.valueOf("2018-5-10"));
 			Venta c = ventaDao.read(this.venta.getId());
 			assertNotEquals(c.getFecha(), this.venta.getFecha());
 		} catch (Exception e) {
-			System.out.println("Error updateFechaTest: " + e);
+			System.out.println("Error updateVentaFechaTest: " + e);
 		}
 	}
 
 	@Test
 	public void updatePrecioTotal() {
 		try {
-			System.out.println("UpdatePrecioTotal");
 			ventaDao.updateTotal(this.venta.getId(), 1000.1);
 			Venta v = ventaDao.read(this.venta.getId());
 			assertNotEquals(v.getTotal(), this.venta.getTotal());
 		} catch (Exception e) {
-			System.out.println("Error updatePrecioTotalTest: " + e);
+			System.out.println("Error updateVentaPrecioTotalTest: " + e);
 		}
 	}
 }

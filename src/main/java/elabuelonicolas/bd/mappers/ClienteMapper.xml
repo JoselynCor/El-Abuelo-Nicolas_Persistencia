@@ -38,7 +38,7 @@
 	<select id="readByDireccion" parameterType="int"
 		resultMap="BaseResultMap">
 		select * from
-		cliente where iddireccion=#{idDireccion}
+		cliente where iddireccion=#{iddireccion}
 	</select>
 	<select id="readByContacto" parameterType="String"
 		resultMap="BaseResultMap">

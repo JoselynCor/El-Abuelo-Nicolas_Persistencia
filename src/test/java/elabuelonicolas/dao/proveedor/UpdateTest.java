@@ -41,7 +41,6 @@ public class UpdateTest {
 	public void update() {
 		Proveedor p = proveedorDao.read(this.proveedor.getId());
 		try {
-			System.out.println("Update");
 			p.setNombre("Bodega");
 			p.setIddireccion(2);
 			p.setContacto("Jose");
@@ -50,7 +49,7 @@ public class UpdateTest {
 			p.setRfc("NIOJ950622HOMLCR05");
 			proveedorDao.update(p);
 		} catch (Exception e) {
-			System.out.println("Error updateTest: " + e);
+			System.out.println("Error updateProveedorTest: " + e);
 		}
 
 		assertNotEquals(this.proveedor.getNombre(), p.getNombre());
@@ -64,60 +63,55 @@ public class UpdateTest {
 	@Test
 	public void updateNombre() {
 		try {
-			System.out.println("UpdateName");
 			proveedorDao.updateNombre(this.proveedor.getId(), "Jaime");
 			Proveedor p = proveedorDao.read(this.proveedor.getId());
 			assertNotEquals(p.getNombre(), this.proveedor.getNombre());
 		} catch (Exception e) {
-			System.out.println("Error updateNombreTest: " + e);
+			System.out.println("Error updateProveedorNombreTest: " + e);
 		}
 	}
 
 	@Test
 	public void updateContacto() {
 		try {
-			System.out.println("UpdateContact");
 			proveedorDao.updateContacto(this.proveedor.getId(), "Egremy");
 			Proveedor p = proveedorDao.read(this.proveedor.getId());
 			assertNotEquals(p.getContacto(), this.proveedor.getContacto());
 		} catch (Exception e) {
-			System.out.println("Error updateContactoTest: " + e);
+			System.out.println("Error updateProveedorContactoTest: " + e);
 		}
 	}
 
 	@Test
 	public void updateTelefono() {
 		try {
-			System.out.println("UpdateNumber");
 			proveedorDao.updateTelefono(this.proveedor.getId(), "192929929");
 			Proveedor p = proveedorDao.read(this.proveedor.getId());
 			assertNotEquals(p.getTelefono(), this.proveedor.getTelefono());
 		} catch (Exception e) {
-			System.out.println("Error updateTelefonoTest: " + e);
+			System.out.println("Error updateProveedorTelefonoTest: " + e);
 		}
 	}
 
 	@Test
 	public void updateEmail() {
 		try {
-			System.out.println("UpdateEmail");
 			proveedorDao.updateEmail(this.proveedor.getId(), "ajsknas@hotmail.com");
 			Proveedor p = proveedorDao.read(this.proveedor.getId());
 			assertNotEquals(p.getEmail(), this.proveedor.getTelefono());
 		} catch (Exception e) {
-			System.out.println("Error updateEmailTest: " + e);
+			System.out.println("Error updateProveedorEmailTest: " + e);
 		}
 	}
 
 	@Test
 	public void updateRfc() {
 		try {
-			System.out.println("UpdateRfc");
 			proveedorDao.updateRfc(this.proveedor.getId(), "KWUBEUW8B38DNW");
 			Proveedor p = proveedorDao.read(this.proveedor.getId());
 			assertNotEquals(p.getRfc(), this.proveedor.getRfc());
 		} catch (Exception e) {
-			System.out.println("Error updateRfcTest: " + e);
+			System.out.println("Error updateProveedorRfcTest: " + e);
 		}
 	}
 }

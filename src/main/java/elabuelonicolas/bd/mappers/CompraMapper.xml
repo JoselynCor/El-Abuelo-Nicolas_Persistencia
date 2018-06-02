@@ -53,7 +53,7 @@
 	<update id="updateIdProveedor"
 		parameterType="elabuelonicolas.bd.domain.Compra">
 		UPDATE compra SET
-		idproveedor=#{idProveedor}
+		idproveedor=#{idproveedor}
 		WHERE
 		id=#{id}
 	</update>

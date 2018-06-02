@@ -24,7 +24,7 @@ public class CompraDaoImpl implements CompraDao {
 			CompraMapper compraMapper = sqlSession.getMapper(CompraMapper.class);
 			return compraMapper.findAll(); 
 		} catch (Exception e) {
-			System.out.println("Error findAll: " + e);
+			System.out.println("Error findAllCompra: " + e);
 		}
 		return null;
 	}
@@ -35,7 +35,7 @@ public class CompraDaoImpl implements CompraDao {
 			CompraMapper compraMapper = sqlSession.getMapper(CompraMapper.class);
 			compraMapper.create(compra);
 		} catch (Exception e) {
-			System.out.println("Error create: " + e);
+			System.out.println("Error createCompra: " + e);
 		}
 	}
 
@@ -45,18 +45,18 @@ public class CompraDaoImpl implements CompraDao {
 			CompraMapper compraMapper = sqlSession.getMapper(CompraMapper.class);
 			return compraMapper.read(id);
 		} catch (Exception e) {
-			System.out.println("Error read: " + e);
+			System.out.println("Error readCompra: " + e);
 		}
 		return null;
 	}
 
 	@Override
-	public List<Compra> readByIdProveedor(int idProveedor) {
+	public List<Compra> readByIdProveedor(int idproveedor) {
 		try {
 			CompraMapper compraMapper = sqlSession.getMapper(CompraMapper.class);
-			return compraMapper.readByIdProveedor(idProveedor);
+			return compraMapper.readByIdProveedor(idproveedor);
 		} catch (Exception e) {
-			System.out.println("Error readByIdProveedor: " + e);
+			System.out.println("Error readByIdProveedorCompra: " + e);
 		}
 		return null;
 	}
@@ -67,7 +67,7 @@ public class CompraDaoImpl implements CompraDao {
 			CompraMapper compraMapper = sqlSession.getMapper(CompraMapper.class);
 			return compraMapper.readByFecha(fecha);
 		} catch (Exception e) {
-			System.out.println("Error readByFecha: " + e);
+			System.out.println("Error readByFechaCompra: " + e);
 		}
 		return null;
 	}
@@ -78,7 +78,7 @@ public class CompraDaoImpl implements CompraDao {
 			CompraMapper compraMapper = sqlSession.getMapper(CompraMapper.class);
 			return compraMapper.readByTotal(total);
 		} catch (Exception e) {
-			System.out.println("Error readByTotal: " + e);
+			System.out.println("Error readByTotalCompra: " + e);
 		}
 		return null;
 	}
@@ -89,17 +89,17 @@ public class CompraDaoImpl implements CompraDao {
 			CompraMapper compraMapper = sqlSession.getMapper(CompraMapper.class);
 			compraMapper.update(compra);
 		} catch (Exception e) {
-			System.out.println("Error update: " + e);
+			System.out.println("Error updateCompra: " + e);
 		}
 	}
 	
 	@Override
-	public void updateIdProveedor(int id, int idProveedor) {
+	public void updateIdProveedor(int id, int idproveedor) {
 		try {
 			CompraMapper compraMapper = sqlSession.getMapper(CompraMapper.class);
-			compraMapper.updateIdProveedor(id, idProveedor);
+			compraMapper.updateIdProveedor(id, idproveedor);
 		} catch (Exception e) {
-			System.out.println("Error updateIdProveedor: " + e);
+			System.out.println("Error updateIdProveedorCompra: " + e);
 		}
 	}
 
@@ -109,7 +109,7 @@ public class CompraDaoImpl implements CompraDao {
 			CompraMapper compraMapper = sqlSession.getMapper(CompraMapper.class);
 			compraMapper.updateFecha(id, fecha);
 		} catch (Exception e) {
-			System.out.println("Error updateFecha: " + e);
+			System.out.println("Error updateFechaCompra: " + e);
 		}
 	}
 
@@ -119,7 +119,7 @@ public class CompraDaoImpl implements CompraDao {
 			CompraMapper compraMapper = sqlSession.getMapper(CompraMapper.class);
 			compraMapper.updateTotal(id, total);
 		} catch (Exception e) {
-			System.out.println("Error updateTotal: " + e);
+			System.out.println("Error updateTotalCompra: " + e);
 		}
 	}
 
@@ -129,7 +129,7 @@ public class CompraDaoImpl implements CompraDao {
 			CompraMapper compraMapper = sqlSession.getMapper(CompraMapper.class);
 			compraMapper.delete(id);
 		} catch (Exception e) {
-			System.out.println("Error delete: " + e);
+			System.out.println("Error deleteCompra: " + e);
 		}
 	}
 
@@ -139,7 +139,7 @@ public class CompraDaoImpl implements CompraDao {
 			CompraMapper compraMapper = sqlSession.getMapper(CompraMapper.class);
 			return compraMapper.last(); 			
 		} catch(Exception e) {
-			System.out.println("Error last: " + e);
+			System.out.println("Error lastCompra: " + e);
 		}
 		return null;
 	}

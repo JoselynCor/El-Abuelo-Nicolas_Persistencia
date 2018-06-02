@@ -23,7 +23,7 @@ public class ListacompraDaoImpl implements ListacompraDao {
 			ListacompraMapper listacompraMapper = sqlSession.getMapper(ListacompraMapper.class);
 			return listacompraMapper.findAll();
 		} catch (Exception e) {
-			System.out.println("Error findAll: " + e);
+			System.out.println("Error findAllListacompra: " + e);
 		}
 		return null;
 	}
@@ -34,7 +34,7 @@ public class ListacompraDaoImpl implements ListacompraDao {
 			ListacompraMapper listacompraMapper = sqlSession.getMapper(ListacompraMapper.class);
 			listacompraMapper.create(listacompra);
 		} catch (Exception e) {
-			System.out.println("Error create: " + e);
+			System.out.println("Error createListacompra: " + e);
 		}
 	}
 
@@ -44,7 +44,7 @@ public class ListacompraDaoImpl implements ListacompraDao {
 			ListacompraMapper listacompraMapper = sqlSession.getMapper(ListacompraMapper.class);
 			return listacompraMapper.read(id);
 		} catch (Exception e) {
-			System.out.println("Error read: " + e);
+			System.out.println("Error readListacompra: " + e);
 		}
 		return null;
 	}
@@ -55,7 +55,7 @@ public class ListacompraDaoImpl implements ListacompraDao {
 			ListacompraMapper listacompraMapper = sqlSession.getMapper(ListacompraMapper.class);
 			return listacompraMapper.readByIdCompra(idcompra);
 		} catch (Exception e) {
-			System.out.println("Error readByIdCompra: " + e);
+			System.out.println("Error readByIdCompraListacompra: " + e);
 		}
 		return null;
 	}
@@ -66,7 +66,7 @@ public class ListacompraDaoImpl implements ListacompraDao {
 			ListacompraMapper listacompraMapper = sqlSession.getMapper(ListacompraMapper.class);
 			return listacompraMapper.readByIdProducto(idproducto);
 		} catch (Exception e) {
-			System.out.println("Error readByIdProducto: " + e);
+			System.out.println("Error readByIdProductoListacompra: " + e);
 		}
 		return null;
 	}
@@ -77,7 +77,7 @@ public class ListacompraDaoImpl implements ListacompraDao {
 			ListacompraMapper listacompraMapper = sqlSession.getMapper(ListacompraMapper.class);
 			return listacompraMapper.readByCantidad(cantidad);
 		} catch (Exception e) {
-			System.out.println("Error readByIdCantidad: " + e);
+			System.out.println("Error readByIdCantidadListacompra: " + e);
 		}
 		return null;
 	}
@@ -88,7 +88,7 @@ public class ListacompraDaoImpl implements ListacompraDao {
 			ListacompraMapper listacompraMapper = sqlSession.getMapper(ListacompraMapper.class);
 			return listacompraMapper.readBySubtotal(subtotal);
 		} catch (Exception e) {
-			System.out.println("Error readByIdSubtotal: " + e);
+			System.out.println("Error readByIdSubtotalListacompra: " + e);
 		}
 		return null;
 	}
@@ -99,7 +99,7 @@ public class ListacompraDaoImpl implements ListacompraDao {
 			ListacompraMapper listacompraMapper = sqlSession.getMapper(ListacompraMapper.class);
 			listacompraMapper.update(listacompra);
 		} catch (Exception e) {
-			System.out.println("Error update: " + e);
+			System.out.println("Error updateListacompra: " + e);
 		}
 	}
 
@@ -109,7 +109,7 @@ public class ListacompraDaoImpl implements ListacompraDao {
 			ListacompraMapper listacompraMapper = sqlSession.getMapper(ListacompraMapper.class);
 			listacompraMapper.updateIdCompra(id, idcompra);
 		} catch (Exception e) {
-			System.out.println("Error updateIdCompra: " + e);
+			System.out.println("Error updateIdCompraListacompra: " + e);
 		}
 	}
 
@@ -119,7 +119,7 @@ public class ListacompraDaoImpl implements ListacompraDao {
 			ListacompraMapper listacompraMapper = sqlSession.getMapper(ListacompraMapper.class);
 			listacompraMapper.updateIdProducto(id, idproducto);
 		} catch (Exception e) {
-			System.out.println("Error updateIdProducto: " + e);
+			System.out.println("Error updateIdProductoListacompra: " + e);
 		}
 	}
 
@@ -129,7 +129,7 @@ public class ListacompraDaoImpl implements ListacompraDao {
 			ListacompraMapper listacompraMapper = sqlSession.getMapper(ListacompraMapper.class);
 			listacompraMapper.updateCantidad(id, cantidad);
 		} catch (Exception e) {
-			System.out.println("Error updateCantidad: " + e);
+			System.out.println("Error updateCantidadListacompra: " + e);
 		}
 	}
 
@@ -139,7 +139,7 @@ public class ListacompraDaoImpl implements ListacompraDao {
 			ListacompraMapper listacompraMapper = sqlSession.getMapper(ListacompraMapper.class);
 			listacompraMapper.updateSubtotal(id, subtotal);
 		} catch (Exception e) {
-			System.out.println("Error updateSubtotal: " + e);
+			System.out.println("Error updateSubtotalListacompra: " + e);
 		}
 	}
 	
@@ -149,7 +149,7 @@ public class ListacompraDaoImpl implements ListacompraDao {
 			ListacompraMapper listacompraMapper = sqlSession.getMapper(ListacompraMapper.class);
 			listacompraMapper.delete(id);
 		} catch (Exception e) {
-			System.out.println("Error delete: " + e);
+			System.out.println("Error deleteListacompra: " + e);
 		}
 	}
 
@@ -159,7 +159,7 @@ public class ListacompraDaoImpl implements ListacompraDao {
 			ListacompraMapper listacompraMapper = sqlSession.getMapper(ListacompraMapper.class);
 			return listacompraMapper.last();
 		} catch (Exception e) {
-			System.out.println("Error last: " + e);
+			System.out.println("Error lastListacompra: " + e);
 		}
 		return null;
 	}

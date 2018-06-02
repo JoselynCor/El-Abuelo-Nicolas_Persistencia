@@ -17,23 +17,23 @@ import elabuelonicolas.bd.domain.Compra;
 public class FindAllTest {
 	@Inject
 	CompraDao clienteDao;
-	private Object clientes;
+	private Object compras;
 
 	@Before
 	public void setUp() {
-		this.clientes = clienteDao.findAll().size();
+		this.compras = clienteDao.findAll().size();
 	}
 	
 	@After
 	public void tearDown() {
-		this.clientes = null;
+		this.compras = null;
 	}
 
 	@Test
 	public void findAll() {
 		try {
 			List<Compra> list = clienteDao.findAll();
-			assertEquals(list.size(), this.clientes);
+			assertEquals(list.size(), this.compras);
 		} catch (Exception e) {
 			System.out.println("Error findAllCompraTest: " + e);
 		}

@@ -24,7 +24,7 @@ public class VentaDaoImpl implements VentaDao {
 			VentaMapper ventaMapper = sqlSession.getMapper(VentaMapper.class);
 			return ventaMapper.findAll();
 		} catch (Exception e) {
-			System.out.println("Error findAll: " + e);
+			System.out.println("Error findAllVenta: " + e);
 		}
 		return null;
 	}
@@ -35,7 +35,7 @@ public class VentaDaoImpl implements VentaDao {
 			VentaMapper ventaMapper = sqlSession.getMapper(VentaMapper.class);
 			ventaMapper.create(venta);
 		} catch (Exception e) {
-			System.out.println("Error create: " + e);
+			System.out.println("Error createVenta: " + e);
 		}
 	}
 
@@ -45,7 +45,7 @@ public class VentaDaoImpl implements VentaDao {
 			VentaMapper ventaMapper = sqlSession.getMapper(VentaMapper.class);
 			return ventaMapper.read(id);
 		} catch (Exception e) {
-			System.out.println("Error read: " + e);
+			System.out.println("Error readVenta: " + e);
 		}
 		return null;
 	}
@@ -56,7 +56,7 @@ public class VentaDaoImpl implements VentaDao {
 			VentaMapper ventaMapper = sqlSession.getMapper(VentaMapper.class);
 			return ventaMapper.readByIdCliente(idCliente);
 		} catch (Exception e) {
-			System.out.println("Error readByIdCliente: " + e);
+			System.out.println("Error readByIdClienteVenta: " + e);
 		}
 		return null;
 	}
@@ -67,7 +67,7 @@ public class VentaDaoImpl implements VentaDao {
 			VentaMapper ventaMapper = sqlSession.getMapper(VentaMapper.class);
 			return ventaMapper.readByFecha(fecha);
 		} catch (Exception e) {
-			System.out.println("Error readByFecha: " + e);
+			System.out.println("Error readByFechaVenta: " + e);
 		}
 		return null;
 	}
@@ -78,7 +78,7 @@ public class VentaDaoImpl implements VentaDao {
 			VentaMapper ventaMapper = sqlSession.getMapper(VentaMapper.class);
 			return ventaMapper.readByFechas(fechaInicio, fechaFin);
 		} catch (Exception e) {
-			System.out.println("Error readByFechas: " + e);
+			System.out.println("Error readByFechasVenta: " + e);
 		}
 		return null;
 	}
@@ -89,7 +89,7 @@ public class VentaDaoImpl implements VentaDao {
 			VentaMapper ventaMapper = sqlSession.getMapper(VentaMapper.class);
 			ventaMapper.update(venta);
 		} catch (Exception e) {
-			System.out.println("Error update: " + e);
+			System.out.println("Error updateVenta: " + e);
 		}
 	}
 
@@ -99,7 +99,7 @@ public class VentaDaoImpl implements VentaDao {
 			VentaMapper ventaMapper = sqlSession.getMapper(VentaMapper.class);
 			ventaMapper.updateIdCliente(id, idCliente);
 		} catch (Exception e) {
-			System.out.println("Error updateIdCliente: " + e);
+			System.out.println("Error updateIdClienteVenta: " + e);
 		}
 	}
 
@@ -109,7 +109,7 @@ public class VentaDaoImpl implements VentaDao {
 			VentaMapper ventaMapper = sqlSession.getMapper(VentaMapper.class);
 			ventaMapper.updateFecha(id, fecha);
 		} catch (Exception e) {
-			System.out.println("Error updateFecha: " + e);
+			System.out.println("Error updateFechaVenta: " + e);
 		}
 	}
 
@@ -119,7 +119,7 @@ public class VentaDaoImpl implements VentaDao {
 			VentaMapper ventaMapper = sqlSession.getMapper(VentaMapper.class);
 			ventaMapper.updateTotal(id, total);
 		} catch (Exception e) {
-			System.out.println("Error updateTotal: " + e);
+			System.out.println("Error updateTotalVenta: " + e);
 		}
 	}
 	
@@ -129,7 +129,7 @@ public class VentaDaoImpl implements VentaDao {
 			VentaMapper ventaMapper = sqlSession.getMapper(VentaMapper.class);
 			ventaMapper.delete(id);
 		} catch (Exception e) {
-			System.out.println("Error delete: " + e);
+			System.out.println("Error deleteVenta: " + e);
 		}
 	}
 
@@ -139,7 +139,7 @@ public class VentaDaoImpl implements VentaDao {
 			VentaMapper ventaMapper = sqlSession.getMapper(VentaMapper.class);
 			return ventaMapper.last();
 		}catch(Exception e) {
-			System.out.println("Error last: " + e);
+			System.out.println("Error lastVenta: " + e);
 		}
 		return null;
 	}

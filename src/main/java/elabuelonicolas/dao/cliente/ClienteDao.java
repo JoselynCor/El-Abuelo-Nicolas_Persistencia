@@ -14,7 +14,7 @@ public interface ClienteDao {
 
 	List<Cliente> readByNombre(String nombre);
 
-	Cliente readByDireccion(int idDireccion);
+	Cliente readByDireccion(int iddireccion);
 
 	List<Cliente> readByContacto(String nombre);
 

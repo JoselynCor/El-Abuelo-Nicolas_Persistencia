@@ -21,7 +21,7 @@ public class ReadTest {
 			Listacompra compra = listacompraDao.read(1);
 			assertEquals(compra.getId(), 1, 1);
 		} catch (Exception e) {
-			System.out.println("Error readTest: " + e);
+			System.out.println("Error readListacompraTest: " + e);
 		}
 	}
 
@@ -31,7 +31,7 @@ public class ReadTest {
 			List<Listacompra> listacompra = listacompraDao.readByIdCompra(1);
 			assertEquals(listacompra.get(0).getIdcompra(), 1, 1);
 		} catch (Exception e) {
-			System.out.println("Error readByIdCompraTest: " + e);
+			System.out.println("Error readListacompraByIdCompraTest: " + e);
 		}
 	}
 	
@@ -41,7 +41,7 @@ public class ReadTest {
 			List<Listacompra> listacompra = listacompraDao.readByIdProducto(1);
 			assertEquals(listacompra.get(0).getIdcompra(), 1, 1);
 		} catch (Exception e) {
-			System.out.println("Error readByProductoTest: " + e);
+			System.out.println("Error readListacompraByProductoTest: " + e);
 		}
 	}
 	
@@ -51,7 +51,7 @@ public class ReadTest {
 			List<Listacompra> listacompra = listacompraDao.readByCantidad(21);
 			assertEquals(listacompra.get(0).getCantidad(), 21, 1);
 		} catch (Exception e) {
-			System.out.println("Error readByCantidadTest: " + e);
+			System.out.println("Error readListacompraByCantidadTest: " + e);
 		}
 	}
 	
@@ -61,7 +61,7 @@ public class ReadTest {
 			List<Listacompra> listacompra = listacompraDao.readBySubtotal(123.1);
 			assertEquals(listacompra.get(0).getSubtotal(), 123.1, 1);
 		} catch (Exception e) {
-			System.out.println("Error readBySubtotalTest: " + e);
+			System.out.println("Error readListacompraBySubtotalTest: " + e);
 		}
 	}
 }

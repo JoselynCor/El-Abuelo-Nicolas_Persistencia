@@ -41,7 +41,6 @@ public class UpdateTest {
 	public void update() {
 		Cliente c = clienteDao.read(this.cliente.getId());
 		try {
-			System.out.println("Update");
 			c.setNombre("Luis");
 			c.setIddireccion(2);
 			c.setContacto("Guerrero");
@@ -64,7 +63,6 @@ public class UpdateTest {
 	@Test
 	public void updateNombre() {
 		try {
-			System.out.println("UpdateName");
 			clienteDao.updateNombre(this.cliente.getId(), "Jaime");
 			Cliente c = clienteDao.read(this.cliente.getId());
 			assertNotEquals(c.getNombre(), this.cliente.getNombre());
@@ -76,7 +74,6 @@ public class UpdateTest {
 	@Test
 	public void updateContacto() {
 		try {
-			System.out.println("UpdateContact");
 			clienteDao.updateContacto(this.cliente.getId(), "Egremy");
 			Cliente c = clienteDao.read(this.cliente.getId());
 			assertNotEquals(c.getContacto(), this.cliente.getContacto());
@@ -88,7 +85,6 @@ public class UpdateTest {
 	@Test
 	public void updateTelefono() {
 		try {
-			System.out.println("UpdateNumber");
 			clienteDao.updateTelefono(this.cliente.getId(), "192929929");
 			Cliente c = clienteDao.read(this.cliente.getId());
 			assertNotEquals(c.getTelefono(), this.cliente.getTelefono());
@@ -100,7 +96,6 @@ public class UpdateTest {
 	@Test
 	public void updateEmail() {
 		try {
-			System.out.println("UpdateEmail");
 			clienteDao.updateEmail(this.cliente.getId(), "ajsknas@hotmail.com");
 			Cliente c = clienteDao.read(this.cliente.getId());
 			assertNotEquals(c.getEmail(), this.cliente.getTelefono());
@@ -112,7 +107,6 @@ public class UpdateTest {
 	@Test
 	public void updateRfc() {
 		try {
-			System.out.println("UpdateRfc");
 			clienteDao.updateRfc(this.cliente.getId(), "KWUBEUW8B38DNW");
 			Cliente c = clienteDao.read(this.cliente.getId());
 			assertNotEquals(c.getRfc(), this.cliente.getRfc());

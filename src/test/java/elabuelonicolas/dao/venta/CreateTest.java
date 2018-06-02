@@ -42,7 +42,7 @@ public class CreateTest {
 			
 			this.venta.setId(v.getId());
 		} catch (Exception e) {
-			System.out.println("Error createTest: " + e);
+			System.out.println("Error createVentaTest: " + e);
 		}
 	}
 }

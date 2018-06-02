@@ -22,7 +22,7 @@ public class ReadTest {
 			Producto p = productoDao.read(1);
 			assertEquals(p.getId(), 1, 1);
 		} catch (Exception e) {
-			System.out.println("Error readTest: " + e);
+			System.out.println("Error readProductoTest: " + e);
 		}
 	}
 
@@ -32,7 +32,7 @@ public class ReadTest {
 			List<Producto> producto = productoDao.readByTipo("Balón");
 			assertEquals(producto.get(0).getTipo(), "Balón");
 		} catch (Exception e) {
-			System.out.println("Error readByTipoTest: " + e);
+			System.out.println("Error readProductoByTipoTest: " + e);
 		}
 	}
 
@@ -42,7 +42,7 @@ public class ReadTest {
 			List<Producto> producto = productoDao.readByMarca("Nike");
 			assertEquals(producto.get(0).getMarca(), "Nike");
 		} catch (Exception e) {
-			System.out.println("Error readByMarcaTest: " + e);
+			System.out.println("Error readProductoByMarcaTest: " + e);
 		}
 	}
 
@@ -52,7 +52,7 @@ public class ReadTest {
 			List<Producto> producto = productoDao.readByCosto(150.0);
 			assertEquals(producto.get(0).getCosto(), 150.0, 1);
 		} catch (Exception e) {
-			System.out.println("Error readByCostoTest: " + e);
+			System.out.println("Error readProductoByCostoTest: " + e);
 		}
 	}
 
@@ -62,7 +62,7 @@ public class ReadTest {
 			List<Producto> producto = productoDao.readByExistencia(1);
 			assertEquals(producto.get(0).getExistencia(), 1, 1);
 		} catch (Exception e) {
-			System.out.println("Error readByExistenciaTest: " + e);
+			System.out.println("Error readProductoByExistenciaTest: " + e);
 		}
 	}
 }

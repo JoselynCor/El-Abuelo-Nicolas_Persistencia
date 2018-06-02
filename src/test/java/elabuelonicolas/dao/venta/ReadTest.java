@@ -23,7 +23,7 @@ public class ReadTest {
 			Venta c = ventaDao.read(1);
 			assertEquals(c.getId(), 1, 1);
 		} catch (Exception e) {
-			System.out.println("Error readTest: " + e);
+			System.out.println("Error readVentaTest: " + e);
 		}
 	}
 
@@ -33,7 +33,7 @@ public class ReadTest {
 			List<Venta> ventas = ventaDao.readByIdCliente(1);
 			assertEquals(ventas.get(0).getIdcliente(), 1, 1);
 		} catch (Exception e) {
-			System.out.println("Error readByIdClienteTest: " + e);
+			System.out.println("Error readVentaByIdClienteTest: " + e);
 		}
 	}
 
@@ -43,7 +43,7 @@ public class ReadTest {
 			List<Venta> ventas = ventaDao.readByFecha(Date.valueOf("2018-5-1"));
 			assertEquals(ventas.get(0).getFecha(), Date.valueOf("2018-5-1"));
 		} catch (Exception e) {
-			System.out.println("Error readByFechaTest: " + e);
+			System.out.println("Error readVentaByFechaTest: " + e);
 		}
 	}
 
@@ -53,7 +53,7 @@ public class ReadTest {
 			List<Venta> ventas = ventaDao.readByFechas(Date.valueOf("2018-5-1"), Date.valueOf("2018-5-2"));
 			assertEquals(ventas.get(0).getFecha(), Date.valueOf("2018-5-1"));
 		} catch (Exception e) {
-			System.out.println("Error readByFechasTest: " + e);
+			System.out.println("Error readVentaByFechasTest: " + e);
 		}
 	}
 }

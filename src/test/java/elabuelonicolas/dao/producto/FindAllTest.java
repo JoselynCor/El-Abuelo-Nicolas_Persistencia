@@ -35,7 +35,7 @@ public class FindAllTest {
 			List<Producto> list = productoDao.findAll();
 			assertEquals(list.size(), this.proveedor);
 		} catch (Exception e) {
-			System.out.println("Error findAllTest: " + e);
+			System.out.println("Error findAllProductoTest: " + e);
 		}
 	}
 }

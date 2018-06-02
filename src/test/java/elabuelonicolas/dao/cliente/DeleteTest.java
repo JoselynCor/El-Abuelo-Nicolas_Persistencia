@@ -47,7 +47,7 @@ public class DeleteTest {
 
 			assertNull(c);
 		} catch (Exception e) {
-			System.out.println("Error deleteTest: " + e);
+			System.out.println("Error deleteClienteTest: " + e);
 		}
 	}
 }

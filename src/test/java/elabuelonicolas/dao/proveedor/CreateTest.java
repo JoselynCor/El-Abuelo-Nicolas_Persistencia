@@ -44,7 +44,7 @@ public class CreateTest {
 			
 			this.proveedor.setId(c.getId());
 		} catch (Exception e) {
-			System.out.println("Error createTest: " + e);
+			System.out.println("Error createProveedorTest: " + e);
 		}
 	}
 }

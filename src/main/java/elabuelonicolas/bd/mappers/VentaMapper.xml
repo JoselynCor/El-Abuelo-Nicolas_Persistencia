@@ -39,8 +39,8 @@
 	<select id="readByFechas" parameterType="map"
 		resultMap="BaseResultMap">
 		select * from
-		venta where fecha between #{fechaInicio} and
-		#{fechaFin}
+		venta where fecha between #{fechainicio} and
+		#{fechafin}
 	</select>
 	<update id="update"
 		parameterType="elabuelonicolas.bd.domain.Venta">
@@ -53,7 +53,7 @@
 	</update>
 	<update id="updateIdCliente" parameterType="map">
 		UPDATE venta SET
-		idcliente=#{idCliente}
+		idcliente=#{idcliente}
 		WHERE id=#{id}
 	</update>
 	<update id="updateFecha" parameterType="map">

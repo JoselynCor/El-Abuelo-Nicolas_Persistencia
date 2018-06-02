@@ -22,7 +22,7 @@ public class ReadTest {
 			Proveedor p = proveedorDao.read(1);
 			assertEquals((int) p.getId(), 1);
 		} catch (Exception e) {
-			System.out.println("Error readTest: " + e);
+			System.out.println("Error readProveedorTest: " + e);
 		}
 	}
 
@@ -32,7 +32,7 @@ public class ReadTest {
 			List<Proveedor> proveedor = proveedorDao.readByNombre("José Luis");
 			assertEquals(proveedor.get(0).getNombre(), "José Luis");
 		} catch (Exception e) {
-			System.out.println("Error readByNombreTest: " + e);
+			System.out.println("Error readProveedorByNombreTest: " + e);
 		}
 	}
 
@@ -42,7 +42,7 @@ public class ReadTest {
 			Proveedor proveedor = proveedorDao.readByDireccion(1);
 			assertEquals((int) proveedor.getIddireccion(), 1);
 		} catch (Exception e) {
-			System.out.println("Error readByDireccionTest: " + e);
+			System.out.println("Error readProveedorByDireccionTest: " + e);
 		}
 	}
 
@@ -52,7 +52,7 @@ public class ReadTest {
 			List<Proveedor> proveedor = proveedorDao.readByContacto("Nicolás");
 			assertEquals(proveedor.get(0).getContacto(), "Nicolás");
 		} catch (Exception e) {
-			System.out.println("Error readByContactoTest: " + e);
+			System.out.println("Error readProveedorByContactoTest: " + e);
 		}
 	}
 
@@ -62,7 +62,7 @@ public class ReadTest {
 			List<Proveedor> proveedor = proveedorDao.readByTelefono("351354343");
 			assertEquals(proveedor.get(0).getTelefono(), "351354343");
 		} catch (Exception e) {
-			System.out.println("Error readByTelefonoTest: " + e);
+			System.out.println("Error readProveedorByTelefonoTest: " + e);
 		}
 	}
 
@@ -72,7 +72,7 @@ public class ReadTest {
 			List<Proveedor> proveedor = proveedorDao.readByEmail("josejaime@gmail.com");
 			assertEquals(proveedor.get(0).getEmail(), "josejaime@gmail.com");
 		} catch (Exception e) {
-			System.out.println("Error readByEmailTest: " + e);
+			System.out.println("Error readProveedorByEmailTest: " + e);
 		}
 	}
 
@@ -82,7 +82,7 @@ public class ReadTest {
 			List<Proveedor> proveedor = proveedorDao.readByRfc("UHS2K28HJ3N3");
 			assertEquals(proveedor.get(0).getRfc(), "UHS2K28HJ3N3");
 		} catch (Exception e) {
-			System.out.println("Error readByRfcTest: " + e);
+			System.out.println("Error readProveedorByRfcTest: " + e);
 		}
 	}
 }

@@ -23,7 +23,7 @@ public class ProveedorDaoImpl implements ProveedorDao {
 			ProveedorMapper proveedorMapper = sqlSession.getMapper(ProveedorMapper.class);
 			return proveedorMapper.findAll();
 		} catch (Exception e) {
-			System.out.println("Error findAll: " + e);
+			System.out.println("Error findAllProveedor: " + e);
 		}
 		return null;
 	}
@@ -34,7 +34,7 @@ public class ProveedorDaoImpl implements ProveedorDao {
 			ProveedorMapper proveedorMapper = sqlSession.getMapper(ProveedorMapper.class);
 			proveedorMapper.create(proveedor);
 		} catch (Exception e) {
-			System.out.println("Error create: " + e);
+			System.out.println("Error createProveedor: " + e);
 		}
 	}
 
@@ -44,7 +44,7 @@ public class ProveedorDaoImpl implements ProveedorDao {
 			ProveedorMapper proveedorMapper = sqlSession.getMapper(ProveedorMapper.class);
 			return proveedorMapper.read(id);
 		} catch (Exception e) {
-			System.out.println("Error read: " + e);
+			System.out.println("Error readProveedor: " + e);
 		}
 		return null;
 	}
@@ -55,18 +55,18 @@ public class ProveedorDaoImpl implements ProveedorDao {
 			ProveedorMapper proveedorMapper = sqlSession.getMapper(ProveedorMapper.class);
 			return proveedorMapper.readByNombre(nombre);
 		} catch (Exception e) {
-			System.out.println("Error readByNombre: " + e);
+			System.out.println("Error readByNombreProveedor: " + e);
 		}
 		return null;
 	}
 
 	@Override
-	public Proveedor readByDireccion(int idDireccion) {
+	public Proveedor readByDireccion(int iddireccion) {
 		try {
 			ProveedorMapper proveedorMapper = sqlSession.getMapper(ProveedorMapper.class);
-			return proveedorMapper.readByDireccion(idDireccion);
+			return proveedorMapper.readByDireccion(iddireccion);
 		} catch (Exception e) {
-			System.out.println("Error readByDireccion: " + e);
+			System.out.println("Error readByDireccionProveedor: " + e);
 		}
 		return null;
 	}
@@ -77,7 +77,7 @@ public class ProveedorDaoImpl implements ProveedorDao {
 			ProveedorMapper proveedorMapper = sqlSession.getMapper(ProveedorMapper.class);
 			return proveedorMapper.readByContacto(contacto);
 		} catch (Exception e) {
-			System.out.println("Error readByContacto: " + e);
+			System.out.println("Error readByContactoProveedor: " + e);
 		}
 		return null;
 	}
@@ -89,7 +89,7 @@ public class ProveedorDaoImpl implements ProveedorDao {
 			List<Proveedor> proveedor = proveedorMapper.readByTelefono(telefono);
 			return proveedor;
 		} catch (Exception e) {
-			System.out.println("Error readByNumber: " + e);
+			System.out.println("Error readByNumberProveedor: " + e);
 		}
 		return null;
 	}
@@ -100,7 +100,7 @@ public class ProveedorDaoImpl implements ProveedorDao {
 			ProveedorMapper proveedorMapper = sqlSession.getMapper(ProveedorMapper.class);
 			return proveedorMapper.readByEmail(email);
 		} catch (Exception e) {
-			System.out.println("Error readByEmail: " + e);
+			System.out.println("Error readByEmailProveedor: " + e);
 		}
 		return null;
 	}
@@ -111,7 +111,7 @@ public class ProveedorDaoImpl implements ProveedorDao {
 			ProveedorMapper proveedorMapper = sqlSession.getMapper(ProveedorMapper.class);
 			return proveedorMapper.readByRfc(rfc);
 		} catch (Exception e) {
-			System.out.println("Error readByRfc: " + e);
+			System.out.println("Error readByRfcProveedor: " + e);
 		}
 		return null;
 	}
@@ -122,7 +122,7 @@ public class ProveedorDaoImpl implements ProveedorDao {
 			ProveedorMapper proveedorMapper = sqlSession.getMapper(ProveedorMapper.class);
 			proveedorMapper.update(proveedor);
 		} catch (Exception e) {
-			System.out.println("Error update: " + e);
+			System.out.println("Error updateProveedor: " + e);
 		}
 	}
 
@@ -132,7 +132,7 @@ public class ProveedorDaoImpl implements ProveedorDao {
 			ProveedorMapper proveedorMapper = sqlSession.getMapper(ProveedorMapper.class);
 			proveedorMapper.updateNombre(id, nombre);
 		} catch (Exception e) {
-			System.out.println("Error updateNombre: " + e);
+			System.out.println("Error updateNombreProveedor: " + e);
 		}
 	}
 
@@ -142,7 +142,7 @@ public class ProveedorDaoImpl implements ProveedorDao {
 			ProveedorMapper proveedorMapper = sqlSession.getMapper(ProveedorMapper.class);
 			proveedorMapper.updateContacto(id, contacto);
 		} catch (Exception e) {
-			System.out.println("Error updateContacto: " + e);
+			System.out.println("Error updateContactoProveedor: " + e);
 		}
 	}
 
@@ -152,7 +152,7 @@ public class ProveedorDaoImpl implements ProveedorDao {
 			ProveedorMapper proveedorMapper = sqlSession.getMapper(ProveedorMapper.class);
 			proveedorMapper.updateTelefono(id, telefono);
 		} catch (Exception e) {
-			System.out.println("Error updateTelefono: " + e);
+			System.out.println("Error updateTelefonoProveedor: " + e);
 		}
 	}
 
@@ -162,7 +162,7 @@ public class ProveedorDaoImpl implements ProveedorDao {
 			ProveedorMapper proveedorMapper = sqlSession.getMapper(ProveedorMapper.class);
 			proveedorMapper.updateEmail(id, email);
 		} catch (Exception e) {
-			System.out.println("Error updateEmail: " + e);
+			System.out.println("Error updateEmailProveedor: " + e);
 		}
 	}
 
@@ -172,7 +172,7 @@ public class ProveedorDaoImpl implements ProveedorDao {
 			ProveedorMapper proveedorMapper = sqlSession.getMapper(ProveedorMapper.class);
 			proveedorMapper.updateRfc(id, rfc);
 		} catch (Exception e) {
-			System.out.println("Error updateRfc: " + e);
+			System.out.println("Error updateRfcProveedor: " + e);
 		}
 	}
 
@@ -182,13 +182,18 @@ public class ProveedorDaoImpl implements ProveedorDao {
 			ProveedorMapper proveedorMapper = sqlSession.getMapper(ProveedorMapper.class);
 			proveedorMapper.delete(id);
 		} catch (Exception e) {
-			System.out.println("Error delete: " + e);
+			System.out.println("Error deleteProveedor: " + e);
 		}
 	}
 
 	@Override
 	public Proveedor last() {
-		ProveedorMapper proveedorMapper = sqlSession.getMapper(ProveedorMapper.class);
-		return proveedorMapper.last();
+		try {
+			ProveedorMapper proveedorMapper = sqlSession.getMapper(ProveedorMapper.class);
+			return proveedorMapper.last();
+		} catch (Exception e) {
+			System.out.println("Error deleteProveedor: " + e);
+		}
+		return null;
 	}
 }

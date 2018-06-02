@@ -44,7 +44,7 @@ public class DeleteTest {
 
 			assertNull(c);
 		} catch (Exception e) {
-			System.out.println("Error deleteCompraTest: " + e);
+			System.out.println("Error deleteListaventaTest: " + e);
 		}
 	}
 }

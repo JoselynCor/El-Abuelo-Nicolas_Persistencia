@@ -35,7 +35,7 @@ public class FindAllTest {
 			List<Cliente> list = clienteDao.findAll();
 			assertEquals(list.size(), this.clientes);
 		} catch (Exception e) {
-			System.out.println("Error findAllTest: " + e);
+			System.out.println("Error findAllClienteTest: " + e);
 		}
 	}
 }

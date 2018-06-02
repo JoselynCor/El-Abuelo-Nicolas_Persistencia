@@ -26,7 +26,7 @@ public class ListaventaDaoImpl implements ListaventaDao {
 			ListaventaMapper listaventaMapper = sqlSession.getMapper(ListaventaMapper.class);
 			return listaventaMapper.findAll();
 		} catch (Exception e) {
-			System.out.println("Error findAll: " + e);
+			System.out.println("Error findAllListaventa: " + e);
 		}
 		return null;
 	}
@@ -37,7 +37,7 @@ public class ListaventaDaoImpl implements ListaventaDao {
 			ListaventaMapper listaventaMapper = sqlSession.getMapper(ListaventaMapper.class);
 			listaventaMapper.create(listaventa);
 		} catch (Exception e) {
-			System.out.println("Error create: " + e);
+			System.out.println("Error createListaventa: " + e);
 		}
 	}
 
@@ -47,7 +47,7 @@ public class ListaventaDaoImpl implements ListaventaDao {
 			ListaventaMapper listaventaMapper = sqlSession.getMapper(ListaventaMapper.class);
 			return listaventaMapper.read(id);
 		} catch (Exception e) {
-			System.out.println("Error read: " + e);
+			System.out.println("Error readListaventa: " + e);
 		}
 		return null;
 	}
@@ -58,7 +58,7 @@ public class ListaventaDaoImpl implements ListaventaDao {
 			ListaventaMapper listaventaMapper = sqlSession.getMapper(ListaventaMapper.class);
 			return listaventaMapper.readByIdVenta(idventa);
 		} catch (Exception e) {
-			System.out.println("Error readByIdVenta: " + e);
+			System.out.println("Error readByIdVentaListaventa: " + e);
 		}
 		return null;
 	}
@@ -69,7 +69,7 @@ public class ListaventaDaoImpl implements ListaventaDao {
 			ListaventaMapper listaventaMapper = sqlSession.getMapper(ListaventaMapper.class);
 			return listaventaMapper.readByIdProducto(idproducto);
 		} catch (Exception e) {
-			System.out.println("Error readByIdProducto: " + e);
+			System.out.println("Error readByIdProductoListaventa: " + e);
 		}
 		return null;
 	}
@@ -80,7 +80,7 @@ public class ListaventaDaoImpl implements ListaventaDao {
 			ListaventaMapper listaventaMapper = sqlSession.getMapper(ListaventaMapper.class);
 			return listaventaMapper.readByCantidad(cantidad);
 		} catch (Exception e) {
-			System.out.println("Error readByIdCantidad: " + e);
+			System.out.println("Error readByIdCantidadListaventa: " + e);
 		}
 		return null;
 	}
@@ -91,7 +91,7 @@ public class ListaventaDaoImpl implements ListaventaDao {
 			ListaventaMapper listaventaMapper = sqlSession.getMapper(ListaventaMapper.class);
 			return listaventaMapper.readBySubtotal(subtotal);
 		} catch (Exception e) {
-			System.out.println("Error readByIdSubtotal: " + e);
+			System.out.println("Error readByIdSubtotalListaventa: " + e);
 		}
 		return null;
 	}
@@ -102,7 +102,7 @@ public class ListaventaDaoImpl implements ListaventaDao {
 			ListaventaMapper listaventaMapper = sqlSession.getMapper(ListaventaMapper.class);
 			listaventaMapper.update(listaventa);
 		} catch (Exception e) {
-			System.out.println("Error update: " + e);
+			System.out.println("Error updateListaventa: " + e);
 		}
 	}
 	
@@ -112,7 +112,7 @@ public class ListaventaDaoImpl implements ListaventaDao {
 			ListaventaMapper listaventaMapper = sqlSession.getMapper(ListaventaMapper.class);
 			listaventaMapper.updateIdVenta(id, idventa);
 		} catch (Exception e) {
-			System.out.println("Error updateIdVenta: " + e);
+			System.out.println("Error updateIdVentaListaventa: " + e);
 		}
 	}
 
@@ -122,7 +122,7 @@ public class ListaventaDaoImpl implements ListaventaDao {
 			ListaventaMapper listaventaMapper = sqlSession.getMapper(ListaventaMapper.class);
 			listaventaMapper.updateIdProducto(id, idproducto);
 		} catch (Exception e) {
-			System.out.println("Error updateIdProducto: " + e);
+			System.out.println("Error updateIdProductoListaventa: " + e);
 		}
 	}
 
@@ -132,7 +132,7 @@ public class ListaventaDaoImpl implements ListaventaDao {
 			ListaventaMapper listaventaMapper = sqlSession.getMapper(ListaventaMapper.class);
 			listaventaMapper.updateCantidad(id, cantidad);
 		} catch (Exception e) {
-			System.out.println("Error updateCantidad: " + e);
+			System.out.println("Error updateCantidadListaventa: " + e);
 		}
 	}
 
@@ -142,7 +142,7 @@ public class ListaventaDaoImpl implements ListaventaDao {
 			ListaventaMapper listaventaMapper = sqlSession.getMapper(ListaventaMapper.class);
 			listaventaMapper.updateSubtotal(id, subtotal);
 		} catch (Exception e) {
-			System.out.println("Error updateSubtotal: " + e);
+			System.out.println("Error updateSubtotalListaventa: " + e);
 		}
 	}
 
@@ -152,7 +152,7 @@ public class ListaventaDaoImpl implements ListaventaDao {
 			ListaventaMapper listaventaMapper = sqlSession.getMapper(ListaventaMapper.class);
 			listaventaMapper.delete(id);
 		} catch (Exception e) {
-			System.out.println("Error delete: " + e);
+			System.out.println("Error deleteListaventa: " + e);
 		}
 	}
 
@@ -162,7 +162,7 @@ public class ListaventaDaoImpl implements ListaventaDao {
 			ListaventaMapper listaventaMapper = sqlSession.getMapper(ListaventaMapper.class);
 			return listaventaMapper.last();
 		} catch (Exception e) {
-			System.out.println("Error last: " + e);
+			System.out.println("Error lastListaventa: " + e);
 		}
 		return null;
 	}
