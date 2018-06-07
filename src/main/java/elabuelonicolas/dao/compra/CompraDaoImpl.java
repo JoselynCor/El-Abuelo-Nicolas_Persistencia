@@ -1,6 +1,6 @@
 package elabuelonicolas.dao.compra;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 import javax.inject.Named;
 import org.apache.ibatis.session.SqlSession;

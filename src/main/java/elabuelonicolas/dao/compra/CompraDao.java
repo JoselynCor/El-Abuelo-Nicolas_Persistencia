@@ -1,6 +1,6 @@
 package elabuelonicolas.dao.compra;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import elabuelonicolas.bd.domain.Compra;
