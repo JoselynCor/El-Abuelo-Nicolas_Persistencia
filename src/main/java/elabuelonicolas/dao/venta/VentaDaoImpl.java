@@ -10,7 +10,7 @@ import elabuelonicolas.bd.mappers.VentaMapper;
 
 @Named
 public class VentaDaoImpl implements VentaDao {
-	
+
 	SqlSession sqlSession;
 
 	@Autowired
@@ -84,6 +84,39 @@ public class VentaDaoImpl implements VentaDao {
 	}
 
 	@Override
+	public List<Venta> readByTotal(Double total) {
+		try {
+			VentaMapper ventaMapper = sqlSession.getMapper(VentaMapper.class);
+			return ventaMapper.readByTotal(total);
+		} catch (Exception e) {
+			System.out.println("Error readByTotalVenta: " + e);
+		}
+		return null;
+	}
+
+	@Override
+	public List<Venta> readByTotalReal(Double totalreal) {
+		try {
+			VentaMapper ventaMapper = sqlSession.getMapper(VentaMapper.class);
+			return ventaMapper.readByTotalReal(totalreal);
+		} catch (Exception e) {
+			System.out.println("Error readByTotalRealVenta: " + e);
+		}
+		return null;
+	}
+
+	@Override
+	public List<Venta> readByGanancia(Double ganancia) {
+		try {
+			VentaMapper ventaMapper = sqlSession.getMapper(VentaMapper.class);
+			return ventaMapper.readByGanancia(ganancia);
+		} catch (Exception e) {
+			System.out.println("Error readByGananciaVenta: " + e);
+		}
+		return null;
+	}
+
+	@Override
 	public void update(Venta venta) {
 		try {
 			VentaMapper ventaMapper = sqlSession.getMapper(VentaMapper.class);
@@ -122,7 +155,27 @@ public class VentaDaoImpl implements VentaDao {
 			System.out.println("Error updateTotalVenta: " + e);
 		}
 	}
-	
+
+	@Override
+	public void updateTotalReal(int id, Double totalreal) {
+		try {
+			VentaMapper ventaMapper = sqlSession.getMapper(VentaMapper.class);
+			ventaMapper.updateTotalReal(id, totalreal);
+		} catch (Exception e) {
+			System.out.println("Error updateTotalRealVenta: " + e);
+		}
+	}
+
+	@Override
+	public void updateGanancia(int id, Double ganancia) {
+		try {
+			VentaMapper ventaMapper = sqlSession.getMapper(VentaMapper.class);
+			ventaMapper.updateGanancia(id, ganancia);
+		} catch (Exception e) {
+			System.out.println("Error updateGananciaVenta: " + e);
+		}
+	}
+
 	@Override
 	public void delete(int id) {
 		try {
@@ -138,7 +191,7 @@ public class VentaDaoImpl implements VentaDao {
 		try {
 			VentaMapper ventaMapper = sqlSession.getMapper(VentaMapper.class);
 			return ventaMapper.last();
-		}catch(Exception e) {
+		} catch (Exception e) {
 			System.out.println("Error lastVenta: " + e);
 		}
 		return null;

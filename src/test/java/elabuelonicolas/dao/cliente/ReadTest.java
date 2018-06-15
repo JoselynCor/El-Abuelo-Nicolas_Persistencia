@@ -29,28 +29,18 @@ public class ReadTest {
 	@Test
 	public void readByNombre() {
 		try {
-			List<Cliente> clientes = clienteDao.readByNombre("José Luis");
-			assertEquals(clientes.get(0).getNombre(), "José Luis");
+			List<Cliente> clientes = clienteDao.readByNombre("Aurrera");
+			assertEquals(clientes.get(0).getNombre(), "Aurrera");
 		} catch (Exception e) {
 			System.out.println("Error readClienteByNombreTest: " + e);
 		}
 	}
 
 	@Test
-	public void readByDireccion() {
-		try {
-			Cliente cliente = clienteDao.readByDireccion(1);
-			assertEquals((int) cliente.getIddireccion(), 1);
-		} catch (Exception e) {
-			System.out.println("Error readClienteByDireccionTest: " + e);
-		}
-	}
-
-	@Test
 	public void readByContacto() {
 		try {
-			List<Cliente> clientes = clienteDao.readByContacto("Castro");
-			assertEquals(clientes.get(0).getContacto(), "Castro");
+			List<Cliente> clientes = clienteDao.readByContacto("José Luis");
+			assertEquals(clientes.get(0).getContacto(), "José Luis");
 		} catch (Exception e) {
 			System.out.println("Error readClienteByContactoTest: " + e);
 		}
@@ -59,8 +49,8 @@ public class ReadTest {
 	@Test
 	public void readByTelefono() {
 		try {
-			List<Cliente> clientes = clienteDao.readByTelefono("9535362391");
-			assertEquals(clientes.get(0).getTelefono(), "9535362391");
+			Cliente clientes = clienteDao.readByTelefono("9535362391");
+			assertEquals(clientes.getTelefono(), "9535362391");
 		} catch (Exception e) {
 			System.out.println("Error readClienteByTelefonoTest: " + e);
 		}
@@ -69,8 +59,8 @@ public class ReadTest {
 	@Test
 	public void readByEmail() {
 		try {
-			List<Cliente> clientes = clienteDao.readByEmail("jlcastrogro@gmail.com");
-			assertEquals(clientes.get(0).getEmail(), "jlcastrogro@gmail.com");
+			Cliente clientes = clienteDao.readByEmail("contacto@aurrera.com");
+			assertEquals(clientes.getEmail(), "contacto@aurrera.com");
 		} catch (Exception e) {
 			System.out.println("Error readClienteByEmailTest: " + e);
 		}
@@ -79,8 +69,8 @@ public class ReadTest {
 	@Test
 	public void readByRfc() {
 		try {
-			List<Cliente> clientes = clienteDao.readByRfc("KUCNW4NW4RN");
-			assertEquals(clientes.get(0).getRfc(), "KUCNW4NW4RN");
+			Cliente clientes = clienteDao.readByRfc("928HEND938HDNOWIN");
+			assertEquals(clientes.getRfc(), "928HEND938HDNOWIN");
 		} catch (Exception e) {
 			System.out.println("Error readClienteByRfcTest: " + e);
 		}

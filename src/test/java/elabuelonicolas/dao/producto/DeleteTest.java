@@ -24,8 +24,10 @@ public class DeleteTest {
 		this.producto = new Producto();
 		this.producto.setTipo("Balón");
 		this.producto.setMarca("Puma");
-		this.producto.setCosto(310.1);
+		this.producto.setCostocompra(3.1);
+		this.producto.setCostoventa(3.1);
 		this.producto.setExistencia(12);
+		this.producto.setStatus(1);
 		productoDao.create(this.producto);
 		this.producto.setId(productoDao.last().getId());
 	}

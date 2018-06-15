@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Param;
 import elabuelonicolas.bd.domain.Venta;
 
 public interface VentaDao {
-	
+
 	List<Venta> findAll();
 
 	void create(Venta venta);
@@ -19,15 +19,25 @@ public interface VentaDao {
 
 	List<Venta> readByFechas(@Param("fechainicio") Date fechainicio, @Param("fechafin") Date fechafin);
 
+	List<Venta> readByTotal(Double total);
+
+	List<Venta> readByTotalReal(Double totalreal);
+
+	List<Venta> readByGanancia(Double ganancia);
+
 	void update(Venta venta);
 
-	void updateIdCliente(@Param("id") int id, @Param("idCliente") int idcliente);
+	void updateIdCliente(@Param("id") int id, @Param("idcliente") int idcliente);
 
 	void updateFecha(@Param("id") int id, @Param("fecha") Date fecha);
 
 	void updateTotal(@Param("id") int id, @Param("total") Double total);
 
+	void updateTotalReal(@Param("id") int id, @Param("totalreal") Double totalreal);
+
+	void updateGanancia(@Param("id") int id, @Param("ganancia") Double ganancia);
+
 	void delete(int id);
-	
+
 	Venta last();
 }

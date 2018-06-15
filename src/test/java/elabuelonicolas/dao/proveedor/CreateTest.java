@@ -23,10 +23,17 @@ public class CreateTest {
 		this.proveedor = new Proveedor();
 		this.proveedor.setNombre("Elektra");
 		this.proveedor.setContacto("Jose");
-		this.proveedor.setIddireccion(3);
 		this.proveedor.setEmail("elektrahj@gmail.com");
 		this.proveedor.setRfc("EKHJ984317HPLCRM09");
 		this.proveedor.setTelefono("9551239856");
+		this.proveedor.setEstado("Oaxaca");
+		this.proveedor.setMunicipio("Putla");
+		this.proveedor.setLocalidad("Putla");
+		this.proveedor.setCodigopostal(71000);
+		this.proveedor.setAsentamiento("Col. Centro");
+		this.proveedor.setCalle("Oaxaca");
+		this.proveedor.setNumero(123);
+		this.proveedor.setStatus(1);
 	}
 
 	@After

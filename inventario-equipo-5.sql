@@ -136,8 +136,8 @@ CREATE TABLE `producto` (
   `id` int(11) NOT NULL,
   `tipo` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
   `marca` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
-  `costo_compra` double NOT NULL,
-  `costo_venta` double NOT NULL,
+  `costocompra` double NOT NULL,
+  `costoventa` double NOT NULL,
   `existencia` int(11) NOT NULL,
   `status` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
@@ -146,7 +146,7 @@ CREATE TABLE `producto` (
 -- Volcado de datos para la tabla `producto`
 --
 
-INSERT INTO `producto` (`id`, `tipo`, `marca`, `costo_compra`, `costo_venta`, `existencia`, `status`) VALUES
+INSERT INTO `producto` (`id`, `tipo`, `marca`, `costocompra`, `costoventa`, `existencia`, `status`) VALUES
 (1, 'Balón', 'Nike', 200, 300, 10, 1),
 (2, 'Balón', 'Puma', 300, 350, 15, 1),
 (3, 'Playera', 'Adidas', 200, 250, 20, 1),

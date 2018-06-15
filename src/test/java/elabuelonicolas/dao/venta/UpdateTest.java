@@ -23,8 +23,9 @@ public class UpdateTest {
 	public void setUp() {
 		this.venta = new Venta();
 		this.venta.setIdcliente(1);
-		this.venta.setFecha(Date.valueOf("2018-5-1"));
 		this.venta.setTotal(100.10);
+		this.venta.setTotalreal(100.10);
+		this.venta.setGanancia(100.10);
 
 		ventaDao.create(this.venta);
 
@@ -56,7 +57,7 @@ public class UpdateTest {
 	@Test
 	public void updateIdCliente() {
 		try {
-			ventaDao.updateIdCliente(this.venta.getId(), 10);
+			ventaDao.updateIdCliente(this.venta.getId(), 2);
 			Venta v = ventaDao.read(this.venta.getId());
 			assertNotEquals(v.getIdcliente(), this.venta.getIdcliente());
 		} catch (Exception e) {

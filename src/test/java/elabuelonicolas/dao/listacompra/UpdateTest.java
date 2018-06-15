@@ -41,7 +41,7 @@ public class UpdateTest {
 		Listacompra c = listacompraDao.read(this.listaCompra.getId());
 		try {
 			c.setIdcompra(2);
-			c.setIdproducto(5);
+			c.setIdproducto(2);
 			c.setCantidad(100);
 			c.setSubtotal(105.5);
 			listacompraDao.update(c);

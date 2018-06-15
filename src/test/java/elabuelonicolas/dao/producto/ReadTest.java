@@ -49,8 +49,8 @@ public class ReadTest {
 	@Test
 	public void readByCosto() {
 		try {
-			List<Producto> producto = productoDao.readByCosto(150.0);
-			assertEquals(producto.get(0).getCosto(), 150.0, 1);
+			List<Producto> producto = productoDao.readByCostoCompra(200.0);
+			assertEquals(producto.get(0).getCostocompra(), 200.0, 1);
 		} catch (Exception e) {
 			System.out.println("Error readProductoByCostoTest: " + e);
 		}
@@ -59,8 +59,8 @@ public class ReadTest {
 	@Test
 	public void readByExistencia() {
 		try {
-			List<Producto> producto = productoDao.readByExistencia(1);
-			assertEquals(producto.get(0).getExistencia(), 1, 1);
+			List<Producto> producto = productoDao.readByExistencia(10);
+			assertEquals(producto.get(0).getExistencia(), 10, 1);
 		} catch (Exception e) {
 			System.out.println("Error readProductoByExistenciaTest: " + e);
 		}

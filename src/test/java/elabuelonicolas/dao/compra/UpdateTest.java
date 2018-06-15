@@ -24,7 +24,6 @@ public class UpdateTest {
 	public void setUp() {
 		this.compra = new Compra();
 		this.compra.setIdproveedor(1);
-		this.compra.setFecha(Date.valueOf("2018-05-02"));
 		this.compra.setTotal(100.1);
 		compraDao.create(this.compra);
 		this.compra.setId(compraDao.last().getId());
@@ -62,18 +61,6 @@ public class UpdateTest {
 			assertNotEquals(c.getIdproveedor(), this.compra.getIdproveedor());
 		} catch (Exception e) {
 			System.out.println("Error updateCompraProveedorTest: " + e);
-		}
-	}
-
-	@Test
-	public void updateFecha() {
-		try {
-			System.out.println("UpdateNumber");
-			compraDao.updateFecha(this.compra.getId(), Date.valueOf("2018-2-1"));
-			Compra c = compraDao.read(this.compra.getId());
-			assertNotEquals(c.getFecha(), this.compra.getFecha());
-		} catch (Exception e) {
-			System.out.println("Error updateCompraFechaTest: " + e);
 		}
 	}
 

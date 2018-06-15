@@ -75,12 +75,34 @@ public class ProductoDaoImpl implements ProductoDao{
 	}
 
 	@Override
-	public List<Producto> readByCosto(Double costo) {
+	public List<Producto> readByCostoCompra(Double costo) {
 		try {
 			ProductoMapper productoMapper = sqlSession.getMapper(ProductoMapper.class);
-			return productoMapper.readByCosto(costo);
+			return productoMapper.readByCostoCompra(costo);
 		} catch (Exception e) {
 			System.out.println("Error readByCostoProducto: " + e);
+		}
+		return null;
+	}
+	
+	@Override
+	public List<Producto> readByCostoVenta(Double costoventa) {
+		try {
+			ProductoMapper productoMapper = sqlSession.getMapper(ProductoMapper.class);
+			return productoMapper.readByCostoVenta(costoventa);
+		} catch (Exception e) {
+			System.out.println("Error readByCostoVentaProducto: " + e);
+		}
+		return null;
+	}
+
+	@Override
+	public List<Producto> readByStatus(int status) {
+		try {
+			ProductoMapper productoMapper = sqlSession.getMapper(ProductoMapper.class);
+			return productoMapper.readByStatus(status);
+		} catch (Exception e) {
+			System.out.println("Error readByStatusProducto: " + e);
 		}
 		return null;
 	}
@@ -127,15 +149,35 @@ public class ProductoDaoImpl implements ProductoDao{
 	}
 
 	@Override
-	public void updateCosto(int id, Double costo) {
+	public void updateCostoCompra(int id, Double costo) {
 		try {
 			ProductoMapper productoMapper = sqlSession.getMapper(ProductoMapper.class);
-			productoMapper.updateCosto(id, costo);
+			productoMapper.updateCostoCompra(id, costo);
 		} catch (Exception e) {
 			System.out.println("Error updateCostoProducto: " + e);
 		}
 	}
 
+	@Override
+	public void updateCostoVenta(int id, Double costoventa) {
+		try {
+			ProductoMapper productoMapper = sqlSession.getMapper(ProductoMapper.class);
+			productoMapper.updateCostoVenta(id, costoventa);
+		} catch (Exception e) {
+			System.out.println("Error updateCostoVentaProducto: " + e);
+		}
+	}
+
+	@Override
+	public void updateStatus(int id, int status) {
+		try {
+			ProductoMapper productoMapper = sqlSession.getMapper(ProductoMapper.class);
+			productoMapper.updateStatus(id, status);
+		} catch (Exception e) {
+			System.out.println("Error updateStatusProducto: " + e);
+		}
+	}
+	
 	@Override
 	public void updateExistencia(int id, int existencia) {
 		try {
@@ -145,7 +187,6 @@ public class ProductoDaoImpl implements ProductoDao{
 			System.out.println("Error existenciaProducto: " + e);
 		}
 	}
-
 	
 	@Override
 	public void delete(int id) {
