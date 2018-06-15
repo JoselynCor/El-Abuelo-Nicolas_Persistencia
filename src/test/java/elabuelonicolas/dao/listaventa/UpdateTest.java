@@ -17,15 +17,17 @@ public class UpdateTest {
 	ListaventaDao listaventaDao;
 
 	private Listaventa listaventa;
-	
+
 	@Before
 	public void setUp() {
 		this.listaventa = new Listaventa();
 		this.listaventa.setIdventa(4);
 		this.listaventa.setIdproducto(1);
 		this.listaventa.setCantidad(10);
-		this.listaventa.setSubtotal(100.12);
-		
+		this.listaventa.setSubtotal(99.0);
+		this.listaventa.setSubtotalreal(100.12);
+		this.listaventa.setGanancia(12.1);
+
 		listaventaDao.create(this.listaventa);
 
 		this.listaventa.setId(listaventaDao.last().getId());
@@ -41,9 +43,11 @@ public class UpdateTest {
 		Listaventa c = listaventaDao.read(this.listaventa.getId());
 		try {
 			c.setIdventa(2);
-			c.setIdproducto(5);
+			c.setIdproducto(3);
 			c.setCantidad(100);
 			c.setSubtotal(105.5);
+			c.setSubtotalreal(100.12);
+			c.setGanancia(12.1);
 			listaventaDao.update(c);
 		} catch (Exception e) {
 			System.out.println("Error updateListaventaTest: " + e);
@@ -60,7 +64,7 @@ public class UpdateTest {
 		try {
 			listaventaDao.updateIdVenta(this.listaventa.getId(), 2);
 			Listaventa c = listaventaDao.read(this.listaventa.getId());
-			assertNotEquals(c.getIdventa(), this.listaventa.getIdventa());
+			assertNotEquals(c.getIdventa(), this.listaventa.getIdventa(), 1);
 		} catch (Exception e) {
 			System.out.println("Error updateListaventaTest: " + e);
 		}
@@ -69,10 +73,9 @@ public class UpdateTest {
 	@Test
 	public void updateSubtotal() {
 		try {
-			System.out.println("UpdateEmail");
-			listaventaDao.updateSubtotal(this.listaventa.getId(), 100.112);
+			listaventaDao.updateSubtotal(this.listaventa.getId(), 100.0);
 			Listaventa c = listaventaDao.read(this.listaventa.getId());
-			assertNotEquals(c.getSubtotal(), this.listaventa.getSubtotal());
+			assertNotEquals(c.getSubtotal(), this.listaventa.getSubtotal(), 1);
 		} catch (Exception e) {
 			System.out.println("Error updateListaventaSubtotalTest: " + e);
 		}

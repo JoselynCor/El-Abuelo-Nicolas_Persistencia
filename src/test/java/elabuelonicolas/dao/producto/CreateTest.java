@@ -23,8 +23,10 @@ public class CreateTest {
 		this.producto = new Producto();
 		this.producto.setTipo("Elektra");
 		this.producto.setMarca("Jose");
-		this.producto.setCosto(3.1);
+		this.producto.setCostocompra(3.1);
+		this.producto.setCostoventa(3.1);
 		this.producto.setExistencia(12);
+		this.producto.setStatus(1);
 	}
 
 	@After

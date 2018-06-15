@@ -12,7 +12,7 @@ import elabuelonicolas.bd.mappers.ListaventaMapper;
 
 @Named
 public class ListaventaDaoImpl implements ListaventaDao {
-	
+
 	SqlSession sqlSession;
 
 	@Autowired
@@ -95,7 +95,29 @@ public class ListaventaDaoImpl implements ListaventaDao {
 		}
 		return null;
 	}
-	
+
+	@Override
+	public List<Listaventa> readBySubtotalReal(double subtotalreal) {
+		try {
+			ListaventaMapper listaventaMapper = sqlSession.getMapper(ListaventaMapper.class);
+			return listaventaMapper.readBySubtotalReal(subtotalreal);
+		} catch (Exception e) {
+			System.out.println("Error readBySubtotalRealListaventa: " + e);
+		}
+		return null;
+	}
+
+	@Override
+	public List<Listaventa> readByGanancia(double ganancia) {
+		try {
+			ListaventaMapper listaventaMapper = sqlSession.getMapper(ListaventaMapper.class);
+			return listaventaMapper.readByGanancia(ganancia);
+		} catch (Exception e) {
+			System.out.println("Error readByGananciaListaventa: " + e);
+		}
+		return null;
+	}
+
 	@Override
 	public void update(Listaventa listaventa) {
 		try {
@@ -105,7 +127,7 @@ public class ListaventaDaoImpl implements ListaventaDao {
 			System.out.println("Error updateListaventa: " + e);
 		}
 	}
-	
+
 	@Override
 	public void updateIdVenta(int id, int idventa) {
 		try {
@@ -143,6 +165,26 @@ public class ListaventaDaoImpl implements ListaventaDao {
 			listaventaMapper.updateSubtotal(id, subtotal);
 		} catch (Exception e) {
 			System.out.println("Error updateSubtotalListaventa: " + e);
+		}
+	}
+
+	@Override
+	public void updateSubtotalReal(int id, double subtotalreal) {
+		try {
+			ListaventaMapper listaventaMapper = sqlSession.getMapper(ListaventaMapper.class);
+			listaventaMapper.updateSubtotalReal(id, subtotalreal);
+		} catch (Exception e) {
+			System.out.println("Error updateSubtotalRealListaventa: " + e);
+		}
+	}
+
+	@Override
+	public void updateGanancia(int id, double ganancia) {
+		try {
+			ListaventaMapper listaventaMapper = sqlSession.getMapper(ListaventaMapper.class);
+			listaventaMapper.updateGanancia(id, ganancia);
+		} catch (Exception e) {
+			System.out.println("Error updateGananciaListaventa: " + e);
 		}
 	}
 

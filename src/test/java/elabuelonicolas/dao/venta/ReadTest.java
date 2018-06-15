@@ -40,8 +40,8 @@ public class ReadTest {
 	@Test
 	public void readByFecha() {
 		try {
-			List<Venta> ventas = ventaDao.readByFecha(Date.valueOf("2018-5-1"));
-			assertEquals(ventas.get(0).getFecha(), Date.valueOf("2018-5-1"));
+			List<Venta> ventas = ventaDao.readByFecha(Date.valueOf("2018-6-1"));
+			assertEquals(ventas.get(0).getFecha(), Date.valueOf("2018-6-1"));
 		} catch (Exception e) {
 			System.out.println("Error readVentaByFechaTest: " + e);
 		}
@@ -50,8 +50,8 @@ public class ReadTest {
 	@Test
 	public void readByFechas() {
 		try {
-			List<Venta> ventas = ventaDao.readByFechas(Date.valueOf("2018-5-1"), Date.valueOf("2018-5-2"));
-			assertEquals(ventas.get(0).getFecha(), Date.valueOf("2018-5-1"));
+			List<Venta> ventas = ventaDao.readByFechas(Date.valueOf("2018-6-1"), Date.valueOf("2018-6-2"));
+			assertEquals(ventas.get(0).getFecha(), Date.valueOf("2018-6-1"));
 		} catch (Exception e) {
 			System.out.println("Error readVentaByFechasTest: " + e);
 		}

@@ -48,8 +48,8 @@ public class ReadTest {
 	@Test
 	public void readByCantidad() {
 		try {
-			List<Listaventa> listaventa = listaventaDao.readByCantidad(1);
-			assertEquals(listaventa.get(0).getCantidad(), 1, 1);
+			List<Listaventa> listaventa = listaventaDao.readByCantidad(2);
+			assertEquals(listaventa.get(0).getCantidad(), 2, 1);
 		} catch (Exception e) {
 			System.out.println("Error readListaventaByCantidadTest: " + e);
 		}
@@ -58,8 +58,8 @@ public class ReadTest {
 	@Test
 	public void readBySubtotal() {
 		try {
-			List<Listaventa> listaventa = listaventaDao.readBySubtotal(1553.5);
-			assertEquals(listaventa.get(0).getSubtotal(), 1553.5, 1);
+			List<Listaventa> listaventa = listaventaDao.readBySubtotal(500.0);
+			assertEquals(listaventa.get(0).getSubtotal(), 500.0, 1);
 		} catch (Exception e) {
 			System.out.println("Error readListaventaBySubtotalTest: " + e);
 		}

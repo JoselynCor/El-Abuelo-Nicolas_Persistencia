@@ -1,7 +1,6 @@
 package elabuelonicolas.dao.compra;
 
 import static org.junit.Assert.assertNull;
-import java.sql.Date;
 import javax.inject.Inject;
 import org.junit.After;
 import org.junit.Before;
@@ -23,7 +22,6 @@ public class DeleteTest {
 	public void setUp() {
 		this.compra = new Compra();
 		this.compra.setIdproveedor(1);
-		this.compra.setFecha(Date.valueOf("2018-1-1"));
 		this.compra.setTotal(100.1);
 	}
 

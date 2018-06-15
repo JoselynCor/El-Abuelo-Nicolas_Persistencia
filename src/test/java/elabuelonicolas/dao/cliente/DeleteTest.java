@@ -24,10 +24,17 @@ public class DeleteTest {
 		this.cliente = new Cliente();
 		this.cliente.setNombre("Luis");
 		this.cliente.setContacto("Josué");
-		this.cliente.setIddireccion(5);
 		this.cliente.setEmail("castrogro@gmail.com");
 		this.cliente.setRfc("JACG950419HOCSRS00");
 		this.cliente.setTelefono("955007892");
+		this.cliente.setEstado("Oaxaca");
+		this.cliente.setMunicipio("Putla");
+		this.cliente.setLocalidad("Putla");
+		this.cliente.setCodigopostal(71000);
+		this.cliente.setAsentamiento("Col. Centro");
+		this.cliente.setCalle("Oaxaca");
+		this.cliente.setNumero(123);
+		this.cliente.setStatus(1);
 		clienteDao.create(this.cliente);
 		this.cliente.setId(clienteDao.last().getId());
 	}

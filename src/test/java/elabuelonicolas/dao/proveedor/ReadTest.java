@@ -29,28 +29,18 @@ public class ReadTest {
 	@Test
 	public void readByNombre() {
 		try {
-			List<Proveedor> proveedor = proveedorDao.readByNombre("José Luis");
-			assertEquals(proveedor.get(0).getNombre(), "José Luis");
+			List<Proveedor> proveedor = proveedorDao.readByNombre("Aurrera");
+			assertEquals(proveedor.get(0).getNombre(), "Aurrera");
 		} catch (Exception e) {
 			System.out.println("Error readProveedorByNombreTest: " + e);
 		}
 	}
 
 	@Test
-	public void readByDireccion() {
-		try {
-			Proveedor proveedor = proveedorDao.readByDireccion(1);
-			assertEquals((int) proveedor.getIddireccion(), 1);
-		} catch (Exception e) {
-			System.out.println("Error readProveedorByDireccionTest: " + e);
-		}
-	}
-
-	@Test
 	public void readByContacto() {
 		try {
-			List<Proveedor> proveedor = proveedorDao.readByContacto("Nicolás");
-			assertEquals(proveedor.get(0).getContacto(), "Nicolás");
+			List<Proveedor> proveedor = proveedorDao.readByContacto("José Luis");
+			assertEquals(proveedor.get(0).getContacto(), "José Luis");
 		} catch (Exception e) {
 			System.out.println("Error readProveedorByContactoTest: " + e);
 		}
@@ -59,8 +49,8 @@ public class ReadTest {
 	@Test
 	public void readByTelefono() {
 		try {
-			List<Proveedor> proveedor = proveedorDao.readByTelefono("351354343");
-			assertEquals(proveedor.get(0).getTelefono(), "351354343");
+			Proveedor proveedor = proveedorDao.readByTelefono("9535362391");
+			assertEquals(proveedor.getTelefono(), "9535362391");
 		} catch (Exception e) {
 			System.out.println("Error readProveedorByTelefonoTest: " + e);
 		}
@@ -69,8 +59,8 @@ public class ReadTest {
 	@Test
 	public void readByEmail() {
 		try {
-			List<Proveedor> proveedor = proveedorDao.readByEmail("josejaime@gmail.com");
-			assertEquals(proveedor.get(0).getEmail(), "josejaime@gmail.com");
+			Proveedor proveedor = proveedorDao.readByEmail("contacto@aurrera.com");
+			assertEquals(proveedor.getEmail(), "contacto@aurrera.com");
 		} catch (Exception e) {
 			System.out.println("Error readProveedorByEmailTest: " + e);
 		}
@@ -79,8 +69,8 @@ public class ReadTest {
 	@Test
 	public void readByRfc() {
 		try {
-			List<Proveedor> proveedor = proveedorDao.readByRfc("UHS2K28HJ3N3");
-			assertEquals(proveedor.get(0).getRfc(), "UHS2K28HJ3N3");
+			Proveedor proveedor = proveedorDao.readByRfc("928HEND938HDNOWIN");
+			assertEquals(proveedor.getRfc(), "928HEND938HDNOWIN");
 		} catch (Exception e) {
 			System.out.println("Error readProveedorByRfcTest: " + e);
 		}
