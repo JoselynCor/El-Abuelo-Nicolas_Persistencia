@@ -38,7 +38,6 @@ public class UpdateTest {
 	public void update() {
 		Compra c = compraDao.read(this.compra.getId());
 		try {
-			System.out.println("Update");
 			c.setIdproveedor(2);
 			c.setFecha(Date.valueOf("2018-12-1"));
 			c.setTotal(105.5);
@@ -55,7 +54,6 @@ public class UpdateTest {
 	@Test
 	public void updateIdProveedor() {
 		try {
-			System.out.println("UpdateProveedor");
 			compraDao.updateIdProveedor(this.compra.getId(), 2);
 			Compra c = compraDao.read(this.compra.getId());
 			assertNotEquals(c.getIdproveedor(), this.compra.getIdproveedor());
@@ -67,7 +65,6 @@ public class UpdateTest {
 	@Test
 	public void updateTotal() {
 		try {
-			System.out.println("UpdateEmail");
 			compraDao.updateTotal(this.compra.getId(), 100.112);
 			Compra c = compraDao.read(this.compra.getId());
 			assertNotEquals(c.getTotal(), this.compra.getTotal());
