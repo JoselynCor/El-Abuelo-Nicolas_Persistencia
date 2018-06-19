@@ -23,10 +23,10 @@
 	<insert id="create"
 		parameterType="elabuelonicolas.bd.domain.Producto">
 		insert into producto (
-		tipo, marca, costocompra, costoventa, existencia, status
+		tipo, marca, costocompra, costoventa, existencia
 		)
 		values (
-		#{tipo}, #{marca}, #{costocompra}, #{costoventa}, #{existencia}, #{status}
+		#{tipo}, #{marca}, #{costocompra}, #{costoventa}, #{existencia}
 		)
 	</insert>
 	<select id="read" parameterType="int" resultMap="BaseResultMap">

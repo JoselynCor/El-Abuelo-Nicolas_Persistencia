@@ -35,13 +35,13 @@
 		insert into cliente (
 		nombre, contacto, telefono, email,
 		rfc, estado, municipio, localidad, codigopostal, asentamiento, calle,
-		numero, status)
+		numero)
 		values (
 		#{nombre}, #{contacto}, #{telefono}, #{email},
 		#{rfc}, #{estado},
 		#{municipio}, #{localidad}, #{codigopostal},
 		#{asentamiento},
-		#{calle}, #{numero}, #{status}
+		#{calle}, #{numero}
 		)
 	</insert>
 	<select id="read" parameterType="int" resultMap="BaseResultMap">
