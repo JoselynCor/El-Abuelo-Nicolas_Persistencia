@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 14-06-2018 a las 20:02:13
+-- Tiempo de generación: 18-06-2018 a las 23:58:03
 -- Versión del servidor: 10.1.33-MariaDB
 -- Versión de PHP: 7.2.6
 
@@ -42,16 +42,16 @@ CREATE TABLE `cliente` (
   `asentamiento` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
   `calle` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
   `numero` int(11) NOT NULL,
-  `status` int(1) NOT NULL
+  `status` int(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `cliente`
 --
 
-INSERT INTO `cliente` (`id`, `nombre`, `contacto`, `telefono`, `email`, `rfc`, `estado`, `municipio`, `localidad`, `codigopostal`, `asentamiento`, `calle`, `numero`, `status`) VALUES
-(1, 'Aurrera', 'José Luis', '9535362391', 'contacto@aurrera.com', '928HEND938HDNOWIN', 'Oaxaca', 'Huajuapan de Léon', 'Huajuapan de León', 69000, 'Col. Centro', 'C. Nuyoo', 12, 1),
-(2, 'Mi tiendita', 'Egremy', '68136568465', 'contacto@mitiendita.com', 'IQOUNED83FU3ND83', 'Oaxaca', 'Huajuapan de Léon', 'Huajuapan de León', 69007, 'Col. Jardines del Sur', 'C. 5 de febrero', 26, 1);
+INSERT INTO `cliente` (`id`, `nombre`, `contacto`, `telefono`, `email`, `rfc`, `estado`, `municipio`, `localidad`, `codigopostal`, `asentamiento`, `calle`, `numero`) VALUES
+(1, 'Aurrera', 'José Luis', '9535362391', 'contacto@aurrera.com', '928HEND938HDNOWIN', 'Oaxaca', 'Huajuapan de Léon', 'Huajuapan de León', 69000, 'Col. Centro', 'C. Nuyoo', 12),
+(2, 'Mi tiendita', 'Egremy', '68136568465', 'contacto@mitiendita.com', 'IQOUNED83FU3ND83', 'Oaxaca', 'Huajuapan de Léon', 'Huajuapan de León', 69007, 'Col. Jardines del Sur', 'C. 5 de febrero', 26);
 
 -- --------------------------------------------------------
 
@@ -139,18 +139,18 @@ CREATE TABLE `producto` (
   `costocompra` double NOT NULL,
   `costoventa` double NOT NULL,
   `existencia` int(11) NOT NULL,
-  `status` int(1) NOT NULL
+  `status` int(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `producto`
 --
 
-INSERT INTO `producto` (`id`, `tipo`, `marca`, `costocompra`, `costoventa`, `existencia`, `status`) VALUES
-(1, 'Balón', 'Nike', 200, 300, 10, 1),
-(2, 'Balón', 'Puma', 300, 350, 15, 1),
-(3, 'Playera', 'Adidas', 200, 250, 20, 1),
-(4, 'Playera', 'Jordan', 300, 350, 10, 1);
+INSERT INTO `producto` (`id`, `tipo`, `marca`, `costocompra`, `costoventa`, `existencia`) VALUES
+(1, 'Balón', 'Nike', 200, 300, 10),
+(2, 'Balón', 'Puma', 300, 350, 15),
+(3, 'Playera', 'Adidas', 200, 250, 20),
+(4, 'Playera', 'Jordan', 300, 350, 10);
 
 -- --------------------------------------------------------
 
@@ -172,16 +172,16 @@ CREATE TABLE `proveedor` (
   `asentamiento` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
   `calle` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
   `numero` int(11) NOT NULL,
-  `status` int(1) NOT NULL
+  `status` int(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `proveedor`
 --
 
-INSERT INTO `proveedor` (`id`, `nombre`, `contacto`, `telefono`, `email`, `rfc`, `estado`, `municipio`, `localidad`, `codigopostal`, `asentamiento`, `calle`, `numero`, `status`) VALUES
-(1, 'Aurrera', 'José Luis', '9535362391', 'contacto@aurrera.com', '928HEND938HDNOWIN', 'Oaxaca', 'Huajuapan de Léon', 'Huajuapan de León', 69000, 'Col. Centro', 'C. Nuyoo', 12, 1),
-(2, 'Mi tiendita', 'Egremy', '68136568465', 'contacto@mitiendita.com', 'IQOUNED83FU3ND83', 'Oaxaca', 'Huajuapan de Léon', 'Huajuapan de León', 69007, 'Col. Jardines del Sur', 'C. 5 de febrero', 26, 1);
+INSERT INTO `proveedor` (`id`, `nombre`, `contacto`, `telefono`, `email`, `rfc`, `estado`, `municipio`, `localidad`, `codigopostal`, `asentamiento`, `calle`, `numero`) VALUES
+(1, 'Aurrera', 'José Luis', '9535362391', 'contacto@aurrera.com', '928HEND938HDNOWIN', 'Oaxaca', 'Huajuapan de Léon', 'Huajuapan de León', 69000, 'Col. Centro', 'C. Nuyoo', 12),
+(2, 'Mi tiendita', 'Egremy', '68136568465', 'contacto@mitiendita.com', 'IQOUNED83FU3ND83', 'Oaxaca', 'Huajuapan de Léon', 'Huajuapan de León', 69007, 'Col. Jardines del Sur', 'C. 5 de febrero', 26);
 
 -- --------------------------------------------------------
 
