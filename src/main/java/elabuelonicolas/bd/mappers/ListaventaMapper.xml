@@ -18,7 +18,13 @@
 		<result column="ganancia" jdbcType="DOUBLE" property="ganancia" />
 	</resultMap>
 	<select id="findAll" resultMap="BaseResultMap">
-		SELECT * FROM listaventa
+		SELECT 
+			listaventa.id, listaventa.idventa, producto.tipo,
+			producto.marca, listaventa.cantidad, listaventa.subtotal,
+			listaventa.subtotalreal, listaventa.ganancia
+		FROM listaventa
+		RIGHT JOIN producto
+		ON listaventa.idproducto = producto.id;
 	</select>
 	<insert id="create"
 		parameterType="elabuelonicolas.bd.domain.Listaventa">
