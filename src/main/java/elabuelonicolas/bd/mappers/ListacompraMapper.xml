@@ -16,7 +16,12 @@
 		<result column="subtotal" jdbcType="DOUBLE" property="subtotal" />
 	</resultMap>
 	<select id="findAll" resultMap="BaseResultMap">
-		SELECT * FROM listacompra
+		SELECT 
+			listacompra.id, listacompra.idcompra, producto.tipo,
+			producto.marca, listacompra.cantidad, listacompra.subtotal
+		FROM listacompra
+		RIGHT JOIN producto
+		ON listacompra.idproducto = producto.id;
 	</select>
 	<insert id="create"
 		parameterType="elabuelonicolas.bd.domain.Listacompra">

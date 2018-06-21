@@ -16,11 +16,16 @@
 		<result column="ganancia" jdbcType="DOUBLE" property="ganancia" />
 	</resultMap>
 	<select id="findAll" resultMap="BaseResultMap">
-		SELECT * FROM venta
+		SELECT 
+			venta.id, cliente.nombre, venta.fecha, venta.total 
+		FROM venta 
+		RIGHT JOIN cliente
+		ON venta.idcliente = cliente.id
+
 	</select>
 	<insert id="create"
 		parameterType="elabuelonicolas.bd.domain.Venta">
-		insert into venta (
+		INSERT INTO venta (
 		idcliente, total, totalreal,
 		ganancia)
 		values (

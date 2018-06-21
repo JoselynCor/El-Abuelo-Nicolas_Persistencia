@@ -13,7 +13,11 @@
 		<result column="total" jdbcType="DOUBLE" property="total" />
 	</resultMap>
 	<select id="findAll" resultMap="BaseResultMap">
-		SELECT * FROM compra
+		SELECT 
+			compra.id, proveedor.nombre, compra.fecha, compra.total 
+		FROM compra 
+		RIGHT JOIN proveedor 
+		ON compra.idproveedor = proveedor.id
 	</select>
 	<insert id="create"
 		parameterType="elabuelonicolas.bd.domain.Compra">
