@@ -152,4 +152,22 @@
 		desc
 		limit 1
 	</select>
+		
+		<resultMap id="GetBest" type="elabuelonicolas.bd.domain.Listaventa">
+		<id column="id" property="id" />
+		<result column="idproducto" jdbcType="INTEGER" property="idproducto" />
+		<result column="cantidad" jdbcType="INTEGER" property="cantidad" />
+		<result column="tipo" jdbcType="VARCHAR" property="producto.tipo" />
+		<result column="marca" jdbcType="VARCHAR" property="producto.marca" />
+		<result column="idProd" jdbcType="INTEGER" property="producto.id" />
+		
+		
+	</resultMap>
+		
+	<select id="best" resultMap="GetBest">
+		SELECT tipo, marca, sum(listaventa.cantidad) 
+		FROM listaventa RIGHT JOIN producto 
+		ON listaventa.idproducto = idProd 
+		GROUP BY marca ORDER by listaventa.cantidad limit 5; 
+	</select>
 </mapper>

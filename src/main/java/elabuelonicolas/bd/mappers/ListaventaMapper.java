@@ -41,4 +41,6 @@ public interface ListaventaMapper {
 	void delete(int id);
 
 	Listaventa last();
+	
+	List<Listaventa> best();
 }
