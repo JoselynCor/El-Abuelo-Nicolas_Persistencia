@@ -14,7 +14,7 @@
 	</resultMap>
 	<select id="findAll" resultMap="BaseResultMap">
 		SELECT 
-			compra.id, proveedor.nombre, compra.fecha, compra.total 
+			compra.id,compra.idproveedor, proveedor.nombre, compra.fecha, compra.total 
 		FROM compra 
 		RIGHT JOIN proveedor 
 		ON compra.idproveedor = proveedor.id
