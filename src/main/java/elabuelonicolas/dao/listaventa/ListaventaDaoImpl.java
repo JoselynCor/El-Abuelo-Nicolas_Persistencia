@@ -208,4 +208,15 @@ public class ListaventaDaoImpl implements ListaventaDao {
 		}
 		return null;
 	}
+	
+	@Override
+	public List<Listaventa> best() {
+		try {
+			ListaventaMapper listaventaMapper = sqlSession.getMapper(ListaventaMapper.class);
+			return listaventaMapper.best();
+		} catch (Exception e) {
+			System.out.println("Error bestListaventa: " + e);
+		}
+		return null;
+	}
 }
