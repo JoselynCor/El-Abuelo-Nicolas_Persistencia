@@ -17,7 +17,7 @@
 	</resultMap>
 	<select id="findAll" resultMap="BaseResultMap">
 		SELECT 
-			venta.id, cliente.nombre, venta.fecha, venta.total 
+			venta.id, venta.idcliente, cliente.nombre, venta.fecha, venta.total 
 		FROM venta 
 		RIGHT JOIN cliente
 		ON venta.idcliente = cliente.id
