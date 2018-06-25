@@ -17,7 +17,7 @@
 	</resultMap>
 	<select id="findAll" resultMap="BaseResultMap">
 		SELECT 
-			listacompra.id, listacompra.idcompra, producto.tipo,
+			listacompra.id, listacompra.idcompra, listacompra.idproducto, producto.tipo,
 			producto.marca, listacompra.cantidad, listacompra.subtotal
 		FROM listacompra
 		RIGHT JOIN producto
